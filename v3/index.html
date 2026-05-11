@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>女兒國 · The Kingdom of True Daughters</title>
+  <meta name="description" content="女兒國 — 占卜・療癒・祈願・開運。回歸屬於你的真・善・美。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple:     #8B07A8;
+      --purple-dk:  #5A0070;
+      --purple-mid: #2D0550;
+      --gold:       #C9A84C;
+      --gold-lt:    #E8D89A;
+      --gold-glow:  #FFE066;
+      --void:       #0D0118;
+      --void-mid:   #140829;
+      --void-lt:    #1E0F3A;
+      --lavender:   #C9B8E8;
+      --cream:      #F5EFD8;
+    }
+    *,*::before,*::after { box-sizing:border-box;margin:0;padding:0 }
+    html { scroll-behavior:smooth }
+    body { background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased }
+    ::-webkit-scrollbar { width:5px }
+    ::-webkit-scrollbar-track { background:var(--void) }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px }
+    img { display:block;max-width:100% }
+    a { color:inherit;text-decoration:none }
+
+    /* ── TYPOGRAPHY ── */
+    .f-cinzel    { font-family:'Cinzel',serif }
+    .f-cormorant { font-family:'Cormorant Garamond',serif }
+    .f-noto      { font-family:'Noto Serif TC',serif }
+    .f-mont      { font-family:'Montserrat',sans-serif }
+
+    .grad-gold {
+      background:linear-gradient(135deg,#E8D89A 0%,#C9A84C 40%,#FFE066 70%,#C9A84C 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+    }
+
+    /* ── DIVIDERS ── */
+    .div-gold    { width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem auto }
+    .div-gold-sm { width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.5rem auto }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease }
+    .reveal.vis { opacity:1;transform:none }
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+    .d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+    /* ══════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════ */
+    #nav {
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      padding:1.1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      transition:background .4s,backdrop-filter .4s,border-color .4s;
+      border-bottom:1px solid transparent
+    }
+    #nav.scrolled {
+      background:rgba(13,1,24,.92);
+      backdrop-filter:blur(22px);
+      border-color:rgba(201,168,76,.18)
+    }
+    .nav-logo { display:flex;align-items:center;gap:.9rem }
+    .nav-logo img.logo-mark {
+      width:42px;height:42px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.35);
+      box-shadow:0 0 16px rgba(201,168,76,.25);
+      object-fit:cover
+    }
+    .nav-logo-text { display:flex;flex-direction:column;line-height:1.15 }
+    .nav-logo-zh {
+      font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+    }
+    .nav-logo-en { font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;color:rgba(201,184,232,.65) }
+    .nav-links { display:flex;align-items:center;gap:2.2rem }
+    .nav-link {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      color:var(--lavender);position:relative;transition:color .3s
+    }
+    .nav-link::after {
+      content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;
+      background:var(--gold);transition:width .3s
+    }
+    .nav-link:hover { color:var(--gold-lt) }
+    .nav-link:hover::after { width:100% }
+
+    /* Dropdown */
+    .nav-dropdown { position:relative }
+    .nav-dropdown-menu {
+      position:absolute;top:calc(100% + 1rem);left:50%;transform:translateX(-50%);
+      background:rgba(13,1,24,.97);backdrop-filter:blur(24px);
+      border:1px solid rgba(201,168,76,.18);
+      padding:.6rem 0;min-width:200px;
+      opacity:0;pointer-events:none;
+      transition:opacity .25s,transform .25s;
+      transform:translateX(-50%) translateY(-8px)
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity:1;pointer-events:all;
+      transform:translateX(-50%) translateY(0)
+    }
+    .nav-dropdown-item {
+      display:block;padding:.55rem 1.4rem;
+      font-family:'Noto Serif TC',serif;font-size:.8rem;
+      color:rgba(201,184,232,.7);
+      transition:color .2s,background .2s
+    }
+    .nav-dropdown-item:hover { color:var(--gold-lt);background:rgba(201,168,76,.06) }
+    .nav-dropdown-item .dd-en {
+      font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;
+      color:rgba(201,168,76,.5);display:block;margin-top:.1rem
+    }
+
+    .nav-cta {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      border:1px solid rgba(201,168,76,.45);
+      padding:.45rem 1.25rem;color:var(--gold-lt);
+      transition:background .3s,box-shadow .3s
+    }
+    .nav-cta:hover { background:rgba(201,168,76,.12);box-shadow:0 0 18px rgba(201,168,76,.18) }
+    .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px }
+    .hamburger span { width:24px;height:1.5px;background:var(--lavender);transition:all .3s }
+    .mobile-nav {
+      display:none;position:fixed;inset:0;z-index:190;
+      background:rgba(13,1,24,.97);backdrop-filter:blur(30px);
+      flex-direction:column;align-items:center;justify-content:center;gap:2rem;
+      opacity:0;transition:opacity .4s
+    }
+    .mobile-nav.open { opacity:1 }
+    .mobile-nav .nav-link { font-size:1.05rem }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    #hero {
+      position:relative;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden
+    }
+    #hero-canvas { position:absolute;inset:0;width:100%;height:100%;z-index:0 }
+    .hero-bg {
+      position:absolute;inset:0;z-index:1;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(139,7,168,.45) 0%,transparent 65%),
+        radial-gradient(ellipse 60% 50% at 80% 90%,   rgba(45,5,80,.7)   0%,transparent 55%),
+        radial-gradient(ellipse 50% 40% at 10% 70%,   rgba(20,8,41,.9)   0%,transparent 55%),
+        linear-gradient(180deg,#0D0118 0%,#140829 55%,#0D0118 100%)
+    }
+    .hero-ring {
+      position:absolute;inset:0;z-index:2;
+      display:flex;align-items:center;justify-content:center;pointer-events:none
+    }
+    .hero-ring svg { opacity:.07;animation:slowRotate 60s linear infinite }
+    @keyframes slowRotate { to { transform:rotate(360deg) } }
+
+    .hero-content {
+      position:relative;z-index:3;text-align:center;
+      padding:2rem 1.5rem;max-width:800px
+    }
+    .hero-logo-wrap {
+      position:relative;display:inline-block;
+      margin-bottom:2rem;
+      animation:float 7s ease-in-out infinite
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .hero-logo-wrap img.hero-orb {
+      width:160px;height:160px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.35);
+      object-fit:cover;
+      animation:logoGlow 3.5s ease-in-out infinite alternate
+    }
+    @keyframes logoGlow {
+      from { filter:drop-shadow(0 0 18px rgba(201,168,76,.4)) drop-shadow(0 0 40px rgba(139,7,168,.3)) }
+      to   { filter:drop-shadow(0 0 40px rgba(201,168,76,.75)) drop-shadow(0 0 80px rgba(139,7,168,.5)) }
+    }
+    .hero-logo-ring {
+      position:absolute;inset:-12px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.25);
+      animation:ringPulse 3.5s ease-in-out infinite
+    }
+    .hero-logo-ring2 {
+      position:absolute;inset:-24px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.1);
+      animation:ringPulse 3.5s ease-in-out infinite .8s
+    }
+    @keyframes ringPulse {
+      0%,100%{opacity:.4;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.03)}
+    }
+
+    /* Logo text image replacing typed text */
+    .hero-logo-text-img {
+      display:block;margin:0 auto 1rem;
+      max-width:300px;width:90%;
+      filter:drop-shadow(0 0 20px rgba(201,168,76,.35));
+      animation:logoGlowImg 3.5s ease-in-out infinite alternate
+    }
+    @keyframes logoGlowImg {
+      from { filter:drop-shadow(0 0 10px rgba(201,168,76,.3)) }
+      to   { filter:drop-shadow(0 0 28px rgba(201,168,76,.65)) drop-shadow(0 0 50px rgba(139,7,168,.35)) }
+    }
+
+    .hero-en {
+      font-family:'Cinzel',serif;font-size:clamp(.7rem,1.8vw,1rem);
+      letter-spacing:.25em;color:rgba(201,184,232,.65);
+      text-transform:uppercase;margin-bottom:1.8rem
+    }
+    .hero-divider { margin:0 auto 1.6rem }
+    .hero-tagline-zh {
+      font-family:'Noto Serif TC',serif;font-size:clamp(1rem,2.5vw,1.4rem);
+      font-weight:400;color:var(--lavender);letter-spacing:.15em;margin-bottom:.5rem
+    }
+    .hero-tagline-en {
+      font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:clamp(.9rem,2vw,1.2rem);
+      color:rgba(201,184,232,.55);letter-spacing:.08em;margin-bottom:2.8rem
+    }
+    .hero-btns { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap }
+    .btn-primary {
+      font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.12em;
+      padding:.9rem 2.4rem;cursor:pointer;
+      background:linear-gradient(135deg,var(--purple),var(--purple-dk));
+      border:1px solid rgba(201,168,76,.4);color:var(--cream);
+      position:relative;overflow:hidden;
+      transition:box-shadow .3s,transform .2s
+    }
+    .btn-primary::before {
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(201,168,76,.22),transparent);
+      opacity:0;transition:opacity .3s
+    }
+    .btn-primary:hover::before { opacity:1 }
+    .btn-primary:hover { box-shadow:0 0 35px rgba(139,7,168,.55),0 0 70px rgba(139,7,168,.2);transform:translateY(-2px) }
+    .btn-outline {
+      font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.12em;
+      padding:.9rem 2.4rem;cursor:pointer;
+      background:transparent;border:1px solid rgba(201,168,76,.45);color:var(--gold-lt);
+      transition:background .3s,border-color .3s,box-shadow .3s,transform .2s
+    }
+    .btn-outline:hover {
+      background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.8);
+      box-shadow:0 0 22px rgba(201,168,76,.2);transform:translateY(-2px)
+    }
+    .scroll-cue {
+      position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;
+      display:flex;flex-direction:column;align-items:center;gap:.5rem;
+      animation:scrollFade 2s ease-in-out infinite
+    }
+    @keyframes scrollFade { 0%,100%{opacity:.3;transform:translateX(-50%) translateY(0)} 50%{opacity:.8;transform:translateX(-50%) translateY(6px)} }
+    .scroll-cue span { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;color:rgba(201,168,76,.5) }
+
+    /* ══════════════════════════════════
+       QUICK-JUMP NAV
+    ══════════════════════════════════ */
+    #quick-nav {
+      background:rgba(13,1,24,.95);
+      backdrop-filter:blur(20px);
+      border-top:1px solid rgba(201,168,76,.12);
+      border-bottom:1px solid rgba(201,168,76,.12);
+      padding:0
+    }
+    .quick-nav-inner {
+      display:flex;align-items:stretch;max-width:1080px;margin:0 auto;
+    }
+    .quick-nav-item {
+      flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      padding:1.4rem 1rem;gap:.5rem;
+      border-right:1px solid rgba(201,168,76,.08);
+      transition:background .3s;cursor:pointer;
+      position:relative;overflow:hidden
+    }
+    .quick-nav-item:last-child { border-right:none }
+    .quick-nav-item::after {
+      content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+      width:0;height:2px;background:var(--gold);transition:width .35s
+    }
+    .quick-nav-item:hover { background:rgba(201,168,76,.05) }
+    .quick-nav-item:hover::after { width:60% }
+    .qn-icon { font-size:1.4rem;opacity:.8 }
+    .qn-zh {
+      font-family:'Noto Serif TC',serif;font-size:.88rem;font-weight:500;
+      color:var(--cream)
+    }
+    .qn-en {
+      font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.14em;
+      color:rgba(201,168,76,.55)
+    }
+
+    /* ══════════════════════════════════
+       MARQUEE
+    ══════════════════════════════════ */
+    .marquee-wrap {
+      overflow:hidden;
+      background:linear-gradient(90deg,var(--void),rgba(139,7,168,.15),var(--void));
+      padding:.85rem 0
+    }
+    .marquee-inner {
+      display:inline-flex;gap:3.5rem;white-space:nowrap;
+      animation:marquee 35s linear infinite
+    }
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .marquee-item {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;
+      color:rgba(201,184,232,.5);display:flex;align-items:center;gap:1rem
+    }
+    .marquee-item .m-star { color:var(--gold);opacity:.6;font-size:.65rem }
+
+    /* ══════════════════════════════════
+       SECTION HEADERS (shared)
+    ══════════════════════════════════ */
+    .section-label {
+      font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;
+      color:var(--gold);opacity:.7;text-transform:uppercase;margin-bottom:.8rem
+    }
+    .section-zh {
+      font-family:'Noto Serif TC',serif;font-weight:700;
+      font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:.06em;
+      color:var(--cream);line-height:1.2
+    }
+    .section-en {
+      font-family:'Cinzel',serif;font-size:clamp(.75rem,1.5vw,.9rem);
+      letter-spacing:.2em;color:rgba(201,184,232,.5);margin-top:.4rem
+    }
+    .section-desc {
+      font-family:'Noto Serif TC',serif;font-size:1rem;line-height:1.9;
+      color:rgba(201,184,232,.88);max-width:580px;margin:1.8rem auto 0
+    }
+
+    /* ══════════════════════════════════
+       ABOUT / PHILOSOPHY
+    ══════════════════════════════════ */
+    #about {
+      position:relative;padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 50%,var(--void) 100%)
+    }
+    .phil-geo { position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.04 }
+    .phil-geo svg { width:100%;height:100% }
+    .phil-pillars {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:2rem;max-width:960px;margin:4rem auto 0
+    }
+    .pillar {
+      text-align:center;padding:2.5rem 1.8rem;
+      background:rgba(20,8,41,.55);backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.12);
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .pillar:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.35);
+      box-shadow:0 24px 60px rgba(139,7,168,.25),0 0 30px rgba(201,168,76,.08)
+    }
+    .pillar-char {
+      font-family:'Noto Serif TC',serif;font-size:3.2rem;font-weight:700;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C,#FFE066);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:1rem;line-height:1
+    }
+    .pillar-zh { font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.25rem }
+    .pillar-en { font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;color:rgba(201,168,76,.65);margin-bottom:1.2rem }
+    .pillar-desc { font-family:'Noto Serif TC',serif;font-size:.9rem;line-height:1.85;color:rgba(201,184,232,.82) }
+
+    /* ══════════════════════════════════
+       SERVICES (Accordion)
+    ══════════════════════════════════ */
+    #services {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,rgba(20,8,41,.7) 100%)
+    }
+    .services-grid {
+      display:grid;grid-template-columns:repeat(2,1fr);
+      gap:1.5rem;max-width:1000px;margin:4rem auto 0
+    }
+    .service-cat {
+      background:rgba(14,4,30,.65);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.12);
+      overflow:hidden;
+      transition:border-color .35s,box-shadow .35s
+    }
+    .service-cat.open { border-color:rgba(201,168,76,.3);box-shadow:0 20px 50px rgba(139,7,168,.2) }
+    .service-cat-header {
+      display:flex;align-items:center;gap:1.2rem;
+      padding:1.8rem 2rem;cursor:pointer;
+      transition:background .3s
+    }
+    .service-cat-header:hover { background:rgba(201,168,76,.04) }
+    .service-cat-icon {
+      width:54px;height:54px;flex-shrink:0;border-radius:50%;
+      background:linear-gradient(135deg,rgba(139,7,168,.3),rgba(20,8,41,.8));
+      border:1px solid rgba(201,168,76,.25);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.5rem;
+      transition:transform .35s,box-shadow .35s
+    }
+    .service-cat.open .service-cat-icon { transform:scale(1.08);box-shadow:0 0 18px rgba(201,168,76,.25) }
+    .service-cat-labels { flex:1 }
+    .service-cat-zh { font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.15rem }
+    .service-cat-en { font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;color:rgba(201,168,76,.6) }
+    .service-arrow {
+      font-size:.8rem;color:rgba(201,168,76,.5);
+      transition:transform .35s
+    }
+    .service-cat.open .service-arrow { transform:rotate(180deg) }
+    .service-cat-body {
+      max-height:0;overflow:hidden;
+      transition:max-height .45s cubic-bezier(.4,0,.2,1),padding .35s
+    }
+    .service-cat.open .service-cat-body { max-height:600px }
+    .service-cat-body-inner {
+      padding:0 2rem 2rem;
+      border-top:1px solid rgba(201,168,76,.08)
+    }
+    .service-items { display:flex;flex-direction:column;gap:1.1rem;padding-top:1.4rem }
+    .service-item {
+      display:flex;align-items:flex-start;gap:1rem;
+      padding:1.1rem 1.2rem;
+      background:rgba(20,8,41,.5);
+      border:1px solid rgba(201,168,76,.07);
+      transition:border-color .3s,transform .3s
+    }
+    .service-item:hover { border-color:rgba(201,168,76,.2);transform:translateX(4px) }
+    .service-item-dot {
+      width:8px;height:8px;border-radius:50%;
+      background:var(--gold);opacity:.6;margin-top:.35rem;flex-shrink:0
+    }
+    .service-item-zh { font-family:'Noto Serif TC',serif;font-size:.92rem;font-weight:500;color:var(--cream);margin-bottom:.2rem }
+    .service-item-en { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;color:rgba(201,168,76,.55);margin-bottom:.5rem }
+    .service-item-desc { font-family:'Noto Serif TC',serif;font-size:.8rem;line-height:1.8;color:rgba(201,184,232,.65) }
+
+    /* ══════════════════════════════════
+       EVENTS SECTION
+    ══════════════════════════════════ */
+    #events {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,rgba(13,1,24,1) 0%,rgba(20,8,41,.8) 100%)
+    }
+    .events-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;max-width:1080px;margin:4rem auto 0
+    }
+    .event-card {
+      background:rgba(20,8,41,.55);backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.12);overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .event-card:hover { transform:translateY(-8px);border-color:rgba(201,168,76,.36);box-shadow:0 24px 60px rgba(139,7,168,.25) }
+    .event-img {
+      height:180px;position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center
+    }
+    .event-img-bg { position:absolute;inset:0;transition:transform .5s ease }
+    .event-card:hover .event-img-bg { transform:scale(1.06) }
+    .event-img-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 40%,rgba(13,1,24,.9) 100%)
+    }
+    .event-date-badge {
+      position:absolute;top:1rem;left:1rem;z-index:2;
+      background:rgba(139,7,168,.75);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.3);
+      padding:.4rem .8rem;text-align:center
+    }
+    .event-date-day { font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--gold-lt);line-height:1 }
+    .event-date-mon { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;color:rgba(201,184,232,.8) }
+    .event-tag {
+      position:absolute;top:1rem;right:1rem;z-index:2;
+      background:rgba(201,168,76,.2);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.35);
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;
+      color:var(--gold-lt);padding:.3rem .7rem
+    }
+    .event-body { padding:1.5rem }
+    .event-zh { font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.2rem }
+    .event-en { font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:rgba(201,168,76,.6);margin-bottom:.9rem }
+    .event-detail { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.6);line-height:1.7;margin-bottom:1.2rem }
+    .event-meta { display:flex;align-items:center;justify-content:space-between }
+    .event-type { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;color:var(--gold);opacity:.7 }
+    .event-register {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;
+      color:var(--gold-lt);border:1px solid rgba(201,168,76,.35);padding:.35rem .9rem;
+      transition:background .3s,box-shadow .3s
+    }
+    .event-register:hover { background:rgba(201,168,76,.12);box-shadow:0 0 14px rgba(201,168,76,.15) }
+
+    /* ══════════════════════════════════
+       WISDOM LIBRARY
+    ══════════════════════════════════ */
+    #library {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 100%)
+    }
+    .library-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;max-width:1080px;margin:4rem auto 0
+    }
+    .article-card {
+      background:rgba(14,4,30,.65);backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.1);overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .article-card:hover { transform:translateY(-8px);border-color:rgba(201,168,76,.35);box-shadow:0 24px 60px rgba(139,7,168,.22) }
+    .article-img { height:160px;position:relative;overflow:hidden }
+    .article-img-bg { position:absolute;inset:0;transition:transform .5s }
+    .article-card:hover .article-img-bg { transform:scale(1.06) }
+    .article-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 30%,rgba(13,1,24,.85) 100%)
+    }
+    .article-cat {
+      position:absolute;bottom:.8rem;left:.9rem;z-index:2;
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;
+      color:var(--gold);border-left:2px solid var(--gold);padding-left:.5rem
+    }
+    .article-body { padding:1.4rem }
+    .article-zh { font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.2rem;line-height:1.4 }
+    .article-en { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;color:rgba(201,168,76,.55);margin-bottom:.8rem }
+    .article-excerpt { font-family:'Noto Serif TC',serif;font-size:.8rem;line-height:1.78;color:rgba(201,184,232,.6);margin-bottom:1.1rem }
+    .article-footer { display:flex;align-items:center;justify-content:space-between }
+    .article-date { font-family:'Montserrat',sans-serif;font-size:.65rem;color:rgba(201,184,232,.4) }
+    .article-read {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;
+      color:var(--gold);display:flex;align-items:center;gap:.3rem;transition:gap .3s
+    }
+    .article-card:hover .article-read { gap:.6rem }
+
+    /* ══════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════ */
+    #community {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void-mid) 0%,var(--void) 100%);
+      position:relative;overflow:hidden
+    }
+    .community-bg-glow {
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:800px;height:800px;border-radius:50%;
+      background:radial-gradient(circle,rgba(139,7,168,.12) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .testimonials {
+      display:grid;grid-template-columns:repeat(2,1fr);
+      gap:2rem;max-width:900px;margin:4rem auto 0
+    }
+    .testi-card {
+      padding:2.5rem;
+      background:rgba(20,8,41,.6);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.1);position:relative
+    }
+    .testi-quote {
+      position:absolute;top:1.2rem;left:1.5rem;
+      font-family:'Cormorant Garamond',serif;font-size:5rem;
+      color:rgba(201,168,76,.15);line-height:1;pointer-events:none
+    }
+    .testi-text { font-family:'Noto Serif TC',serif;font-size:.9rem;line-height:1.9;color:rgba(201,184,232,.8);margin-bottom:1.5rem;position:relative;z-index:1 }
+    .testi-author { display:flex;align-items:center;gap:.8rem }
+    .testi-dot { width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--gold));opacity:.6 }
+    .testi-name { font-family:'Noto Serif TC',serif;font-size:.85rem;color:var(--gold-lt) }
+    .testi-role { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;color:rgba(201,184,232,.45) }
+    .community-cta {
+      text-align:center;margin-top:4rem;
+      padding:3.5rem 2.5rem;max-width:600px;margin-left:auto;margin-right:auto;
+      background:rgba(20,8,41,.6);
+      border:1px solid rgba(201,168,76,.2);
+      box-shadow:0 0 60px rgba(139,7,168,.12)
+    }
+    .community-cta-zh { font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:500;color:var(--cream);margin-bottom:.4rem }
+    .community-cta-en { font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(201,184,232,.55);margin-bottom:1.8rem }
+
+    /* ══════════════════════════════════
+       NEWSLETTER
+    ══════════════════════════════════ */
+    #newsletter {
+      padding:7rem 2rem 9rem;
+      background:linear-gradient(180deg,var(--void) 0%,#06000F 100%)
+    }
+    .newsletter-box {
+      max-width:600px;margin:0 auto;text-align:center;
+      padding:3.5rem 3rem;
+      background:rgba(20,8,41,.7);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.18)
+    }
+    .newsletter-icon { font-size:2.2rem;margin-bottom:1.2rem;opacity:.8 }
+    .nl-form { display:flex;gap:0;margin-top:2rem }
+    .nl-input {
+      flex:1;background:rgba(13,1,24,.8);
+      border:1px solid rgba(201,168,76,.25);border-right:none;
+      color:var(--cream);padding:.85rem 1.3rem;
+      font-family:'Montserrat',sans-serif;font-size:.82rem;
+      outline:none;transition:border-color .3s
+    }
+    .nl-input::placeholder { color:rgba(201,184,232,.35) }
+    .nl-input:focus { border-color:rgba(201,168,76,.55) }
+    .nl-btn {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      padding:.85rem 1.6rem;cursor:pointer;
+      background:linear-gradient(135deg,var(--purple),var(--purple-dk));
+      border:1px solid rgba(201,168,76,.4);color:var(--gold-lt);
+      transition:box-shadow .3s,background .3s
+    }
+    .nl-btn:hover { box-shadow:0 0 25px rgba(139,7,168,.5) }
+    .nl-note { font-family:'Noto Serif TC',serif;font-size:.75rem;color:rgba(201,184,232,.35);margin-top:1rem }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    footer {
+      background:linear-gradient(180deg,#06000F 0%,#030009 100%);
+      border-top:1px solid rgba(201,168,76,.12);
+      padding:4rem 2rem 2rem
+    }
+    .footer-inner { max-width:1080px;margin:0 auto }
+    .footer-top {
+      display:grid;grid-template-columns:1.5fr 1fr 1fr;
+      gap:3rem;padding-bottom:3rem;
+      border-bottom:1px solid rgba(201,168,76,.08)
+    }
+    .footer-brand img.f-logo { width:52px;height:52px;border-radius:50%;margin-bottom:1rem;opacity:.9;object-fit:cover }
+    .footer-brand-zh { font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--gold-lt);margin-bottom:.25rem }
+    .footer-brand-en { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;color:rgba(201,184,232,.4);margin-bottom:1rem }
+    .footer-tagline { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.5);line-height:1.7 }
+    .footer-col-title { font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;color:var(--gold);opacity:.75;margin-bottom:1.2rem }
+    .footer-links { display:flex;flex-direction:column;gap:.7rem }
+    .footer-link { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.5);transition:color .3s }
+    .footer-link:hover { color:var(--gold-lt) }
+    .footer-bottom {
+      display:flex;align-items:center;justify-content:space-between;
+      padding-top:2rem;flex-wrap:wrap;gap:1rem
+    }
+    .footer-copy { font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.3) }
+    .footer-socials { display:flex;gap:1rem }
+    .social-btn {
+      width:34px;height:34px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.2);
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(201,184,232,.5);font-size:.8rem;
+      transition:border-color .3s,color .3s,box-shadow .3s
+    }
+    .social-btn:hover { border-color:rgba(201,168,76,.55);color:var(--gold-lt);box-shadow:0 0 12px rgba(201,168,76,.2) }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width:900px) {
+      .phil-pillars { grid-template-columns:1fr }
+      .services-grid { grid-template-columns:1fr }
+      .events-grid { grid-template-columns:1fr }
+      .library-grid { grid-template-columns:1fr }
+      .testimonials { grid-template-columns:1fr }
+      .footer-top { grid-template-columns:1fr 1fr }
+      .nav-links { display:none }
+      .hamburger { display:flex }
+      .mobile-nav { display:flex }
+      .quick-nav-inner { flex-wrap:wrap }
+      .quick-nav-item { flex:1 1 45%;border-right:none;border-bottom:1px solid rgba(201,168,76,.08) }
+    }
+    @media (max-width:580px) {
+      .footer-top { grid-template-columns:1fr }
+      .nl-form { flex-direction:column }
+      .nl-input { border-right:1px solid rgba(201,168,76,.25) }
+      .hero-logo-wrap img.hero-orb { width:130px;height:130px }
+      #nav { padding:1rem 1.2rem }
+      .hero-logo-text-img { max-width:220px }
+      .quick-nav-item { flex:1 1 100% }
+    }
+
+    /* ══════════════════════════════════
+       SIDE GOLD ACCENTS
+    ══════════════════════════════════ */
+    .side-accent {
+      position:fixed;top:0;width:90px;height:100vh;
+      z-index:5;pointer-events:none;overflow:hidden
+    }
+    .side-accent-left  { left:0 }
+    .side-accent-right { right:0 }
+    .side-accent-left::before {
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to right,rgba(201,168,76,.09) 0%,rgba(201,168,76,.04) 50%,transparent 100%);
+      animation:sideShimmer 5s ease-in-out infinite
+    }
+    .side-accent-right::before {
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to left,rgba(201,168,76,.09) 0%,rgba(201,168,76,.04) 50%,transparent 100%);
+      animation:sideShimmer 5s ease-in-out infinite 2.5s
+    }
+    /* Scrolling glitter dots */
+    .side-accent-left::after,.side-accent-right::after {
+      content:'';position:absolute;
+      top:0;left:0;right:0;height:300%;
+      background-image:
+        radial-gradient(circle,rgba(201,168,76,.55) 1px,transparent 1px),
+        radial-gradient(circle,rgba(255,224,102,.4) 1.5px,transparent 1.5px),
+        radial-gradient(circle,rgba(201,168,76,.35) 1px,transparent 1px),
+        radial-gradient(circle,rgba(255,224,102,.3) 1px,transparent 1px);
+      background-size:28px 55px, 18px 72px, 38px 90px, 22px 110px;
+      background-position:8px 18px, 20px 40px, 4px 65px, 15px 88px;
+      animation:sideParticles 10s linear infinite;opacity:.7
+    }
+    .side-accent-right::after { animation-delay:5s }
+    @keyframes sideShimmer {
+      0%,100%{opacity:.55} 50%{opacity:1}
+    }
+    @keyframes sideParticles {
+      0%{transform:translateY(0)} 100%{transform:translateY(-33.333%)}
+    }
+
+    /* ══════════════════════════════════
+       SERVICE PICTURE CARDS
+    ══════════════════════════════════ */
+    #services {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,rgba(20,8,41,.7) 100%)
+    }
+    .svc-grid {
+      display:flex;flex-wrap:wrap;gap:1.5rem;
+      max-width:1100px;margin:4rem auto 0;
+      justify-content:center
+    }
+    .svc-card {
+      flex:0 1 320px;
+      background:rgba(14,4,30,.65);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.1);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .svc-card:hover {
+      transform:translateY(-10px);
+      border-color:rgba(201,168,76,.38);
+      box-shadow:0 28px 70px rgba(139,7,168,.3),0 0 40px rgba(201,168,76,.08)
+    }
+    .svc-img {
+      height:200px;position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center
+    }
+    .svc-img-bg {
+      position:absolute;inset:0;
+      transition:transform .5s ease
+    }
+    .svc-card:hover .svc-img-bg { transform:scale(1.06) }
+    .svc-img-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 35%,rgba(13,1,24,.88) 100%)
+    }
+    .svc-cat-badge {
+      position:absolute;bottom:.9rem;left:.9rem;z-index:2;
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;
+      color:var(--gold);
+      border-left:2px solid var(--gold);padding-left:.5rem
+    }
+    .svc-body { padding:1.8rem 1.6rem;text-align:center }
+    .svc-zh {
+      font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:500;
+      color:var(--cream);margin-bottom:.2rem
+    }
+    .svc-en {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;
+      color:rgba(201,168,76,.6);margin-bottom:.8rem
+    }
+    .svc-desc {
+      font-family:'Noto Serif TC',serif;font-size:.85rem;line-height:1.85;
+      color:rgba(201,184,232,.7)
+    }
+
+    /* ══════════════════════════════════
+       FORTUNE SECTION
+    ══════════════════════════════════ */
+    #fortune {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,rgba(20,8,41,.8) 0%,var(--void) 100%)
+    }
+    .fortune-grid {
+      display:flex;flex-wrap:wrap;gap:2rem;
+      max-width:860px;margin:4rem auto 0;
+      justify-content:center
+    }
+    .fortune-card {
+      flex:0 1 380px;
+      background:rgba(14,4,30,.65);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.15);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .fortune-card:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.4);
+      box-shadow:0 24px 60px rgba(201,168,76,.1),0 0 40px rgba(139,7,168,.2)
+    }
+    .fortune-card-soon { border-style:dashed;border-color:rgba(201,168,76,.1) }
+    .fortune-img {
+      height:220px;position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center
+    }
+    .fortune-img-bg { position:absolute;inset:0;transition:transform .5s }
+    .fortune-card:hover .fortune-img-bg { transform:scale(1.06) }
+    .fortune-img-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 35%,rgba(13,1,24,.88) 100%)
+    }
+    .fortune-cat-badge {
+      position:absolute;bottom:.9rem;left:.9rem;z-index:2;
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;
+      color:var(--gold);border-left:2px solid var(--gold);padding-left:.5rem
+    }
+    .fortune-soon-overlay {
+      position:absolute;inset:0;z-index:2;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem
+    }
+    .fortune-soon-text {
+      font-size:1rem;letter-spacing:.22em;
+      color:rgba(201,168,76,.45)
+    }
+    .fortune-soon-en {
+      font-size:.58rem;letter-spacing:.22em;
+      color:rgba(201,168,76,.3)
+    }
+    .fortune-body { padding:1.8rem 1.8rem;text-align:center }
+    .fortune-zh {
+      font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:500;
+      color:var(--cream);margin-bottom:.2rem
+    }
+    .fortune-en {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;
+      color:rgba(201,168,76,.6);margin-bottom:.8rem
+    }
+    .fortune-desc {
+      font-family:'Noto Serif TC',serif;font-size:.85rem;line-height:1.85;
+      color:rgba(201,184,232,.7)
+    }
+
+    /* ══════════════════════════════════
+       SERVICE SECTIONS (shared)
+    ══════════════════════════════════ */
+    .service-section {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 100%)
+    }
+    .service-section.ss-alt {
+      background:linear-gradient(180deg,var(--void-mid) 0%,var(--void) 100%)
+    }
+
+    /* ── Service cards grid ── */
+    .ss-cards {
+      display:grid;grid-template-columns:repeat(2,1fr);
+      gap:2rem;max-width:1000px;margin:4rem auto 0
+    }
+    .ss-cards-single {
+      grid-template-columns:1fr;max-width:520px
+    }
+    .ss-card {
+      background:rgba(14,4,30,.65);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.12);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .ss-card:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.38);
+      box-shadow:0 28px 70px rgba(139,7,168,.28),0 0 36px rgba(201,168,76,.07)
+    }
+    .ss-card-img {
+      width:100%;height:280px;overflow:hidden;position:relative;
+      background:#080512
+    }
+    .ss-card-img-wish { display:flex;align-items:center;justify-content:center }
+    .ss-card-img img {
+      width:100%;height:100%;
+      object-fit:cover;object-position:center 30%;
+      transition:transform .5s ease
+    }
+    .ss-card:hover .ss-card-img img { transform:scale(1.06) }
+    .ss-card-body { padding:1.9rem 1.9rem;text-align:center }
+    .ss-card-zh {
+      font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:500;
+      color:var(--cream);margin-bottom:.2rem
+    }
+    .ss-card-en {
+      font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.18em;
+      color:rgba(201,168,76,.65);margin-bottom:.8rem
+    }
+    .ss-card-desc {
+      font-family:'Noto Serif TC',serif;font-size:.88rem;line-height:1.9;
+      color:rgba(201,184,232,.78);margin-bottom:.6rem
+    }
+    .ss-card-desc-en {
+      font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:.92rem;line-height:1.8;
+      color:rgba(201,184,232,.45)
+    }
+
+    /* ── 文創 featured product ── */
+    .ss-featured {
+      display:flex;align-items:center;gap:3.5rem;
+      max-width:960px;margin:4rem auto 0;
+      background:rgba(14,4,30,.55);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.12);
+      overflow:hidden
+    }
+    .ss-featured-img {
+      flex:0 0 280px;height:360px;overflow:hidden;
+      background:#050f05
+    }
+    .ss-featured-img img {
+      width:100%;height:100%;
+      object-fit:contain;
+      transition:transform .5s
+    }
+    .ss-featured:hover .ss-featured-img img { transform:scale(1.04) }
+    .ss-featured-body { flex:1;padding:2.5rem 2.5rem 2.5rem 0 }
+    .ss-featured-body .ss-card-zh { font-size:1.5rem;text-align:left }
+    .ss-featured-body .ss-card-en { text-align:left }
+    .ss-featured-body .ss-card-desc { text-align:left;margin-bottom:.8rem }
+    .ss-featured-body .ss-card-desc-en { text-align:left }
+
+    /* ── Frames sub-section ── */
+    .ss-frame-set { max-width:960px;margin:5rem auto 0 }
+    .ss-frame-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem
+    }
+    .ss-frame-card {
+      background:rgba(14,4,30,.65);
+      border:1px solid rgba(201,168,76,.12);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .ss-frame-card:hover {
+      transform:translateY(-6px);
+      border-color:rgba(201,168,76,.35);
+      box-shadow:0 20px 50px rgba(139,7,168,.22)
+    }
+    .ss-frame-img {
+      width:100%;height:240px;overflow:hidden;
+      background:#050f05
+    }
+    .ss-frame-img img {
+      width:100%;height:100%;
+      object-fit:contain;
+      transition:transform .5s
+    }
+    .ss-frame-card:hover .ss-frame-img img { transform:scale(1.04) }
+    .ss-frame-label-text {
+      font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;
+      color:rgba(201,168,76,.6);text-align:center;
+      padding:1rem 1rem .9rem
+    }
+
+    /* ── Responsive ── */
+    @media (max-width:820px) {
+      .ss-cards { grid-template-columns:1fr }
+      .ss-featured { flex-direction:column;gap:0 }
+      .ss-featured-img { flex:none;width:100%;height:280px }
+      .ss-featured-body { padding:2rem 1.8rem }
+      .ss-featured-body .ss-card-zh,
+      .ss-featured-body .ss-card-en,
+      .ss-featured-body .ss-card-desc,
+      .ss-featured-body .ss-card-desc-en { text-align:center }
+      .ss-frame-grid { grid-template-columns:1fr }
+    }
+
+    /* ── Card internal divider ── */
+    .ss-card-divider {
+      width:40px;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(201,168,76,.35),transparent);
+      margin:1.2rem auto
+    }
+
+    /* ── Frame description block ── */
+    .ss-frame-desc-block {
+      max-width:760px;margin:0 auto 2.5rem;
+      text-align:center;padding:0 1rem
+    }
+    .ss-frame-desc-block .ss-card-desc { margin-bottom:.6rem }
+
+    /* ══════════════════════════════════
+       MOBILE — comprehensive
+    ══════════════════════════════════ */
+    @media (max-width:768px) {
+      /* Nav */
+      #nav { padding:.9rem 1.2rem }
+      .nav-logo img.logo-mark { width:36px;height:36px }
+      .nav-logo-en { display:none }
+
+      /* Hero */
+      .hero-logo-wrap img.hero-orb { width:120px;height:120px }
+      .hero-logo-text-img { max-width:200px }
+      .hero-btns { gap:.7rem }
+      .btn-primary,.btn-outline { font-size:.72rem;padding:.75rem 1.6rem }
+
+      /* Quick-nav */
+      .quick-nav-inner { flex-wrap:wrap }
+      .quick-nav-item { flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(201,168,76,.08) }
+      .qn-zh { font-size:.8rem }
+      .qn-en { font-size:.48rem }
+
+      /* Service sections */
+      .service-section { padding:4rem 1.2rem }
+      .ss-cards { grid-template-columns:1fr;gap:1.5rem }
+      .ss-cards-single { max-width:100% }
+      .ss-card-img { height:240px }
+      .ss-card-body { padding:1.4rem 1.4rem }
+      .ss-card-zh { font-size:1.05rem }
+
+      /* Featured product */
+      .ss-featured { flex-direction:column }
+      .ss-featured-img { flex:none;width:100%;height:260px }
+      .ss-featured-body { padding:1.6rem 1.4rem }
+      .ss-featured-body .ss-card-zh { font-size:1.2rem;text-align:center }
+      .ss-featured-body .ss-card-en,
+      .ss-featured-body .ss-card-desc,
+      .ss-featured-body .ss-card-desc-en { text-align:center }
+
+      /* Frames grid */
+      .ss-frame-grid { grid-template-columns:1fr;gap:1rem }
+      .ss-frame-img { height:200px }
+
+      /* Footer */
+      .footer-top { grid-template-columns:1fr!important }
+      .footer-bottom { flex-direction:column;align-items:center;text-align:center;gap:.8rem }
+
+      /* Marquee */
+      .marquee-item { font-size:.65rem }
+
+      /* Side accents — narrower on mobile */
+      .side-accent { width:40px }
+    }
+
+    @media (max-width:420px) {
+      .quick-nav-item { flex:1 1 100% }
+      .hero-logo-wrap img.hero-orb { width:100px;height:100px }
+      .hero-logo-text-img { max-width:180px }
+      .section-zh { font-size:clamp(1.3rem,6vw,2.4rem) }
+      .ss-card-img { height:200px }
+      .ss-featured-img { height:220px }
+    }
+
+    /* ══════════════════════════════════
+       大鼻子系列
+    ══════════════════════════════════ */
+    .nose-section {
+      max-width:1080px;margin:5rem auto 0;
+      padding:0 1rem
+    }
+
+    /* 3-image hero row */
+    .nose-hero-row {
+      display:flex;align-items:flex-end;gap:1rem;
+      margin-bottom:3rem
+    }
+    .nose-side-img {
+      flex:0 0 28%;
+      border:1px solid rgba(201,168,76,.15);
+      overflow:hidden;
+      background:#080512
+    }
+    .nose-side-img img {
+      width:100%;height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .5s
+    }
+    .nose-side-img:hover img { transform:scale(1.04) }
+    .nose-main-img {
+      flex:1;
+      border:1px solid rgba(201,168,76,.25);
+      overflow:hidden;
+      background:#080512;
+      box-shadow:0 0 40px rgba(201,168,76,.1)
+    }
+    .nose-main-img img {
+      width:100%;display:block;
+      transition:transform .5s
+    }
+    .nose-main-img:hover img { transform:scale(1.03) }
+
+    /* Carousel */
+    .nose-carousel {
+      position:relative;
+      margin-top:2rem
+    }
+    .carousel-track-wrap {
+      overflow:hidden;
+      border:1px solid rgba(201,168,76,.15);
+      background:#080512
+    }
+    .carousel-track {
+      display:flex;
+      transition:transform .45s cubic-bezier(.4,0,.2,1)
+    }
+    .carousel-slide {
+      flex:0 0 100%;
+      display:flex;align-items:center;justify-content:center;
+      min-height:520px
+    }
+    .carousel-slide img {
+      max-height:520px;width:auto;max-width:100%;
+      display:block;object-fit:contain
+    }
+    .carousel-btn {
+      position:absolute;top:50%;transform:translateY(-50%);
+      z-index:10;
+      width:44px;height:44px;border-radius:50%;
+      background:rgba(13,1,24,.8);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.3);
+      color:var(--gold-lt);font-size:1.5rem;line-height:1;
+      cursor:pointer;
+      transition:background .3s,border-color .3s,box-shadow .3s;
+      display:flex;align-items:center;justify-content:center
+    }
+    .carousel-btn:hover {
+      background:rgba(201,168,76,.12);
+      border-color:rgba(201,168,76,.7);
+      box-shadow:0 0 16px rgba(201,168,76,.2)
+    }
+    .carousel-btn-prev { left:-22px }
+    .carousel-btn-next { right:-22px }
+    .carousel-dots {
+      display:flex;justify-content:center;gap:.5rem;
+      margin-top:1.2rem;flex-wrap:wrap
+    }
+    .carousel-dot {
+      width:7px;height:7px;border-radius:50%;
+      background:rgba(201,168,76,.25);
+      cursor:pointer;transition:background .3s,transform .3s
+    }
+    .carousel-dot.active {
+      background:var(--gold);transform:scale(1.35)
+    }
+
+    /* Mobile adjustments for nose */
+    @media (max-width:768px) {
+      .nose-hero-row { flex-direction:column;align-items:stretch;gap:.8rem }
+      .nose-side-img { flex:none;width:100% }
+      .nose-main-img { width:100% }
+      .nose-side-img img { height:260px }
+      .carousel-slide { min-height:380px }
+      .carousel-slide img { max-height:380px }
+      .carousel-btn-prev { left:-16px }
+      .carousel-btn-next { right:-16px }
+    }
+    @media (max-width:420px) {
+      .carousel-slide { min-height:300px }
+      .carousel-slide img { max-height:300px }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Side gold accents -->
+<div class="side-accent side-accent-left"  aria-hidden="true"></div>
+<div class="side-accent side-accent-right" aria-hidden="true"></div>
+
+<!-- ═══════════ MOBILE NAV ═══════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#wenqi"    class="nav-link f-cinzel" onclick="closeMobile()">文創</a>
+  <a href="#readings" class="nav-link f-cinzel" onclick="closeMobile()">占卜</a>
+  <a href="#healings" class="nav-link f-cinzel" onclick="closeMobile()">療癒</a>
+  <a href="#wishes"   class="nav-link f-cinzel" onclick="closeMobile()">祈願</a>
+</div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img class="logo-mark" src="../brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div class="nav-logo-text">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+
+    <!-- Services dropdown -->
+    <div class="nav-dropdown">
+      <a href="#wenqi" class="nav-link">服務項目 ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="#wenqi"    class="nav-dropdown-item">文創 <span class="dd-en">CREATIONS</span></a>
+        <a href="#readings" class="nav-dropdown-item">占卜 <span class="dd-en">READINGS</span></a>
+        <a href="#healings" class="nav-dropdown-item">療癒 <span class="dd-en">HEALING</span></a>
+        <a href="#wishes"   class="nav-dropdown-item">祈願 <span class="dd-en">WISH MAKING</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-bg"></div>
+
+  <div class="hero-ring">
+    <svg viewBox="0 0 600 600" width="700" height="700" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".5">
+      <circle cx="300" cy="300" r="280"/>
+      <circle cx="300" cy="300" r="220"/>
+      <circle cx="300" cy="300" r="160"/>
+      <circle cx="300" cy="300" r="100"/>
+      <line x1="300" y1="20"  x2="300" y2="580"/>
+      <line x1="20"  y1="300" x2="580" y2="300"/>
+      <line x1="102" y1="102" x2="498" y2="498"/>
+      <line x1="498" y1="102" x2="102" y2="498"/>
+      <circle cx="300" cy="80"  r="50"/>
+      <circle cx="300" cy="520" r="50"/>
+      <circle cx="80"  cy="300" r="50"/>
+      <circle cx="520" cy="300" r="50"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <!-- Floating logo orb -->
+    <div class="hero-logo-wrap reveal">
+      <img class="hero-orb" src="../brand_assets/女兒國_logo.jpg" alt="女兒國 Logo">
+      <div class="hero-logo-ring"></div>
+      <div class="hero-logo-ring2"></div>
+    </div>
+
+    <!-- Logo text as image -->
+    <img
+      class="hero-logo-text-img reveal d1"
+      src="../brand_assets/女兒國_logoText.png"
+      alt="女兒國"
+    >
+
+    <div class="hero-en reveal d2">The Kingdom of True Daughters</div>
+    <div class="div-gold hero-divider reveal d2"></div>
+    <div class="hero-tagline-zh reveal d3">回歸屬於你的真・善・美</div>
+    <div class="hero-tagline-en reveal d3">Rediscover Your Truest Self</div>
+
+    <div class="hero-btns reveal d4">
+      <a href="#wenqi"    class="btn-primary f-cinzel">探索服務</a>
+      <a href="#readings" class="btn-outline f-cinzel">服務項目</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.2" color="rgba(201,168,76,.4)">
+      <rect x="1" y="1" width="14" height="22" rx="7" stroke-opacity=".4"/>
+      <circle cx="8" cy="7" r="2" fill="currentColor" opacity=".6">
+        <animate attributeName="cy" values="7;14;7" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".6;.1;.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════ QUICK-JUMP NAV ═══════════ -->
+<nav id="quick-nav" aria-label="Section navigation">
+  <div class="quick-nav-inner">
+    <a href="#wenqi" class="quick-nav-item">
+      <span class="qn-icon">❋</span>
+      <span class="qn-zh">文創</span>
+      <span class="qn-en">CREATIONS</span>
+    </a>
+    <a href="#readings" class="quick-nav-item">
+      <span class="qn-icon">☽</span>
+      <span class="qn-zh">占卜</span>
+      <span class="qn-en">READINGS</span>
+    </a>
+    <a href="#healings" class="quick-nav-item">
+      <span class="qn-icon">✧</span>
+      <span class="qn-zh">療癒</span>
+      <span class="qn-en">HEALING</span>
+    </a>
+    <a href="#wishes" class="quick-nav-item">
+      <span class="qn-icon">◈</span>
+      <span class="qn-zh">祈願</span>
+      <span class="qn-en">WISHES</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee-wrap">
+  <div class="marquee-inner" aria-hidden="true">
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+  </div>
+</div>
+
+<!-- ═══════════ 文創 ═══════════ -->
+<section id="wenqi" class="service-section">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Cultural Creations ·</div>
+    <h2 class="section-zh reveal d1">文創</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Sacred Objects for Abundance &amp; Good Fortune</div>
+  </div>
+
+  <!-- 錢滾錢 featured product -->
+  <div class="ss-featured reveal d2">
+    <div class="ss-featured-img">
+      <img src="../references/錢滾錢.png" alt="錢滾錢" loading="lazy">
+    </div>
+    <div class="ss-featured-body">
+      <div class="ss-card-zh">錢滾錢</div>
+      <div class="ss-card-en">MONEY BEGETS MONEY</div>
+      <div class="div-gold-sm" style="margin:0 0 1.2rem"></div>
+      <p class="ss-card-desc">錢滾錢象徵財富不斷增長與倍增。<br>擺放於家中或工作空間，寓意財運流動不息——資金持續運轉，機會接續而來。它代表穩健成長，以及隨時間累積而成的長遠富足。</p>
+      <p class="ss-card-desc-en">錢滾錢 represents wealth that grows and multiplies. Placed in a home or workspace, it brings financial momentum — money constantly flowing, one opportunity leading to another. It reflects steady growth and sustainable building of abundance over time.</p>
+    </div>
+  </div>
+
+  <!-- 錢滾錢框 framed series -->
+  <div class="ss-frame-set reveal d3">
+    <div style="text-align:center;margin-bottom:2rem">
+      <div class="section-label" style="margin-bottom:.5rem">· Framed Series ·</div>
+      <div class="section-zh" style="font-size:1.5rem">錢滾錢 框</div>
+      <div class="section-en" style="margin-top:.4rem">FRAMED EDITION</div>
+    </div>
+    <div class="ss-frame-desc-block reveal d2">
+      <p class="ss-card-desc">承載著與「錢滾錢」相同的意涵，這款框架版象徵財富的流動——讓財運隨時間持續累積與增長。透過傳統華人能量轉化的原理（借遁），將「錢滾錢」的能量置入框架之中，使其自然融入家中或工作空間。它象徵財務動能——資金循環流轉，機會接續而至。</p>
+      <p class="ss-card-desc-en">Carrying the same intention as 錢滾錢, this framed edition represents wealth in motion — prosperity that flows and builds over time. Through the traditional Chinese principle of energetic transference (借遁 · jie dun), the essence of 錢滾錢 is placed into a frame, allowing it to integrate seamlessly into your home or workspace. It symbolizes financial momentum — money in circulation and opportunities arriving with continuity.</p>
+    </div>
+    <div class="ss-frame-grid">
+      <div class="ss-frame-card reveal d1">
+        <div class="ss-frame-img">
+          <img src="../references/Frame%201.1.png" alt="錢滾錢框 系列一" loading="lazy">
+        </div>
+        <div class="ss-frame-label-text">系列 一 · SERIES I</div>
+      </div>
+      <div class="ss-frame-card reveal d2">
+        <div class="ss-frame-img">
+          <img src="../references/Frame%202.1.png" alt="錢滾錢框 系列二" loading="lazy">
+        </div>
+        <div class="ss-frame-label-text">系列 二 · SERIES II</div>
+      </div>
+      <div class="ss-frame-card reveal d3">
+        <div class="ss-frame-img">
+          <img src="../references/Frame%203.1.png" alt="錢滾錢框 系列三" loading="lazy">
+        </div>
+        <div class="ss-frame-label-text">系列 三 · SERIES III</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 大鼻子系列 -->
+  <div class="nose-section reveal d2">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <div class="section-label" style="margin-bottom:.5rem">· Big Nose Series ·</div>
+      <div class="section-zh" style="font-size:1.5rem">大鼻子系列</div>
+      <div class="section-en" style="margin-top:.4rem">THE BIG NOSE SERIES &ensp;·&ensp; 迎財迎富 &ensp;·&ensp; Welcome Wealth</div>
+    </div>
+
+    <div class="nose-hero-row reveal d2">
+      <div class="nose-side-img">
+        <img src="../references/Nose/Nose%20Mult%201.jpg" alt="大鼻子系列 畫作一" loading="lazy">
+      </div>
+      <div class="nose-main-img">
+        <img src="../references/Nose/Nose%20Main.jpg" alt="大鼻子 Big Nose Series" loading="lazy">
+      </div>
+      <div class="nose-side-img">
+        <img src="../references/Nose/Nose%20Mult%202.jpg" alt="大鼻子系列 畫作二" loading="lazy">
+      </div>
+    </div>
+
+    <div class="nose-carousel reveal d3" id="noseCarousel">
+      <button class="carousel-btn carousel-btn-prev" onclick="noseMove(-1)" aria-label="Previous">&#8249;</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="noseTrack">
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_1.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_2.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_6.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_7.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_8.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_9.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_10.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_11.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_12.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_13.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_14.jpg" alt="大鼻子系列" loading="lazy"></div>
+        <div class="carousel-slide"><img src="../references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_15.jpg" alt="大鼻子系列" loading="lazy"></div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-btn-next" onclick="noseMove(1)" aria-label="Next">&#8250;</button>
+      <div class="carousel-dots" id="noseDots"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════ 占卜 READINGS ═══════════ -->
+<section id="readings" class="service-section ss-alt">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Readings ·</div>
+    <h2 class="section-zh reveal d1">占卜</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Ancient Wisdom, Modern Clarity</div>
+  </div>
+
+  <div class="ss-cards">
+    <!-- 塔囉聊心 -->
+    <div class="ss-card reveal d2">
+      <div class="ss-card-img">
+        <img src="../references/TarotReading.jpg" alt="塔囉聊心" loading="lazy">
+      </div>
+      <div class="ss-card-body">
+        <div class="ss-card-zh">塔囉聊心</div>
+        <div class="ss-card-en">XIAN TIAN TAROT</div>
+        <div class="div-gold-sm"></div>
+        <p class="ss-card-desc">全世界塔羅牌有 888 種。</p>
+        <p class="ss-card-desc">先天塔羅是唯一可以連結靈魂母元星宿的塔羅牌。</p>
+        <p class="ss-card-desc">不一樣的人問同一個問題、抽到同一張牌、訊息完全不一樣，因爲先天塔羅牌不是看圖說故事，也不是藉由牌意來解牌。</p>
+        <p class="ss-card-desc">先天塔羅每一張牌對應著天上的一個星宿，而先天塔羅師是藉由聖筆讀取與接收訊息——訊息來自妳／你的靈魂。</p>
+        <p class="ss-card-desc" style="margin-top:.6rem">想跟靈魂聊聊？想釐清心之所嚮？想知道生由何來死又何去？想了解前世今生？</p>
+        <p class="ss-card-desc" style="font-weight:500;color:var(--gold-lt);margin-top:.4rem">來試試看先天塔羅牌吧！</p>
+        <div class="ss-card-divider"></div>
+        <p class="ss-card-desc-en">Across the world there are many forms of tarot, each with its own symbols and systems. Xian Tian Tarot takes a different path. It does not rely on memorized meanings or fixed interpretations. It does not attempt to predict or prescribe. Instead, it begins with the simple belief that clarity already lives within you.</p>
+        <p class="ss-card-desc-en" style="margin-top:.6rem">The cards are not answers. They are mirrors. Each card serves as an open symbol — a doorway through which perception, memory, and intuition can surface. Because of this, no two readings are ever the same.</p>
+        <p class="ss-card-desc-en" style="margin-top:.6rem">The name Xian Tian (先天) refers to what is innate — the underlying structure that exists before conscious thought. In this spirit, the practice looks not outward for answers, but inward toward what has always been present.</p>
+      </div>
+    </div>
+
+    <!-- 易經解困 -->
+    <div class="ss-card reveal d3">
+      <div class="ss-card-img">
+        <img src="../references/IChingReading.jpg" alt="易經解困" loading="lazy">
+      </div>
+      <div class="ss-card-body">
+        <div class="ss-card-zh">易經解困</div>
+        <div class="ss-card-en">I CHING READING</div>
+        <div class="div-gold-sm"></div>
+        <p class="ss-card-desc">易經為萬經之首，自古帝王將相都要略懂一二，更甚至是古時候的軍師必修之法門。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem">所謂道統治國、易經治企業，而易經為道統之子、道統為易經之母，故易經為國醫。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem">真正的先天易經直指核心，屬真正命相，看其生有何來死又何去、算其命數星宿，更能針對問題、解決問題——從個人立、家庭和、事業興、社會平到國家盛，天困智慧、地困財富、人困健康。</p>
+        <p class="ss-card-desc" style="margin-top:.6rem;color:rgba(201,168,76,.8)">先天易經有五大法門：易經卜卦天下知、奇門遁卦天下解、混沌沌卦天下藏、燃燈燈卦天下富、燈燈燈卦天下貴</p>
+        <div class="ss-card-divider"></div>
+        <p class="ss-card-desc-en">The I Ching (Book of Changes) is one of the oldest foundational texts in Chinese thought and philosophy. For thousands of years, it has influenced governance, leadership, medicine, military strategy, and personal decision-making.</p>
+        <p class="ss-card-desc-en" style="margin-top:.6rem">Today, it can be approached as a system for reflection, clarity, and strategic guidance in modern life — addressing challenges across wisdom, wealth, and health through five traditional methodologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ 療癒 HEALINGS ═══════════ -->
+<section id="healings" class="service-section">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Healings ·</div>
+    <h2 class="section-zh reveal d1">療癒</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Restore Your Body, Mind &amp; Spirit</div>
+  </div>
+
+  <div class="ss-cards">
+    <!-- 刀式舒壓 -->
+    <div class="ss-card reveal d2">
+      <div class="ss-card-img">
+        <img src="../references/KnifeHealing.jpg" alt="刀式舒壓" loading="lazy">
+      </div>
+      <div class="ss-card-body">
+        <div class="ss-card-zh">刀式舒壓</div>
+        <div class="ss-card-en">KNIFE THERAPY</div>
+        <div class="div-gold-sm"></div>
+        <p class="ss-card-desc">刀療，源起於春秋戰國時代，之後傳到日本，目前正在台灣大力推廣並採用科學方法和理念，更有效地為需要的朋友服務。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem">人體本身有自療的本能，只是現代人的生活、飲食不當、心理因素或工作壓力，使得免疫系統失調、體內循環癱塞。刀療即是用放電原理，將電子（磁、氣、能量）擊入患部達到深層刺激，可深達肌裡直透骨髓，屬「非侵入性」之舒緩方法。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem">透過刀療，可以讓人感受到 SPA 的感覺——身體放鬆、促進新陳代謝、調整體質、減少疲勞、睡眠品質改善。</p>
+        <div class="ss-card-divider"></div>
+        <p class="ss-card-desc-en">Deep Relaxation &amp; Body Regulation Treatment</p>
+        <p class="ss-card-desc-en" style="margin-top:.5rem">Knife Therapy is a traditional East Asian bodywork practice. Today, it is practiced using modern wellness principles and a gentle, non-invasive approach to support relaxation, circulation, and overall physical balance.</p>
+        <p class="ss-card-desc-en" style="margin-top:.5rem">Modern stress, irregular sleep, and emotional strain can contribute to muscle tightness, poor circulation, fatigue, and reduced recovery. Knife Therapy uses specially designed, blunt tools applied rhythmically along the body's surface to provide deep, targeted stimulation without penetrating the skin.</p>
+        <p class="ss-card-desc-en" style="margin-top:.5rem">Most people describe the session as deeply relaxing and grounding — clients often report lighter body sensation, reduced fatigue, improved sleep, clearer focus, and better overall wellbeing.</p>
+      </div>
+    </div>
+
+    <!-- 芬多精療癒 -->
+    <div class="ss-card reveal d3">
+      <div class="ss-card-img">
+        <img src="../references/Phytoncides.jpg" alt="芬多精療癒" loading="lazy">
+      </div>
+      <div class="ss-card-body">
+        <div class="ss-card-zh">芬多精療癒</div>
+        <div class="ss-card-en">PHYTONCIDE HEALING</div>
+        <div class="div-gold-sm"></div>
+        <p class="ss-card-desc">在日本的自然療法，又稱為森林浴，藉由深呼吸在美景中漫步達到療癒的效果。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem">芬多精是樹木釋放到空氣中的天然揮發性有機化合物。藉由珊瑚原礦的轉換，會調頻人體最舒適的波長，讓我們藉由芬多精療癒石來舒壓與放鬆。</p>
+        <p class="ss-card-desc" style="margin-top:.5rem;color:rgba(201,184,232,.65)">研究表明芬多精可以：減少壓力（顯著降低心率和血壓）、增強免疫系統（提升自然殺手細胞活性）、改善心情（增加幸福感）、增進集中力和記憶力。</p>
+        <div class="ss-card-divider"></div>
+        <p class="ss-card-desc-en">Nature-Inspired Stress Relief &amp; Forest Bathing Experience</p>
+        <p class="ss-card-desc-en" style="margin-top:.5rem">Inspired by the Japanese wellness concept of Shinrin-yoku (forest bathing) — the simple yet powerful act of slowing down, breathing deeply, and immersing yourself in nature.</p>
+        <p class="ss-card-desc-en" style="margin-top:.5rem">Phytoncides are natural aromatic compounds released by trees and plants. Research suggests that time in forest environments may support stress reduction, relaxation of the nervous system, improved mood, enhanced focus and mental clarity, and general immune support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ 祈願 ═══════════ -->
+<section id="wishes" class="service-section ss-alt">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Wish Making ·</div>
+    <h2 class="section-zh reveal d1">祈願</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Set Your Intentions with the Universe</div>
+  </div>
+
+  <div class="ss-cards ss-cards-single">
+    <div class="ss-card reveal d2">
+      <div class="ss-card-img">
+        <img src="../references/meteorite.jpg" alt="隕石祈願" loading="lazy" style="object-fit:cover;object-position:center 35%">
+      </div>
+      <div class="ss-card-body">
+        <div class="ss-card-zh">隕石祈願</div>
+        <div class="ss-card-en">METEORITE WISH RITUAL</div>
+        <div class="div-gold-sm"></div>
+        <p class="ss-card-desc">有機會透過一顆真正的隕石，為自己設定一個專注而清晰的心願——這是一塊穿越時間與空間而來的宇宙碎片。</p>
+        <p class="ss-card-desc" style="margin-top:.6rem">這不只是單純「許願」，而是一個讓你暫停片刻、釐清內心真正渴望，並以專注與真誠將意念穩穩落定的儀式。</p>
+        <p class="ss-card-desc" style="margin-top:.6rem">在安靜的一刻中重新對齊自己、調整狀態，帶著方向繼續前行。</p>
+        <div class="ss-card-divider"></div>
+        <p class="ss-card-desc-en">Have the opportunity to set a focused intention using a genuine meteorite — a fragment of the universe that has traveled across time and space.</p>
+        <p class="ss-card-desc-en" style="margin-top:.6rem">Rather than simply "making a wish," this ritual invites you to pause, clarify what you truly want, and anchor that intention with presence and sincerity.</p>
+        <p class="ss-card-desc-en" style="margin-top:.6rem">A quiet moment to realign, reset, and move forward with direction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="f-logo" src="../brand_assets/女兒國_logo.jpg" alt="女兒國">
+        <div class="footer-brand-zh">女兒國</div>
+        <div class="footer-brand-en">THE KINGDOM OF TRUE DAUGHTERS</div>
+        <p class="footer-tagline">回歸屬於你的真・善・美<br>
+          <span style="font-size:.72rem;font-family:'Cormorant Garamond',serif;font-style:italic;opacity:.7">Rediscover your truest self</span>
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">探索 EXPLORE</div>
+        <div class="footer-links">
+          <a href="#wenqi"    class="footer-link">服務項目 · Services</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">服務 SERVICES</div>
+        <div class="footer-links">
+          <a href="#wenqi"    class="footer-link">文創 · Creations</a>
+          <a href="#readings" class="footer-link">占卜 · Readings</a>
+          <a href="#healings" class="footer-link">療癒 · Healing</a>
+          <a href="#wishes"   class="footer-link">祈願 · Wish Making</a>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved<br>
+        <span style="opacity:.5;font-size:.6rem">THE KINGDOM IS WITHIN YOU</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/true.daughters/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://lin.ee/rkjbKA5" target="_blank" rel="noopener" class="social-btn" aria-label="LINE" style="font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:0">LINE</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+/* ─── Navbar scroll ─── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ─── Mobile nav ─── */
+const mobileNav = document.getElementById('mobileNav');
+let mobileOpen = false;
+function toggleMobile() {
+  mobileOpen = !mobileOpen;
+  mobileNav.style.display = mobileOpen ? 'flex' : 'none';
+  requestAnimationFrame(() => mobileNav.classList.toggle('open', mobileOpen));
+}
+function closeMobile() {
+  mobileOpen = false;
+  mobileNav.classList.remove('open');
+  setTimeout(() => { mobileNav.style.display = 'none'; }, 400);
+}
+
+/* ─── Service accordion ─── */
+function toggleService(id) {
+  const cat = document.getElementById('cat-' + id);
+  if (!cat) return;
+  cat.classList.toggle('open');
+}
+function openService(id) {
+  const cat = document.getElementById('cat-' + id);
+  if (cat && !cat.classList.contains('open')) {
+    cat.classList.add('open');
+  }
+}
+
+/* ─── Scroll reveal ─── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+/* ─── Hero particles ─── */
+(function initParticles() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  class Particle {
+    constructor() { this.init() }
+    init() {
+      this.x    = Math.random() * W;
+      this.y    = Math.random() * H;
+      this.r    = Math.random() * 1.8 + .3;
+      this.base = Math.random() * .55 + .05;
+      this.op   = this.base;
+      this.spd  = Math.random() * .25 + .06;
+      this.ang  = Math.random() * Math.PI * 2;
+      this.dAng = (Math.random() - .5) * .012;
+      this.life = 0;
+      this.max  = Math.random() * 260 + 180;
+      this.gold = Math.random() > .45;
+    }
+    step() {
+      this.x += Math.cos(this.ang) * this.spd;
+      this.y += Math.sin(this.ang) * this.spd;
+      this.ang += this.dAng;
+      this.life++;
+      const t = this.life / this.max;
+      this.op = this.base * Math.sin(t * Math.PI);
+      if (this.life >= this.max) this.init();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = this.gold
+        ? `rgba(201,168,76,${this.op})`
+        : `rgba(201,184,232,${this.op * .7})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.step(); p.draw(); });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ─── Newsletter submit ─── */
+function handleSubscribe(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const orig = btn.textContent;
+  btn.textContent = '✦ 已送出！';
+  btn.style.background = 'linear-gradient(135deg,rgba(201,168,76,.4),rgba(201,168,76,.2))';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+
+/* ─── Big Nose Carousel ─── */
+(function() {
+  const track = document.getElementById('noseTrack');
+  const dotsContainer = document.getElementById('noseDots');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.carousel-slide');
+  const total = slides.length;
+  let current = 0;
+  let autoTimer;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    current = ((n % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  window.noseMove = function(dir) { goTo(current + dir); resetAuto(); };
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 4500);
+  }
+  resetAuto();
+
+  // Touch swipe
+  let touchX = 0;
+  const wrap = document.querySelector('.carousel-track-wrap');
+  if (wrap) {
+    wrap.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    wrap.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) { noseMove(dx < 0 ? 1 : -1); }
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

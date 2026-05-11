@@ -1,0 +1,8 @@
+node_modules/
+temporary screenshots/
+screenshot.mjs
+screenshot-v2.mjs
+www.moonomens.com*.png
+CLAUDE_WebDesign.md
+package-lock.json
+.DS_Store

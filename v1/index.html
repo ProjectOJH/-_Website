@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>女兒國 · The Kingdom of True Daughters</title>
+  <meta name="description" content="女兒國 — 靈性教育、能量療癒與形而上學學院。回歸屬於你的真・善・美。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple:     #8B07A8;
+      --purple-dk:  #5A0070;
+      --purple-mid: #2D0550;
+      --gold:       #C9A84C;
+      --gold-lt:    #E8D89A;
+      --gold-glow:  #FFE066;
+      --void:       #0D0118;
+      --void-mid:   #140829;
+      --void-lt:    #1E0F3A;
+      --lavender:   #C9B8E8;
+      --cream:      #F5EFD8;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--void)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+
+    /* ── TYPOGRAPHY ── */
+    .f-cinzel    { font-family:'Cinzel',serif }
+    .f-cormorant { font-family:'Cormorant Garamond',serif }
+    .f-noto      { font-family:'Noto Serif TC',serif }
+    .f-mont      { font-family:'Montserrat',sans-serif }
+
+    .grad-gold {
+      background:linear-gradient(135deg,#E8D89A 0%,#C9A84C 40%,#FFE066 70%,#C9A84C 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+    }
+    .grad-lavender {
+      background:linear-gradient(135deg,#C9B8E8,#8B07A8,#C9B8E8);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+    }
+
+    /* ── DIVIDERS ── */
+    .div-gold     { width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem auto }
+    .div-gold-sm  { width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.5rem auto }
+    .dot-sep      { color:var(--gold);opacity:.5;margin:0 .6rem;font-size:.5rem;vertical-align:middle }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease }
+    .reveal.vis { opacity:1;transform:none }
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+    .d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+    /* ══════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════ */
+    #nav {
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      padding:1.1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      transition:background .4s,backdrop-filter .4s,border-color .4s;
+      border-bottom:1px solid transparent
+    }
+    #nav.scrolled {
+      background:rgba(13,1,24,.92);
+      backdrop-filter:blur(22px);
+      border-color:rgba(201,168,76,.18)
+    }
+    .nav-logo { display:flex;align-items:center;gap:.9rem }
+    .nav-logo img.logo-mark {
+      width:42px;height:42px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.35);
+      box-shadow:0 0 16px rgba(201,168,76,.25)
+    }
+    .nav-logo-text {
+      display:flex;flex-direction:column;line-height:1.15
+    }
+    .nav-logo-zh {
+      font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+    }
+    .nav-logo-en {
+      font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;
+      color:rgba(201,184,232,.65)
+    }
+    .nav-links { display:flex;align-items:center;gap:2.2rem }
+    .nav-link {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      color:var(--lavender);position:relative;
+      transition:color .3s
+    }
+    .nav-link::after {
+      content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;
+      background:var(--gold);transition:width .3s
+    }
+    .nav-link:hover { color:var(--gold-lt) }
+    .nav-link:hover::after { width:100% }
+    .nav-cta {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      border:1px solid rgba(201,168,76,.45);
+      padding:.45rem 1.25rem;
+      color:var(--gold-lt);
+      transition:background .3s,box-shadow .3s
+    }
+    .nav-cta:hover {
+      background:rgba(201,168,76,.12);
+      box-shadow:0 0 18px rgba(201,168,76,.18)
+    }
+    .lang-btn {
+      font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.06em;
+      color:rgba(201,184,232,.55);cursor:pointer;
+      border:1px solid rgba(201,184,232,.2);padding:.3rem .75rem;
+      background:transparent;transition:all .3s
+    }
+    .lang-btn:hover { color:var(--gold-lt);border-color:rgba(201,168,76,.4) }
+    .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px }
+    .hamburger span { width:24px;height:1.5px;background:var(--lavender);transition:all .3s }
+    .mobile-nav {
+      display:none;position:fixed;inset:0;z-index:190;
+      background:rgba(13,1,24,.97);backdrop-filter:blur(30px);
+      flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+      opacity:0;transition:opacity .4s
+    }
+    .mobile-nav.open { opacity:1 }
+    .mobile-nav .nav-link { font-size:1.1rem }
+
+    /* ══════════════════════════════════
+       HERO
+    ══════════════════════════════════ */
+    #hero {
+      position:relative;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden
+    }
+    #hero-canvas {
+      position:absolute;inset:0;width:100%;height:100%;z-index:0
+    }
+    .hero-bg {
+      position:absolute;inset:0;z-index:1;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(139,7,168,.45) 0%,transparent 65%),
+        radial-gradient(ellipse 60% 50% at 80% 90%,   rgba(45,5,80,.7) 0%,transparent 55%),
+        radial-gradient(ellipse 50% 40% at 10% 70%,   rgba(20,8,41,.9) 0%,transparent 55%),
+        linear-gradient(180deg,#0D0118 0%,#140829 55%,#0D0118 100%)
+    }
+    /* Sacred geometry ring behind logo */
+    .hero-ring {
+      position:absolute;inset:0;z-index:2;
+      display:flex;align-items:center;justify-content:center;pointer-events:none
+    }
+    .hero-ring svg { opacity:.07;animation:slowRotate 60s linear infinite }
+    @keyframes slowRotate { to { transform:rotate(360deg) } }
+
+    .hero-content {
+      position:relative;z-index:3;text-align:center;
+      padding:2rem 1.5rem;max-width:760px
+    }
+    .hero-logo-wrap {
+      position:relative;display:inline-block;
+      margin-bottom:2.2rem;
+      animation:float 7s ease-in-out infinite
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .hero-logo-wrap img {
+      width:160px;height:160px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.35);
+      animation:logoGlow 3.5s ease-in-out infinite alternate
+    }
+    @keyframes logoGlow {
+      from { filter:drop-shadow(0 0 18px rgba(201,168,76,.4)) drop-shadow(0 0 40px rgba(139,7,168,.3)) }
+      to   { filter:drop-shadow(0 0 40px rgba(201,168,76,.75)) drop-shadow(0 0 80px rgba(139,7,168,.5)) }
+    }
+    .hero-logo-ring {
+      position:absolute;inset:-12px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.25);
+      animation:ringPulse 3.5s ease-in-out infinite
+    }
+    .hero-logo-ring2 {
+      position:absolute;inset:-24px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.1);
+      animation:ringPulse 3.5s ease-in-out infinite .8s
+    }
+    @keyframes ringPulse {
+      0%,100%{opacity:.4;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.03)}
+    }
+    .hero-zh {
+      font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,6vw,4.2rem);
+      font-weight:700;letter-spacing:.06em;line-height:1.1;
+      background:linear-gradient(135deg,#F5EFD8 0%,#E8D89A 35%,#FFE066 60%,#C9A84C 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:.5rem
+    }
+    .hero-en {
+      font-family:'Cinzel',serif;font-size:clamp(.7rem,1.8vw,1rem);
+      letter-spacing:.25em;color:rgba(201,184,232,.65);
+      text-transform:uppercase;margin-bottom:2rem
+    }
+    .hero-divider { margin:0 auto 1.8rem }
+    .hero-tagline-zh {
+      font-family:'Noto Serif TC',serif;font-size:clamp(1rem,2.5vw,1.4rem);
+      font-weight:400;color:var(--lavender);letter-spacing:.15em;
+      margin-bottom:.5rem
+    }
+    .hero-tagline-en {
+      font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:clamp(.9rem,2vw,1.2rem);
+      color:rgba(201,184,232,.55);letter-spacing:.08em;
+      margin-bottom:2.8rem
+    }
+    .hero-btns { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap }
+    .btn-primary {
+      font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.12em;
+      padding:.9rem 2.4rem;cursor:pointer;
+      background:linear-gradient(135deg,var(--purple),var(--purple-dk));
+      border:1px solid rgba(201,168,76,.4);color:var(--cream);
+      position:relative;overflow:hidden;
+      transition:box-shadow .3s,transform .2s
+    }
+    .btn-primary::before {
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,rgba(201,168,76,.22),transparent);
+      opacity:0;transition:opacity .3s
+    }
+    .btn-primary:hover::before { opacity:1 }
+    .btn-primary:hover { box-shadow:0 0 35px rgba(139,7,168,.55),0 0 70px rgba(139,7,168,.2);transform:translateY(-2px) }
+    .btn-primary:active { transform:translateY(0) }
+    .btn-outline {
+      font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.12em;
+      padding:.9rem 2.4rem;cursor:pointer;
+      background:transparent;border:1px solid rgba(201,168,76,.45);color:var(--gold-lt);
+      transition:background .3s,border-color .3s,box-shadow .3s,transform .2s
+    }
+    .btn-outline:hover {
+      background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.8);
+      box-shadow:0 0 22px rgba(201,168,76,.2);transform:translateY(-2px)
+    }
+    .btn-outline:active { transform:translateY(0) }
+    .scroll-cue {
+      position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;
+      display:flex;flex-direction:column;align-items:center;gap:.5rem;
+      animation:scrollFade 2s ease-in-out infinite
+    }
+    @keyframes scrollFade { 0%,100%{opacity:.3;transform:translateX(-50%) translateY(0)} 50%{opacity:.8;transform:translateX(-50%) translateY(6px)} }
+    .scroll-cue span { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.2em;color:rgba(201,168,76,.5) }
+    .scroll-cue svg { color:rgba(201,168,76,.4) }
+
+    /* ══════════════════════════════════
+       MARQUEE
+    ══════════════════════════════════ */
+    .marquee-wrap {
+      overflow:hidden;
+      border-top:1px solid rgba(201,168,76,.15);
+      border-bottom:1px solid rgba(201,168,76,.15);
+      background:linear-gradient(90deg,var(--void),rgba(139,7,168,.15),var(--void));
+      padding:.9rem 0
+    }
+    .marquee-inner {
+      display:inline-flex;gap:3.5rem;white-space:nowrap;
+      animation:marquee 35s linear infinite
+    }
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .marquee-item {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;
+      color:rgba(201,184,232,.5);display:flex;align-items:center;gap:1rem
+    }
+    .marquee-item .m-star { color:var(--gold);opacity:.6;font-size:.65rem }
+
+    /* ══════════════════════════════════
+       SECTION HEADERS (shared)
+    ══════════════════════════════════ */
+    .section-label {
+      font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.3em;
+      color:var(--gold);opacity:.7;text-transform:uppercase;margin-bottom:.8rem
+    }
+    .section-zh {
+      font-family:'Noto Serif TC',serif;font-weight:700;
+      font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:.06em;
+      color:var(--cream);line-height:1.2
+    }
+    .section-en {
+      font-family:'Cinzel',serif;font-size:clamp(.75rem,1.5vw,.9rem);
+      letter-spacing:.2em;color:rgba(201,184,232,.5);margin-top:.4rem
+    }
+    .section-desc {
+      font-family:'Noto Serif TC',serif;font-size:1rem;line-height:1.9;
+      color:rgba(201,184,232,.88);max-width:580px;margin:1.8rem auto 0
+    }
+
+    /* ══════════════════════════════════
+       PHILOSOPHY SECTION
+    ══════════════════════════════════ */
+    #philosophy {
+      position:relative;padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 50%,var(--void) 100%)
+    }
+    .phil-geo {
+      position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.04
+    }
+    .phil-geo svg { width:100%;height:100% }
+    .phil-pillars {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:2rem;max-width:960px;margin:4rem auto 0
+    }
+    .pillar {
+      text-align:center;padding:2.5rem 1.8rem;
+      background:rgba(20,8,41,.55);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.12);
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .pillar:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.35);
+      box-shadow:0 24px 60px rgba(139,7,168,.25),0 0 30px rgba(201,168,76,.08)
+    }
+    .pillar-char {
+      font-family:'Noto Serif TC',serif;font-size:3.2rem;font-weight:700;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C,#FFE066);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      margin-bottom:1rem;line-height:1
+    }
+    .pillar-zh { font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.25rem }
+    .pillar-en { font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;color:rgba(201,168,76,.65);margin-bottom:1.2rem }
+    .pillar-desc { font-family:'Noto Serif TC',serif;font-size:.9rem;line-height:1.85;color:rgba(201,184,232,.82) }
+
+    /* ══════════════════════════════════
+       OFFERINGS SECTION
+    ══════════════════════════════════ */
+    #offerings {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,rgba(20,8,41,.6) 100%)
+    }
+    .offerings-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;max-width:1080px;margin:4rem auto 0
+    }
+    .offering-card {
+      padding:2.2rem 1.8rem;text-align:center;
+      background:rgba(14,4,30,.6);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.1);
+      transition:transform .35s,border-color .35s,box-shadow .35s;
+      cursor:pointer
+    }
+    .offering-card:hover {
+      transform:translateY(-10px);
+      border-color:rgba(201,168,76,.38);
+      box-shadow:0 28px 70px rgba(139,7,168,.3),0 0 40px rgba(201,168,76,.08)
+    }
+    .offering-icon {
+      width:72px;height:72px;border-radius:50%;
+      background:linear-gradient(135deg,rgba(139,7,168,.3),rgba(20,8,41,.8));
+      border:1px solid rgba(201,168,76,.25);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.8rem;margin:0 auto 1.4rem;
+      transition:transform .35s,box-shadow .35s
+    }
+    .offering-card:hover .offering-icon {
+      transform:scale(1.12);box-shadow:0 0 22px rgba(201,168,76,.3)
+    }
+    .offering-zh { font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:500;color:var(--cream);margin-bottom:.2rem }
+    .offering-en { font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.16em;color:rgba(201,168,76,.6);margin-bottom:1rem }
+    .offering-desc { font-family:'Noto Serif TC',serif;font-size:.82rem;line-height:1.82;color:rgba(201,184,232,.65) }
+    .offering-link {
+      display:inline-flex;align-items:center;gap:.4rem;
+      font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.12em;
+      color:var(--gold);margin-top:1.2rem;
+      transition:gap .3s,opacity .3s
+    }
+    .offering-card:hover .offering-link { gap:.7rem }
+
+    /* ══════════════════════════════════
+       EVENTS SECTION
+    ══════════════════════════════════ */
+    #events {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,rgba(13,1,24,1) 0%,rgba(20,8,41,.8) 100%)
+    }
+    .events-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;max-width:1080px;margin:4rem auto 0
+    }
+    .event-card {
+      background:rgba(20,8,41,.55);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.12);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .event-card:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.36);
+      box-shadow:0 24px 60px rgba(139,7,168,.25)
+    }
+    .event-img {
+      height:180px;position:relative;overflow:hidden;
+      display:flex;align-items:center;justify-content:center
+    }
+    .event-img-bg {
+      position:absolute;inset:0;
+      transition:transform .5s ease
+    }
+    .event-card:hover .event-img-bg { transform:scale(1.06) }
+    .event-img-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 40%,rgba(13,1,24,.9) 100%)
+    }
+    .event-date-badge {
+      position:absolute;top:1rem;left:1rem;z-index:2;
+      background:rgba(139,7,168,.75);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.3);
+      padding:.4rem .8rem;text-align:center
+    }
+    .event-date-day { font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--gold-lt);line-height:1 }
+    .event-date-mon { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;color:rgba(201,184,232,.8) }
+    .event-tag {
+      position:absolute;top:1rem;right:1rem;z-index:2;
+      background:rgba(201,168,76,.2);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.35);
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;
+      color:var(--gold-lt);padding:.3rem .7rem
+    }
+    .event-body { padding:1.5rem }
+    .event-zh { font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;color:var(--cream);margin-bottom:.2rem }
+    .event-en { font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:rgba(201,168,76,.6);margin-bottom:.9rem }
+    .event-detail { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.6);line-height:1.7;margin-bottom:1.2rem }
+    .event-meta { display:flex;align-items:center;justify-content:space-between }
+    .event-type { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;color:var(--gold);opacity:.7 }
+    .event-register {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;
+      color:var(--gold-lt);border:1px solid rgba(201,168,76,.35);
+      padding:.35rem .9rem;
+      transition:background .3s,box-shadow .3s
+    }
+    .event-register:hover { background:rgba(201,168,76,.12);box-shadow:0 0 14px rgba(201,168,76,.15) }
+
+    /* ══════════════════════════════════
+       WISDOM LIBRARY
+    ══════════════════════════════════ */
+    #library {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 100%)
+    }
+    .library-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;max-width:1080px;margin:4rem auto 0
+    }
+    .article-card {
+      background:rgba(14,4,30,.65);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.1);
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s
+    }
+    .article-card:hover {
+      transform:translateY(-8px);
+      border-color:rgba(201,168,76,.35);
+      box-shadow:0 24px 60px rgba(139,7,168,.22)
+    }
+    .article-img {
+      height:160px;position:relative;overflow:hidden
+    }
+    .article-img-bg { position:absolute;inset:0;transition:transform .5s }
+    .article-card:hover .article-img-bg { transform:scale(1.06) }
+    .article-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(180deg,transparent 30%,rgba(13,1,24,.85) 100%)
+    }
+    .article-cat {
+      position:absolute;bottom:.8rem;left:.9rem;z-index:2;
+      font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;
+      color:var(--gold);
+      border-left:2px solid var(--gold);padding-left:.5rem
+    }
+    .article-body { padding:1.4rem }
+    .article-zh { font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.2rem;line-height:1.4 }
+    .article-en { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;color:rgba(201,168,76,.55);margin-bottom:.8rem }
+    .article-excerpt { font-family:'Noto Serif TC',serif;font-size:.8rem;line-height:1.78;color:rgba(201,184,232,.6);margin-bottom:1.1rem }
+    .article-footer { display:flex;align-items:center;justify-content:space-between }
+    .article-date { font-family:'Montserrat',sans-serif;font-size:.65rem;color:rgba(201,184,232,.4) }
+    .article-read {
+      font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;
+      color:var(--gold);display:flex;align-items:center;gap:.3rem;
+      transition:gap .3s
+    }
+    .article-card:hover .article-read { gap:.6rem }
+
+    /* ══════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════ */
+    #community {
+      padding:7rem 2rem;
+      background:linear-gradient(180deg,var(--void-mid) 0%,var(--void) 100%);
+      position:relative;overflow:hidden
+    }
+    .community-bg-glow {
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      width:800px;height:800px;border-radius:50%;
+      background:radial-gradient(circle,rgba(139,7,168,.12) 0%,transparent 70%);
+      pointer-events:none
+    }
+    .testimonials {
+      display:grid;grid-template-columns:repeat(2,1fr);
+      gap:2rem;max-width:900px;margin:4rem auto 0
+    }
+    .testi-card {
+      padding:2.5rem;
+      background:rgba(20,8,41,.6);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.1);
+      position:relative
+    }
+    .testi-quote {
+      position:absolute;top:1.2rem;left:1.5rem;
+      font-family:'Cormorant Garamond',serif;font-size:5rem;
+      color:rgba(201,168,76,.15);line-height:1;pointer-events:none
+    }
+    .testi-text { font-family:'Noto Serif TC',serif;font-size:.9rem;line-height:1.9;color:rgba(201,184,232,.8);margin-bottom:1.5rem;position:relative;z-index:1 }
+    .testi-author { display:flex;align-items:center;gap:.8rem }
+    .testi-dot { width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--gold));opacity:.6 }
+    .testi-name { font-family:'Noto Serif TC',serif;font-size:.85rem;color:var(--gold-lt) }
+    .testi-role { font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.1em;color:rgba(201,184,232,.45) }
+    .community-cta {
+      text-align:center;margin-top:4rem;
+      padding:3.5rem 2.5rem;max-width:600px;margin-left:auto;margin-right:auto;
+      background:rgba(20,8,41,.6);
+      border:1px solid rgba(201,168,76,.2);
+      box-shadow:0 0 60px rgba(139,7,168,.12)
+    }
+    .community-cta-zh { font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:500;color:var(--cream);margin-bottom:.4rem }
+    .community-cta-en { font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(201,184,232,.55);margin-bottom:1.8rem }
+
+    /* ══════════════════════════════════
+       NEWSLETTER
+    ══════════════════════════════════ */
+    #newsletter {
+      padding:7rem 2rem 9rem;
+      background:linear-gradient(180deg,var(--void) 0%,#06000F 100%)
+    }
+    .newsletter-box {
+      max-width:600px;margin:0 auto;text-align:center;
+      padding:3.5rem 3rem;
+      background:rgba(20,8,41,.7);
+      backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.18)
+    }
+    .newsletter-icon { font-size:2.2rem;margin-bottom:1.2rem;opacity:.8 }
+    .nl-form { display:flex;gap:0;margin-top:2rem }
+    .nl-input {
+      flex:1;background:rgba(13,1,24,.8);
+      border:1px solid rgba(201,168,76,.25);border-right:none;
+      color:var(--cream);padding:.85rem 1.3rem;
+      font-family:'Montserrat',sans-serif;font-size:.82rem;
+      outline:none;transition:border-color .3s
+    }
+    .nl-input::placeholder { color:rgba(201,184,232,.35) }
+    .nl-input:focus { border-color:rgba(201,168,76,.55) }
+    .nl-btn {
+      font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      padding:.85rem 1.6rem;cursor:pointer;
+      background:linear-gradient(135deg,var(--purple),var(--purple-dk));
+      border:1px solid rgba(201,168,76,.4);color:var(--gold-lt);
+      transition:box-shadow .3s,background .3s
+    }
+    .nl-btn:hover { box-shadow:0 0 25px rgba(139,7,168,.5);background:linear-gradient(135deg,#9D08C0,var(--purple)) }
+    .nl-note { font-family:'Noto Serif TC',serif;font-size:.75rem;color:rgba(201,184,232,.35);margin-top:1rem }
+
+    /* ══════════════════════════════════
+       FOOTER
+    ══════════════════════════════════ */
+    footer {
+      background:linear-gradient(180deg,#06000F 0%,#030009 100%);
+      border-top:1px solid rgba(201,168,76,.12);
+      padding:4rem 2rem 2rem
+    }
+    .footer-inner { max-width:1080px;margin:0 auto }
+    .footer-top {
+      display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
+      gap:3rem;padding-bottom:3rem;
+      border-bottom:1px solid rgba(201,168,76,.08)
+    }
+    .footer-brand img.f-logo { width:52px;height:52px;border-radius:50%;margin-bottom:1rem;opacity:.9 }
+    .footer-brand-zh { font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--gold-lt);margin-bottom:.25rem }
+    .footer-brand-en { font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;color:rgba(201,184,232,.4);margin-bottom:1rem }
+    .footer-tagline { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.5);line-height:1.7 }
+    .footer-col-title { font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;color:var(--gold);opacity:.75;margin-bottom:1.2rem }
+    .footer-links { display:flex;flex-direction:column;gap:.7rem }
+    .footer-link { font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.5);transition:color .3s }
+    .footer-link:hover { color:var(--gold-lt) }
+    .footer-bottom {
+      display:flex;align-items:center;justify-content:space-between;
+      padding-top:2rem;flex-wrap:wrap;gap:1rem
+    }
+    .footer-copy { font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.3) }
+    .footer-socials { display:flex;gap:1rem }
+    .social-btn {
+      width:34px;height:34px;border-radius:50%;
+      border:1px solid rgba(201,168,76,.2);
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(201,184,232,.5);font-size:.8rem;
+      transition:border-color .3s,color .3s,box-shadow .3s
+    }
+    .social-btn:hover { border-color:rgba(201,168,76,.55);color:var(--gold-lt);box-shadow:0 0 12px rgba(201,168,76,.2) }
+
+    /* ══════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════ */
+    @media (max-width:900px) {
+      .phil-pillars { grid-template-columns:1fr }
+      .offerings-grid { grid-template-columns:repeat(2,1fr) }
+      .events-grid { grid-template-columns:1fr }
+      .library-grid { grid-template-columns:1fr }
+      .testimonials { grid-template-columns:1fr }
+      .footer-top { grid-template-columns:1fr 1fr }
+      .nav-links { display:none }
+      .hamburger { display:flex }
+      .mobile-nav { display:flex }
+    }
+    @media (max-width:580px) {
+      .offerings-grid { grid-template-columns:1fr }
+      .footer-top { grid-template-columns:1fr }
+      .nl-form { flex-direction:column }
+      .nl-input { border-right:1px solid rgba(201,168,76,.25) }
+      .hero-logo-wrap img { width:130px;height:130px }
+      #nav { padding:1rem 1.2rem }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ MOBILE NAV ═══════════ -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about"     class="nav-link f-cinzel" onclick="closeMobile()">關於我們</a>
+  <a href="#offerings" class="nav-link f-cinzel" onclick="closeMobile()">服務項目</a>
+  <a href="#events"    class="nav-link f-cinzel" onclick="closeMobile()">活動</a>
+  <a href="#library"   class="nav-link f-cinzel" onclick="closeMobile()">智慧文庫</a>
+  <a href="#community" class="nav-link f-cinzel" onclick="closeMobile()">社群</a>
+  <a href="#newsletter" class="btn-primary f-cinzel" onclick="closeMobile()" style="margin-top:1rem">立即聯繫</a>
+</div>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <img class="logo-mark" src="brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div class="nav-logo-text">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="#about"     class="nav-link">關於我們</a>
+    <a href="#offerings" class="nav-link">服務項目</a>
+    <a href="#events"    class="nav-link">活動</a>
+    <a href="#library"   class="nav-link">智慧文庫</a>
+    <a href="#community" class="nav-link">社群</a>
+    <a href="#newsletter" class="nav-cta" style="margin-left:.8rem">立即聯繫</a>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-bg"></div>
+
+  <!-- Sacred geometry ring -->
+  <div class="hero-ring">
+    <svg viewBox="0 0 600 600" width="700" height="700" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".5">
+      <circle cx="300" cy="300" r="280"/>
+      <circle cx="300" cy="300" r="220"/>
+      <circle cx="300" cy="300" r="160"/>
+      <circle cx="300" cy="300" r="100"/>
+      <line x1="300" y1="20"  x2="300" y2="580"/>
+      <line x1="20"  y1="300" x2="580" y2="300"/>
+      <line x1="102" y1="102" x2="498" y2="498"/>
+      <line x1="498" y1="102" x2="102" y2="498"/>
+      <circle cx="300" cy="80"  r="50"/>
+      <circle cx="300" cy="520" r="50"/>
+      <circle cx="80"  cy="300" r="50"/>
+      <circle cx="520" cy="300" r="50"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-logo-wrap reveal">
+      <img src="brand_assets/女兒國_logo.jpg" alt="女兒國 Logo">
+      <div class="hero-logo-ring"></div>
+      <div class="hero-logo-ring2"></div>
+    </div>
+
+    <div class="hero-zh reveal d1">女兒國</div>
+    <div class="hero-en reveal d2">The Kingdom of True Daughters</div>
+
+    <div class="div-gold hero-divider reveal d2"></div>
+
+    <div class="hero-tagline-zh reveal d3">回歸屬於你的真・善・美</div>
+    <div class="hero-tagline-en reveal d3">Rediscover Your Truest Self</div>
+
+    <div class="hero-btns reveal d4">
+      <a href="#offerings" class="btn-primary f-cinzel">探索更多</a>
+      <a href="#newsletter" class="btn-outline f-cinzel">立即預約</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.2">
+      <rect x="1" y="1" width="14" height="22" rx="7" stroke-opacity=".4"/>
+      <circle cx="8" cy="7" r="2" fill="currentColor" opacity=".6">
+        <animate attributeName="cy" values="7;14;7" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".6;.1;.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════ MARQUEE ═══════════ -->
+<div class="marquee-wrap">
+  <div class="marquee-inner" aria-hidden="true">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item"><span class="m-star">✦</span>神聖 Sacred</span>
+    <span class="marquee-item"><span class="m-star">✦</span>優雅 Elegant</span>
+    <span class="marquee-item"><span class="m-star">✦</span>神秘 Mystical</span>
+    <span class="marquee-item"><span class="m-star">✦</span>療癒 Healing</span>
+    <span class="marquee-item"><span class="m-star">✦</span>賦能 Empowering</span>
+    <span class="marquee-item"><span class="m-star">✦</span>覺醒 Awakening</span>
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+    <span class="marquee-item"><span class="m-star">✦</span>神聖 Sacred</span>
+    <span class="marquee-item"><span class="m-star">✦</span>優雅 Elegant</span>
+    <span class="marquee-item"><span class="m-star">✦</span>神秘 Mystical</span>
+    <span class="marquee-item"><span class="m-star">✦</span>療癒 Healing</span>
+    <span class="marquee-item"><span class="m-star">✦</span>賦能 Empowering</span>
+    <span class="marquee-item"><span class="m-star">✦</span>覺醒 Awakening</span>
+    <span class="marquee-item"><span class="m-star">✦</span>真 Truth</span>
+    <span class="marquee-item"><span class="m-star">✦</span>善 Goodness</span>
+    <span class="marquee-item"><span class="m-star">✦</span>美 Beauty</span>
+  </div>
+</div>
+
+<!-- ═══════════ PHILOSOPHY ═══════════ -->
+<section id="about" style="position:relative;padding:7rem 2rem;background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 50%,var(--void) 100%)">
+  <!-- background sacred geometry -->
+  <div class="phil-geo">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+      <circle cx="720" cy="300" r="400" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".8"/>
+      <circle cx="720" cy="300" r="280" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".6"/>
+      <circle cx="720" cy="300" r="160" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".4"/>
+      <circle cx="580" cy="300" r="160" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".4"/>
+      <circle cx="860" cy="300" r="160" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".4"/>
+      <circle cx="720" cy="161" r="160" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".4"/>
+      <circle cx="720" cy="439" r="160" fill="none" stroke="rgba(201,168,76,1)" stroke-width=".4"/>
+    </svg>
+  </div>
+
+  <div style="position:relative;z-index:1;text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Our Mission ·</div>
+    <h2 class="section-zh reveal d1">我們的使命</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Where Ancient Wisdom Meets Modern Awakening</div>
+    <p class="section-desc reveal d3">
+      女兒國是一個神聖的空間，為所有尋求真知、療癒與靈性成長的靈魂而設。<br>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(201,184,232,.5)">
+        The Kingdom of True Daughters is a sacred sanctuary for souls seeking truth, healing, and spiritual awakening.
+      </span>
+    </p>
+  </div>
+
+  <div class="phil-pillars" style="position:relative;z-index:1">
+    <div class="pillar reveal d2">
+      <div class="pillar-char">真</div>
+      <div class="pillar-zh">真知</div>
+      <div class="pillar-en">TRUE KNOWLEDGE</div>
+      <div class="div-gold-sm"></div>
+      <p class="pillar-desc">植根於東方哲學與形而上學的深度智慧，引領你認識宇宙與自身的真實本質。</p>
+    </div>
+    <div class="pillar reveal d3">
+      <div class="pillar-char">善</div>
+      <div class="pillar-zh">善念</div>
+      <div class="pillar-en">PURE INTENTION</div>
+      <div class="div-gold-sm"></div>
+      <p class="pillar-desc">以愛與慈悲為核心的療癒之路，在每一次相遇中喚醒你最純粹的善意與力量。</p>
+    </div>
+    <div class="pillar reveal d4">
+      <div class="pillar-char">美</div>
+      <div class="pillar-zh">神聖之美</div>
+      <div class="pillar-en">DIVINE BEAUTY</div>
+      <div class="div-gold-sm"></div>
+      <p class="pillar-desc">成為你最真實、最完整的自己，在靈性覺醒的旅程中綻放你獨一無二的神聖之美。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ OFFERINGS ═══════════ -->
+<section id="offerings">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· What We Offer ·</div>
+    <h2 class="section-zh reveal d1">我們的服務</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Pathways to Your Sacred Awakening</div>
+  </div>
+
+  <div class="offerings-grid">
+    <div class="offering-card reveal d1">
+      <div class="offering-icon">✦</div>
+      <div class="offering-zh">靈性課程</div>
+      <div class="offering-en">SPIRITUAL COURSES</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">深度探索形而上學、能量學及東方哲學的系統性課程，從入門到進階，點亮你的靈性道路。</p>
+      <a href="#" class="offering-link">了解更多 <span>→</span></a>
+    </div>
+    <div class="offering-card reveal d2">
+      <div class="offering-icon">☽</div>
+      <div class="offering-zh">能量療癒</div>
+      <div class="offering-en">ENERGY HEALING</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">個人化能量療癒工作坊及私人療程，透過深層能量工作釋放阻塞，恢復身心靈的平衡與和諧。</p>
+      <a href="#" class="offering-link">了解更多 <span>→</span></a>
+    </div>
+    <div class="offering-card reveal d3">
+      <div class="offering-icon">✧</div>
+      <div class="offering-zh">靈性諮詢</div>
+      <div class="offering-en">SPIRITUAL CONSULTATIONS</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">靈性指導、命理分析及靈魂閱讀，為你的人生旅程提供深刻洞見，幫助你找到方向與清晰。</p>
+      <a href="#" class="offering-link">了解更多 <span>→</span></a>
+    </div>
+    <div class="offering-card reveal d2">
+      <div class="offering-icon">⊕</div>
+      <div class="offering-zh">神秘學研究</div>
+      <div class="offering-en">METAPHYSICAL STUDIES</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">深入研究形而上學、神聖幾何、星象及古老智慧傳承，開啟你對宇宙奧秘的深度理解。</p>
+      <a href="#" class="offering-link">了解更多 <span>→</span></a>
+    </div>
+    <div class="offering-card reveal d3">
+      <div class="offering-icon">✶</div>
+      <div class="offering-zh">智慧文庫</div>
+      <div class="offering-en">FREE RESOURCES</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">免費文章、冥想引導影片及學習資源，讓每一位靈魂都能踏上覺醒之旅，無論起點在哪。</p>
+      <a href="#" class="offering-link">立即探索 <span>→</span></a>
+    </div>
+    <div class="offering-card reveal d4">
+      <div class="offering-icon">❋</div>
+      <div class="offering-zh">神聖社群</div>
+      <div class="offering-en">SACRED COMMUNITY</div>
+      <div class="div-gold-sm"></div>
+      <p class="offering-desc">加入我們的全球靈性成長社群，在志同道合的姐妹們相伴下，共同踏上歸家的旅程。</p>
+      <a href="#" class="offering-link">加入我們 <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EVENTS ═══════════ -->
+<section id="events">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Upcoming Events ·</div>
+    <h2 class="section-zh reveal d1">即將舉行</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Join Us in Sacred Space</div>
+  </div>
+
+  <div class="events-grid">
+    <!-- Event 1 -->
+    <div class="event-card reveal d1">
+      <div class="event-img">
+        <div class="event-img-bg" style="background:radial-gradient(ellipse at 50% 40%,rgba(100,160,220,.35) 0%,rgba(60,10,120,.6) 45%,rgba(13,1,24,1) 100%)"></div>
+        <div class="event-img-overlay"></div>
+        <div class="event-date-badge">
+          <div class="event-date-day">12</div>
+          <div class="event-date-mon">MAY 2026</div>
+        </div>
+        <div class="event-tag">線上 Online</div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.22" viewBox="0 0 300 180" fill="none">
+          <circle cx="150" cy="80" r="68" stroke="rgba(201,168,76,1)" stroke-width=".8"/>
+          <circle cx="150" cy="80" r="48" stroke="rgba(201,168,76,1)" stroke-width=".6"/>
+          <circle cx="150" cy="80" r="28" stroke="rgba(201,220,255,1)" stroke-width=".6"/>
+          <circle cx="150" cy="80" r="10" fill="rgba(200,220,255,.25)"/>
+          <line x1="150" y1="12" x2="150" y2="148" stroke="rgba(201,168,76,.4)" stroke-width=".5"/>
+          <line x1="82"  y1="80" x2="218" y2="80" stroke="rgba(201,168,76,.4)" stroke-width=".5"/>
+        </svg>
+      </div>
+      <div class="event-body">
+        <div class="event-zh">滿月能量圓陣</div>
+        <div class="event-en">FULL MOON ENERGY CIRCLE</div>
+        <p class="event-detail">在滿月的神聖能量中，我們共同圍坐，釋放舊有模式，迎接新的可能性與豐盛。適合所有靈性修行者。</p>
+        <div class="event-meta">
+          <span class="event-type">FREE ✦ 免費</span>
+          <a href="#newsletter" class="event-register f-cinzel">立即報名</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card reveal d2">
+      <div class="event-img">
+        <div class="event-img-bg" style="background:radial-gradient(ellipse at 30% 50%,rgba(180,100,220,.4) 0%,rgba(80,5,100,.55) 50%,rgba(13,1,24,1) 100%)"></div>
+        <div class="event-img-overlay"></div>
+        <div class="event-date-badge">
+          <div class="event-date-day">25</div>
+          <div class="event-date-mon">MAY 2026</div>
+        </div>
+        <div class="event-tag">工作坊 Workshop</div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.22" viewBox="0 0 300 180" fill="none">
+          <polygon points="150,18 272,152 28,152" stroke="rgba(201,168,76,1)" stroke-width=".8"/>
+          <polygon points="150,45 245,145 55,145" stroke="rgba(201,168,76,.6)" stroke-width=".6"/>
+          <polygon points="150,72 218,138 82,138" stroke="rgba(220,180,255,.5)" stroke-width=".5"/>
+          <circle cx="150" cy="110" r="22" stroke="rgba(201,168,76,.5)" stroke-width=".6"/>
+        </svg>
+      </div>
+      <div class="event-body">
+        <div class="event-zh">形而上學入門工作坊</div>
+        <div class="event-en">METAPHYSICS FOUNDATIONS</div>
+        <p class="event-detail">全天深度工作坊，帶你踏入形而上學的神聖殿堂。探索宇宙法則、能量體系及靈性意識的基礎。</p>
+        <div class="event-meta">
+          <span class="event-type">付費 ✦ Paid</span>
+          <a href="#newsletter" class="event-register f-cinzel">立即報名</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="event-card reveal d3">
+      <div class="event-img">
+        <div class="event-img-bg" style="background:radial-gradient(ellipse at 70% 40%,rgba(220,150,80,.3) 0%,rgba(139,7,168,.5) 40%,rgba(13,1,24,1) 100%)"></div>
+        <div class="event-img-overlay"></div>
+        <div class="event-date-badge">
+          <div class="event-date-day">7</div>
+          <div class="event-date-mon">JUN 2026</div>
+        </div>
+        <div class="event-tag">密集課程 Intensive</div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.22" viewBox="0 0 300 180" fill="none">
+          <circle cx="150" cy="88" r="72" stroke="rgba(201,168,76,1)" stroke-width=".8"/>
+          <circle cx="116" cy="88" r="40" stroke="rgba(201,168,76,.7)" stroke-width=".6"/>
+          <circle cx="184" cy="88" r="40" stroke="rgba(201,168,76,.7)" stroke-width=".6"/>
+          <circle cx="150" cy="55" r="40" stroke="rgba(240,200,120,.5)" stroke-width=".6"/>
+          <circle cx="150" cy="121" r="40" stroke="rgba(240,200,120,.5)" stroke-width=".6"/>
+        </svg>
+      </div>
+      <div class="event-body">
+        <div class="event-zh">靈性覺醒密集課程</div>
+        <div class="event-en">SPIRITUAL AWAKENING INTENSIVE</div>
+        <p class="event-detail">兩天一夜的沉浸式靈性覺醒旅程，結合能量療癒、冥想、內在探索與集體療愈，深度轉化你的意識。</p>
+        <div class="event-meta">
+          <span class="event-type">付費 ✦ Paid</span>
+          <a href="#newsletter" class="event-register f-cinzel">立即報名</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WISDOM LIBRARY ═══════════ -->
+<section id="library">
+  <div style="text-align:center;padding:0 1rem">
+    <div class="section-label reveal">· Wisdom Library ·</div>
+    <h2 class="section-zh reveal d1">智慧文庫</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Knowledge for the Awakening Soul</div>
+  </div>
+
+  <div class="library-grid">
+    <div class="article-card reveal d1">
+      <div class="article-img">
+        <div class="article-img-bg" style="background:radial-gradient(ellipse at 40% 50%,rgba(160,20,200,.6) 0%,rgba(60,0,100,.5) 50%,rgba(13,1,24,1) 100%)"></div>
+        <div class="article-overlay"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18" viewBox="0 0 280 160" fill="none">
+          <circle cx="140" cy="75" r="60" stroke="rgba(201,168,76,1)" stroke-width=".7"/>
+          <circle cx="140" cy="75" r="38" stroke="rgba(201,168,76,1)" stroke-width=".5"/>
+          <circle cx="140" cy="75" r="18" stroke="rgba(220,190,255,1)" stroke-width=".5"/>
+          <line x1="80" y1="75" x2="200" y2="75" stroke="rgba(201,168,76,.5)" stroke-width=".5"/>
+          <line x1="140" y1="15" x2="140" y2="135" stroke="rgba(201,168,76,.5)" stroke-width=".5"/>
+        </svg>
+        <div class="article-cat">靈性探索 · Spirituality</div>
+      </div>
+      <div class="article-body">
+        <div class="article-zh">認識你的靈性本質</div>
+        <div class="article-en">Understanding Your Spiritual Nature</div>
+        <p class="article-excerpt">每個靈魂都是宇宙意識的獨特表達。當我們開始認識自己的靈性本質，就踏上了回歸本源的神聖旅程...</p>
+        <div class="article-footer">
+          <span class="article-date">2026年4月</span>
+          <a href="#" class="article-read f-cinzel">閱讀全文 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card reveal d2">
+      <div class="article-img">
+        <div class="article-img-bg" style="background:radial-gradient(ellipse at 60% 40%,rgba(20,140,120,.55) 0%,rgba(10,60,80,.5) 50%,rgba(13,1,24,1) 100%)"></div>
+        <div class="article-overlay"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18" viewBox="0 0 280 160" fill="none">
+          <polygon points="140,18 252,148 28,148" stroke="rgba(100,220,200,1)" stroke-width=".7"/>
+          <polygon points="140,40 222,140 58,140" stroke="rgba(201,168,76,.7)" stroke-width=".5"/>
+          <circle cx="140" cy="105" r="28" stroke="rgba(100,220,200,.8)" stroke-width=".5"/>
+          <circle cx="140" cy="105" r="14" stroke="rgba(201,168,76,.5)" stroke-width=".5"/>
+        </svg>
+        <div class="article-cat">能量療癒 · Healing</div>
+      </div>
+      <div class="article-body">
+        <div class="article-zh">能量療癒的科學與藝術</div>
+        <div class="article-en">The Science & Art of Energy Healing</div>
+        <p class="article-excerpt">能量療癒並非神秘或遙不可及。現代量子物理學已開始揭示古老療癒傳統背後的科學基礎，印證了能量無處不在...</p>
+        <div class="article-footer">
+          <span class="article-date">2026年3月</span>
+          <a href="#" class="article-read f-cinzel">閱讀全文 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-card reveal d3">
+      <div class="article-img">
+        <div class="article-img-bg" style="background:radial-gradient(ellipse at 50% 60%,rgba(180,130,30,.5) 0%,rgba(100,50,10,.45) 50%,rgba(13,1,24,1) 100%)"></div>
+        <div class="article-overlay"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18" viewBox="0 0 280 160" fill="none">
+          <circle cx="140" cy="78" r="62" stroke="rgba(201,168,76,1)" stroke-width=".7"/>
+          <circle cx="108" cy="78" r="36" stroke="rgba(201,168,76,.6)" stroke-width=".5"/>
+          <circle cx="172" cy="78" r="36" stroke="rgba(201,168,76,.6)" stroke-width=".5"/>
+          <circle cx="140" cy="47" r="36" stroke="rgba(240,200,100,.5)" stroke-width=".5"/>
+          <circle cx="140" cy="78" r="16" stroke="rgba(240,200,100,.7)" stroke-width=".5"/>
+        </svg>
+        <div class="article-cat">東方哲學 · Philosophy</div>
+      </div>
+      <div class="article-body">
+        <div class="article-zh">東方哲學中的女性智慧</div>
+        <div class="article-en">Feminine Wisdom in Eastern Philosophy</div>
+        <p class="article-excerpt">在道家、佛家及儒家傳統中，女性智慧一直是宇宙平衡的重要基石。陰的力量並非柔弱，而是深沉、包容與無限...</p>
+        <div class="article-footer">
+          <span class="article-date">2026年2月</span>
+          <a href="#" class="article-read f-cinzel">閱讀全文 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:3rem">
+    <a href="#" class="btn-outline f-cinzel reveal">探索全部文章 · View All Articles</a>
+  </div>
+</section>
+
+<!-- ═══════════ COMMUNITY / TESTIMONIALS ═══════════ -->
+<section id="community">
+  <div class="community-bg-glow"></div>
+  <div style="text-align:center;padding:0 1rem;position:relative;z-index:1">
+    <div class="section-label reveal">· Sacred Community ·</div>
+    <h2 class="section-zh reveal d1">靈魂見證</h2>
+    <div class="div-gold reveal d2"></div>
+    <div class="section-en reveal d2">Voices from the Kingdom</div>
+  </div>
+
+  <div class="testimonials" style="position:relative;z-index:1">
+    <div class="testi-card reveal d1">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">女兒國改變了我的生命。這裡不只是一個學習的地方，更是我真正回歸自己的聖殿。每一次上課，都是一次深深的靈魂喚醒，讓我重新找到了生命的意義與方向。</p>
+      <div class="testi-author">
+        <div class="testi-dot"></div>
+        <div>
+          <div class="testi-name">陳曉雯</div>
+          <div class="testi-role">SPIRITUAL STUDENT · TAIPEI</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">The Kingdom of True Daughters has profoundly transformed how I understand myself and the universe. The teachings are deeply rooted in wisdom yet accessible and healing. I found my truest self here.</p>
+      <div class="testi-author">
+        <div class="testi-dot"></div>
+        <div>
+          <div class="testi-name">Sarah M.</div>
+          <div class="testi-role">ENERGY HEALER · SINGAPORE</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d1" style="transition-delay:.2s">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">我從來沒有想到靈性教育可以如此系統、如此深入，又如此溫柔。女兒國讓我明白，真正的力量來自於真實的自己，而非外在的成就與認可。</p>
+      <div class="testi-author">
+        <div class="testi-dot"></div>
+        <div>
+          <div class="testi-name">林雅芳</div>
+          <div class="testi-role">METAPHYSICS STUDENT · HK</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d2" style="transition-delay:.3s">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Joining the Kingdom community was the most transformative decision I made. The blend of Eastern philosophy and modern energy work creates a unique, powerful pathway to awakening that I haven't found anywhere else.</p>
+      <div class="testi-author">
+        <div class="testi-dot"></div>
+        <div>
+          <div class="testi-name">Michelle T.</div>
+          <div class="testi-role">HEALER · MALAYSIA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="community-cta reveal" style="position:relative;z-index:1">
+    <div class="community-cta-zh">準備好踏上覺醒之旅了嗎？</div>
+    <div class="community-cta-en">Are you ready to return to your truest self?</div>
+    <a href="#newsletter" class="btn-primary f-cinzel">加入女兒國 · Join the Kingdom</a>
+  </div>
+</section>
+
+<!-- ═══════════ NEWSLETTER ═══════════ -->
+<section id="newsletter">
+  <div style="text-align:center;padding:0 1rem;margin-bottom:3rem">
+    <div class="section-label reveal">· Stay Connected ·</div>
+    <h2 class="section-zh reveal d1">加入女兒國</h2>
+    <div class="div-gold reveal d2"></div>
+  </div>
+
+  <div class="newsletter-box reveal d2">
+    <div class="newsletter-icon">✦</div>
+    <div class="f-noto" style="font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.4rem">接收最新靈性智慧</div>
+    <div class="f-cormorant" style="font-style:italic;font-size:1rem;color:rgba(201,184,232,.55);margin-bottom:.3rem">Receive Sacred Wisdom & Announcements</div>
+    <p style="font-family:'Noto Serif TC',serif;font-size:.82rem;color:rgba(201,184,232,.5);line-height:1.8;margin-top:.8rem">
+      訂閱我們的通訊，第一時間接收最新的靈性洞見、活動公告及免費靈性資源。
+    </p>
+    <form class="nl-form" onsubmit="handleSubscribe(event)">
+      <input class="nl-input" type="email" placeholder="您的電子郵件 · Your email address" required>
+      <button class="nl-btn" type="submit">訂閱</button>
+    </form>
+    <p class="nl-note">我們尊重您的隱私，絕不分享您的資訊。We respect your privacy.</p>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="f-logo" src="brand_assets/女兒國_logo.jpg" alt="女兒國">
+        <div class="footer-brand-zh">女兒國</div>
+        <div class="footer-brand-en">THE KINGDOM OF TRUE DAUGHTERS</div>
+        <p class="footer-tagline">回歸屬於你的真・善・美<br>
+          <span style="font-size:.72rem;font-family:'Cormorant Garamond',serif;font-style:italic;opacity:.7">Rediscover your truest self</span>
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">探索 EXPLORE</div>
+        <div class="footer-links">
+          <a href="#about"     class="footer-link">關於我們 · About</a>
+          <a href="#offerings" class="footer-link">服務項目 · Services</a>
+          <a href="#events"    class="footer-link">活動 · Events</a>
+          <a href="#library"   class="footer-link">智慧文庫 · Library</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">學習 LEARN</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">靈性課程 · Courses</a>
+          <a href="#" class="footer-link">能量療癒 · Healing</a>
+          <a href="#" class="footer-link">靈性諮詢 · Readings</a>
+          <a href="#" class="footer-link">神秘學 · Metaphysics</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">聯繫 CONNECT</div>
+        <div class="footer-links">
+          <a href="#newsletter" class="footer-link">訂閱通訊 · Newsletter</a>
+          <a href="#community"  class="footer-link">加入社群 · Community</a>
+          <a href="#"           class="footer-link">聯繫我們 · Contact</a>
+          <a href="#"           class="footer-link">合作夥伴 · Partners</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved<br>
+        <span style="opacity:.5;font-size:.6rem">THE KINGDOM IS WITHIN YOU</span>
+      </div>
+
+      <div class="footer-socials">
+        <!-- Instagram -->
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <!-- Facebook -->
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <!-- YouTube -->
+        <a href="#" class="social-btn" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" stroke="none" fill="currentColor"/>
+          </svg>
+        </a>
+        <!-- LINE -->
+        <a href="#" class="social-btn" aria-label="LINE" style="font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:0;color:rgba(201,184,232,.5)">LINE</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+/* ─── Navbar scroll ─── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ─── Mobile nav ─── */
+const mobileNav = document.getElementById('mobileNav');
+let mobileOpen = false;
+function toggleMobile() {
+  mobileOpen = !mobileOpen;
+  mobileNav.style.display = mobileOpen ? 'flex' : 'none';
+  requestAnimationFrame(() => mobileNav.classList.toggle('open', mobileOpen));
+}
+function closeMobile() {
+  mobileOpen = false;
+  mobileNav.classList.remove('open');
+  setTimeout(() => { mobileNav.style.display = 'none'; }, 400);
+}
+
+/* ─── Language toggle ─── */
+let isEn = false;
+const langBtn = document.getElementById('langBtn');
+function toggleLang() {
+  isEn = !isEn;
+  langBtn.textContent = isEn ? '中' : 'EN';
+  document.documentElement.lang = isEn ? 'en' : 'zh-Hant';
+}
+
+/* ─── Scroll reveal ─── */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+/* ─── Hero particles ─── */
+(function initParticles() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  class Particle {
+    constructor() { this.init() }
+    init() {
+      this.x    = Math.random() * W;
+      this.y    = Math.random() * H;
+      this.r    = Math.random() * 1.8 + .3;
+      this.base = Math.random() * .55 + .05;
+      this.op   = this.base;
+      this.spd  = Math.random() * .25 + .06;
+      this.ang  = Math.random() * Math.PI * 2;
+      this.dAng = (Math.random() - .5) * .012;
+      this.life = 0;
+      this.max  = Math.random() * 260 + 180;
+      this.gold = Math.random() > .45;
+    }
+    step() {
+      this.x += Math.cos(this.ang) * this.spd;
+      this.y += Math.sin(this.ang) * this.spd;
+      this.ang += this.dAng;
+      this.life++;
+      const t = this.life / this.max;
+      this.op = this.base * Math.sin(t * Math.PI);
+      if (this.life >= this.max) this.init();
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = this.gold
+        ? `rgba(201,168,76,${this.op})`
+        : `rgba(201,184,232,${this.op * .7})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.step(); p.draw(); });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ─── Newsletter submit ─── */
+function handleSubscribe(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const orig = btn.textContent;
+  btn.textContent = '✦ 已訂閱！';
+  btn.style.background = 'linear-gradient(135deg,rgba(201,168,76,.4),rgba(201,168,76,.2))';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+</body>
+</html>
