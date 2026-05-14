@@ -126,7 +126,8 @@
       font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
       border:1px solid rgba(201,168,76,.45);
       padding:.45rem 1.25rem;color:var(--gold-lt);
-      transition:background .3s,box-shadow .3s
+      transition:background .3s,box-shadow .3s;
+      white-space:nowrap
     }
     .nav-cta:hover { background:rgba(201,168,76,.12);box-shadow:0 0 18px rgba(201,168,76,.18) }
     .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px }
@@ -1169,6 +1170,10 @@
       /* Make sure side accents never intercept touches */
       .side-accent { pointer-events:none!important }
     }
+
+    @media (max-width:480px) {
+      .nav-cta { font-size:.65rem;padding:.4rem .8rem;letter-spacing:.06em }
+    }
   </style>
 </head>
 <body>
@@ -1209,10 +1214,10 @@
       </div>
     </div>
 
-    <a href="prices.html" class="nav-cta" style="margin-left:.8rem">價格 · Prices</a>
   </div>
 
   <div style="display:flex;align-items:center;gap:.8rem">
+    <a href="prices.html" class="nav-cta">價格 · Prices</a>
     <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
