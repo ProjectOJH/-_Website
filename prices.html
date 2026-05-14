@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務價格 · 女兒國 · The Kingdom of True Daughters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple:#8B07A8;--gold:#C9A84C;--gold-lt:#E8D89A;--gold-glow:#FFE066;
+      --void:#0D0118;--void-mid:#140829;--lavender:#C9B8E8;--cream:#F5EFD8;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--void)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(13,1,24,.95);backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(201,168,76,.18)}
+    .nav-logo{display:flex;align-items:center;gap:.9rem}
+    .nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,.35)}
+    .nav-logo-zh{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-logo-en{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;color:rgba(201,184,232,.6)}
+    .nav-back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;color:var(--lavender);
+      display:flex;align-items:center;gap:.5rem;transition:color .3s;min-height:44px;min-width:44px;
+      padding:.5rem}
+    .nav-back:hover{color:var(--gold-lt)}
+    .nav-back svg{transition:transform .3s}
+    .nav-back:hover svg{transform:translateX(-3px)}
+
+    /* DIVIDERS */
+    .div-gold{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem auto}
+    .div-gold-sm{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.5rem auto}
+
+    /* HERO */
+    .prices-hero{padding:10rem 2rem 5rem;text-align:center;
+      background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,7,168,.4) 0%,transparent 65%),
+                 linear-gradient(180deg,#0D0118 0%,#140829 100%)}
+    .prices-hero-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;color:var(--gold);opacity:.7;margin-bottom:.8rem}
+    .prices-hero-zh{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:.06em;
+      background:linear-gradient(135deg,#F5EFD8,#E8D89A,#FFE066,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .prices-hero-en{font-family:'Cinzel',serif;font-size:clamp(.7rem,1.5vw,.9rem);letter-spacing:.22em;color:rgba(201,184,232,.55);margin-top:.6rem}
+
+    /* SECTION */
+    .price-section{padding:5rem 2rem;max-width:1040px;margin:0 auto}
+    .ps-header{text-align:center;margin-bottom:3rem}
+    .ps-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;color:var(--gold);opacity:.7;margin-bottom:.6rem}
+    .ps-zh{font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;letter-spacing:.06em;color:var(--cream)}
+    .ps-en{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.18em;color:rgba(201,184,232,.45);margin-top:.4rem}
+
+    /* PRODUCT CARDS */
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .product-card{background:rgba(14,4,30,.65);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.15);overflow:hidden;display:flex;flex-direction:column}
+    .product-card-img{overflow:hidden;background:#050f05;position:relative}
+    .product-card-img.static-img{height:220px}
+    .product-card-img.static-img img{width:100%;height:100%;object-fit:contain;transition:transform .5s}
+    .product-card:hover .product-card-img.static-img img{transform:scale(1.04)}
+
+    /* Mini carousel inside card */
+    .card-carousel{position:relative}
+    .card-carousel .cc-track-wrap{overflow:hidden;background:#050f05;height:220px}
+    .card-carousel .cc-track{display:flex;transition:transform .4s cubic-bezier(.4,0,.2,1);height:100%}
+    .card-carousel .cc-slide{flex:0 0 100%;display:flex;align-items:center;justify-content:center;height:100%}
+    .card-carousel .cc-slide img{max-height:220px;width:auto;max-width:100%;object-fit:contain}
+    .cc-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+      width:32px;height:32px;border-radius:50%;
+      background:rgba(13,1,24,.7);backdrop-filter:blur(6px);
+      border:1px solid rgba(201,168,76,.3);color:var(--gold-lt);
+      font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+      transition:background .3s,border-color .3s}
+    .cc-btn:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.6)}
+    .cc-btn-prev{left:6px}
+    .cc-btn-next{right:6px}
+    .cc-dots{display:flex;justify-content:center;gap:.4rem;padding:.5rem 0;background:#050f05}
+    .cc-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.25);cursor:pointer;
+      border:none;transition:background .3s,transform .3s}
+    .cc-dot.active{background:var(--gold);transform:scale(1.35)}
+
+    .product-card-body{padding:1.5rem 1.4rem;flex:1;display:flex;flex-direction:column}
+    .product-name-zh{font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:500;color:var(--cream);margin-bottom:.15rem}
+    .product-name-en{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.15em;color:rgba(201,168,76,.6);margin-bottom:.7rem}
+    .product-desc{font-family:'Noto Serif TC',serif;font-size:.82rem;line-height:1.8;color:rgba(201,184,232,.65);margin-bottom:.7rem}
+    .product-desc-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;line-height:1.7;color:rgba(201,184,232,.4);margin-bottom:.7rem}
+    .product-price-block{margin-top:auto;padding-top:1rem;border-top:1px solid rgba(201,168,76,.12)}
+    .product-price-line{font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#FFE066);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      letter-spacing:.04em}
+    .product-price-note{font-family:'Noto Serif TC',serif;font-size:.72rem;color:rgba(201,184,232,.4);margin-top:.3rem}
+
+    /* Big Nose carousel */
+    .nose-mini-carousel{position:relative;margin-top:1.5rem;border:1px solid rgba(201,168,76,.12);background:#080512}
+    .nose-mini-carousel .carousel-track-wrap{overflow:hidden}
+    .nose-mini-carousel .carousel-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+    .nose-mini-carousel .carousel-slide{flex:0 0 100%;display:flex;align-items:center;justify-content:center;min-height:420px}
+    .nose-mini-carousel .carousel-slide img{max-height:420px;width:auto;max-width:100%;object-fit:contain}
+    .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+      width:40px;height:40px;border-radius:50%;
+      background:rgba(13,1,24,.8);backdrop-filter:blur(10px);
+      border:1px solid rgba(201,168,76,.3);color:var(--gold-lt);
+      font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+      transition:background .3s,border-color .3s}
+    .carousel-btn:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.6)}
+    .carousel-btn-prev{left:-20px}
+    .carousel-btn-next{right:-20px}
+    .carousel-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+    .carousel-dot{width:7px;height:7px;border-radius:50%;background:rgba(201,168,76,.25);
+      cursor:pointer;border:none;transition:background .3s,transform .3s}
+    .carousel-dot.active{background:var(--gold);transform:scale(1.35)}
+
+    /* PRICE TABLES */
+    .price-table-wrap{overflow-x:auto}
+    .price-table{width:100%;border-collapse:collapse;font-family:'Noto Serif TC',serif;font-size:.88rem}
+    .price-table th{text-align:left;padding:.8rem 1.2rem;
+      font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.18em;
+      color:var(--gold);border-bottom:1px solid rgba(201,168,76,.25);white-space:nowrap}
+    .price-table td{padding:.85rem 1.2rem;border-bottom:1px solid rgba(201,168,76,.07);vertical-align:top;line-height:1.6}
+    .price-table tr:last-child td{border-bottom:none}
+    .td-service{color:var(--cream);font-weight:500}
+    .td-service-en{display:block;font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;color:rgba(201,168,76,.55);margin-top:.2rem}
+    .td-price{white-space:nowrap;font-weight:500;font-size:.95rem;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .td-note{font-size:.78rem;color:rgba(201,184,232,.5);margin-top:.3rem;font-weight:300}
+    .table-group-header td{padding:.6rem 1.2rem .4rem;
+      font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;
+      color:rgba(201,168,76,.55);background:rgba(201,168,76,.04)}
+
+    /* WISH BOX */
+    .wish-box{display:flex;align-items:center;gap:2rem;
+      background:rgba(14,4,30,.65);border:1px solid rgba(201,168,76,.15);
+      padding:2rem;max-width:680px;margin:0 auto}
+    .wish-img{flex:0 0 200px;height:160px;overflow:hidden}
+    .wish-img img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+    .wish-title-zh{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.2rem}
+    .wish-title-en{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;color:rgba(201,168,76,.6);margin-bottom:.8rem}
+    .wish-price{font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:700;
+      background:linear-gradient(135deg,#E8D89A,#FFE066);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* BANK */
+    .bank-section{padding:5rem 2rem;background:linear-gradient(180deg,rgba(20,8,41,.9) 0%,var(--void) 100%);
+      border-top:1px solid rgba(201,168,76,.1)}
+    .bank-card{max-width:580px;margin:0 auto;background:rgba(14,4,30,.7);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.2);padding:2.5rem 3rem}
+    .bank-row{display:flex;align-items:baseline;gap:1rem;padding:.6rem 0;border-bottom:1px solid rgba(201,168,76,.07)}
+    .bank-row:last-child{border-bottom:none}
+    .bank-key{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.15em;color:rgba(201,168,76,.6);flex:0 0 130px}
+    .bank-val{font-family:'Noto Serif TC',serif;font-size:.95rem;color:var(--cream);font-weight:500}
+    .bank-acct{font-size:1.1rem;letter-spacing:.08em;background:linear-gradient(135deg,#E8D89A,#FFE066);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* LINE */
+    .line-section{padding:4rem 2rem 6rem;text-align:center;
+      background:linear-gradient(180deg,var(--void) 0%,#06000F 100%)}
+    .line-card{max-width:520px;margin:0 auto;background:rgba(14,4,30,.65);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.15);padding:2.5rem 2rem}
+    .line-icon-wrap{width:60px;height:60px;border-radius:16px;background:#06C755;
+      margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center}
+    .line-title-zh{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.3rem}
+    .line-title-en{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;color:rgba(201,184,232,.5);margin-bottom:1.2rem}
+    .line-note{font-family:'Noto Serif TC',serif;font-size:.88rem;line-height:1.85;color:rgba(201,184,232,.7);margin:.8rem 0}
+    .line-note-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;line-height:1.8;color:rgba(201,184,232,.4);margin-bottom:1.2rem}
+    .line-btn{display:inline-flex;align-items:center;gap:.7rem;
+      background:#06C755;color:#fff;
+      font-family:'Noto Serif TC',serif;font-size:.9rem;font-weight:500;
+      padding:.85rem 2rem;border-radius:6px;margin-top:.8rem;
+      transition:opacity .3s,transform .2s;min-height:44px}
+    .line-btn:hover{opacity:.88;transform:translateY(-2px)}
+
+    /* FOOTER */
+    .prices-footer{text-align:center;padding:2rem;border-top:1px solid rgba(201,168,76,.1);
+      font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.25)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      #nav{padding:.9rem 1.2rem}
+      .prices-hero{padding:8rem 1.2rem 4rem}
+      .price-section{padding:3.5rem 1.2rem}
+      .product-grid{grid-template-columns:1fr;gap:1.2rem}
+      .bank-card{padding:1.8rem 1.4rem}
+      .bank-row{flex-direction:column;gap:.2rem}
+      .bank-key{flex:none}
+      .wish-box{flex-direction:column;gap:1rem}
+      .wish-img{flex:none;width:100%;height:200px}
+      .carousel-btn-prev{left:-14px}
+      .carousel-btn-next{right:-14px}
+      .nose-mini-carousel .carousel-slide{min-height:320px}
+      .nose-mini-carousel .carousel-slide img{max-height:320px}
+      .line-card{padding:2rem 1.2rem}
+    }
+    @media(max-width:480px){
+      .price-table th,.price-table td{padding:.7rem .8rem;font-size:.8rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="./brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div style="display:flex;flex-direction:column;line-height:1.15">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+    返回 · Back
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="prices-hero">
+  <div class="prices-hero-label">· Service Pricing ·</div>
+  <h1 class="prices-hero-zh">服務價格</h1>
+  <div class="div-gold"></div>
+</div>
+
+<!-- ═══ 文創 ═══ -->
+<div style="background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 100%);padding-bottom:2rem">
+<div class="price-section">
+  <div class="ps-header">
+    <div class="ps-label">· Cultural Creations ·</div>
+    <div class="ps-zh">文創</div>
+    <div class="ps-en">SACRED OBJECTS FOR ABUNDANCE</div>
+    <div class="div-gold"></div>
+  </div>
+
+  <div class="product-grid">
+    <!-- 錢滾錢 -->
+    <div class="product-card">
+      <div class="product-card-img static-img contain">
+        <img src="./references/錢滾錢.png" alt="錢滾錢" loading="lazy" style="object-fit:contain">
+      </div>
+      <div class="product-card-body">
+        <div class="product-name-zh">錢滾錢</div>
+        <div class="product-name-en">MONEY BEGETS MONEY</div>
+        <p class="product-desc">象徵財富倍增與金錢動能，適合置於家中或工作空間。</p>
+        <p class="product-desc-en">Wealth that grows and multiplies — for home or workspace.</p>
+        <div class="product-price-block">
+          <div class="product-price-line">88000 + 8800 元 NTD</div>
+          <div class="product-price-note">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 錢滾錢框 — carousel of 3 frames -->
+    <div class="product-card">
+      <div class="product-card-img card-carousel" id="frameCarouselWrap">
+        <button class="cc-btn cc-btn-prev" onclick="ccMove('frame',-1)" aria-label="Previous">&#8249;</button>
+        <div class="cc-track-wrap">
+          <div class="cc-track" id="frameTrack">
+            <div class="cc-slide"><img src="./references/Frame%201.1.png" alt="錢滾錢框 一" loading="lazy"></div>
+            <div class="cc-slide"><img src="./references/Frame%202.1.png" alt="錢滾錢框 二" loading="lazy"></div>
+            <div class="cc-slide"><img src="./references/Frame%203.1.png" alt="錢滾錢框 三" loading="lazy"></div>
+          </div>
+        </div>
+        <button class="cc-btn cc-btn-next" onclick="ccMove('frame',1)" aria-label="Next">&#8250;</button>
+        <div class="cc-dots" id="frameDots"></div>
+      </div>
+      <div class="product-card-body">
+        <div class="product-name-zh">錢滾錢 框</div>
+        <div class="product-name-en">MONEY BEGETS MONEY · FRAMES</div>
+        <p class="product-desc">錢滾錢的框架版本，可自然融入家中或工作空間。</p>
+        <p class="product-desc-en">The framed version of 錢滾錢 — seamlessly integrates into any space.</p>
+        <div class="product-price-block">
+          <div class="product-price-line">8800 + 880 元 NTD</div>
+          <div class="product-price-note">一組包含 A3 + A4 框各一<br>Each set includes A3 + A4 frames</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 大鼻子系列框 -->
+    <div class="product-card">
+      <div class="product-card-img static-img">
+        <img src="./references/Nose/Nose%20Main.jpg" alt="大鼻子系列框" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="product-card-body">
+        <div class="product-name-zh">大鼻子系列框</div>
+        <div class="product-name-en">BIG NOSE SERIES · FRAMES</div>
+        <p class="product-desc">迎財迎富・拱尚衛藝術中心。</p>
+        <p class="product-desc-en">Welcome wealth · Big Nose Series by 拱尚衛藝術中心.</p>
+        <div class="product-price-block">
+          <div class="product-price-line">8800 + 880 元 NTD</div>
+          <div class="product-price-note">一組包含 A3 + A4 框各一<br>Each set includes A3 + A4 frames</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 大鼻子 Carousel -->
+  <div style="max-width:600px;margin:3.5rem auto 0">
+    <div style="text-align:center;margin-bottom:1.2rem">
+      <div class="ps-label">· Big Nose Series Gallery ·</div>
+      <div style="font-family:'Noto Serif TC',serif;font-size:.9rem;color:rgba(201,184,232,.55)">大鼻子系列作品</div>
+    </div>
+    <div class="nose-mini-carousel" id="priceCarousel">
+      <button class="carousel-btn carousel-btn-prev" onclick="pcMove(-1)" aria-label="Previous">&#8249;</button>
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="priceTrack">
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_1.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_2.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_6.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_7.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_8.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_9.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_10.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_11.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_12.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_13.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_14.jpg" alt="" loading="lazy"></div>
+          <div class="carousel-slide"><img src="./references/Nose/Nose%20Carousel/LINE_ALBUM_%E5%A4%A7%E9%BC%BB%E5%AD%90%E7%B3%BB%E5%88%97%20v2_260512_15.jpg" alt="" loading="lazy"></div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-btn-next" onclick="pcMove(1)" aria-label="Next">&#8250;</button>
+      <div class="carousel-dots" id="priceDots"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 占卜 ═══ -->
+<div style="background:linear-gradient(180deg,var(--void-mid) 0%,var(--void) 100%)">
+<div class="price-section">
+  <div class="ps-header">
+    <div class="ps-label">· Readings ·</div>
+    <div class="ps-zh">占卜 · 命相</div>
+    <div class="ps-en">DIVINATION &amp; DESTINY READINGS</div>
+    <div class="div-gold"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;margin-bottom:2rem">
+    <div style="overflow:hidden;border:1px solid rgba(201,168,76,.1)">
+      <img src="./references/TarotReading.jpg" alt="塔羅" style="width:100%;height:200px;object-fit:cover;object-position:center 30%;display:block">
+    </div>
+    <div style="overflow:hidden;border:1px solid rgba(201,168,76,.1)">
+      <img src="./references/IChingReading.jpg" alt="易經" style="width:100%;height:200px;object-fit:cover;object-position:center 20%;display:block">
+    </div>
+  </div>
+
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>服務 · Service</th>
+          <th>價格 · Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-group-header"><td colspan="2">塔羅 · Tarot</td></tr>
+        <tr>
+          <td><span class="td-service">塔羅占卜<span class="td-service-en">Tarot Reading · One Question</span></span></td>
+          <td class="td-price">$880</td>
+        </tr>
+        <tr>
+          <td><span class="td-service">塔羅入會方案<span class="td-service-en">Tarot Membership Package</span></span></td>
+          <td class="td-price">$8800</td>
+        </tr>
+        <tr>
+          <td><span class="td-service">與鳳凰國師共同輔導<span class="td-service-en">Joint Guidance with Phoenix Nation Master</span></span></td>
+          <td class="td-price">$12000</td>
+        </tr>
+        <tr class="table-group-header"><td colspan="2">易經 · I Ching</td></tr>
+        <tr>
+          <td><span class="td-service">易經占卜<span class="td-service-en">I Ching Reading · One Question</span></span></td>
+          <td class="td-price">$880</td>
+        </tr>
+        <tr>
+          <td><span class="td-service">易經入會方案<span class="td-service-en">I Ching Membership Package</span></span></td>
+          <td class="td-price">$8800</td>
+        </tr>
+        <tr>
+          <td><span class="td-service">與鳳凰國師共同輔導<span class="td-service-en">Joint Guidance with Phoenix Nation Master</span></span></td>
+          <td class="td-price">$12000</td>
+        </tr>
+        <tr class="table-group-header"><td colspan="2">命相 · Destiny Reading</td></tr>
+        <tr>
+          <td><span class="td-service">鳳凰國師命相<span class="td-service-en">Phoenix Nation Master Destiny Reading · 60 min</span></span></td>
+          <td class="td-price">$3600</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 療癒 ═══ -->
+<div style="background:linear-gradient(180deg,var(--void) 0%,var(--void-mid) 100%)">
+<div class="price-section">
+  <div class="ps-header">
+    <div class="ps-label">· Healings ·</div>
+    <div class="ps-zh">療癒</div>
+    <div class="ps-en">ENERGY HEALING SERVICES</div>
+    <div class="div-gold"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem">
+    <div style="overflow:hidden;border:1px solid rgba(201,168,76,.1)">
+      <img src="./references/KnifeHealing.jpg" alt="刀療" style="width:100%;height:190px;object-fit:cover;object-position:center 20%;display:block">
+    </div>
+    <div style="overflow:hidden;border:1px solid rgba(201,168,76,.1)">
+      <img src="./references/Phytoncides.jpg" alt="芬多精" style="width:100%;height:190px;object-fit:cover;display:block">
+    </div>
+  </div>
+
+  <div class="price-table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>時長 · Duration</th>
+          <th>價格 · Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-service">30 分鐘<span class="td-service-en">30 Minutes</span></span></td>
+          <td class="td-price">$880</td>
+        </tr>
+        <tr>
+          <td><span class="td-service">60 分鐘<span class="td-service-en">60 Minutes</span></span></td>
+          <td class="td-price">$1800</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="td-service">十堂療程<span class="td-service-en">10-Session Package</span></span>
+            <div class="td-note">平均 $1500／次・需額外加祭改符令 $440<br><span style="font-family:'Cormorant Garamond',serif;font-style:italic">Avg. $1500/session · Additional talisman fee $440</span></div>
+          </td>
+          <td class="td-price">$15000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- ═══ 祈願 ═══ -->
+<div style="background:linear-gradient(180deg,var(--void-mid) 0%,var(--void) 100%)">
+<div class="price-section">
+  <div class="ps-header">
+    <div class="ps-label">· Wish Making ·</div>
+    <div class="ps-zh">祈願</div>
+    <div class="ps-en">WISH UPON A METEORITE</div>
+    <div class="div-gold"></div>
+  </div>
+
+  <div class="wish-box">
+    <div class="wish-img">
+      <img src="./references/meteorite.jpg" alt="隕石祈願">
+    </div>
+    <div>
+      <div class="wish-title-zh">隕石祈願</div>
+      <div class="wish-title-en">WISH UPON A METEORITE</div>
+      <div class="wish-price">自由樂捐</div>
+      <div style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:rgba(201,168,76,.5);margin-top:.3rem">Give what your heart feels is right</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══ BANK ═══ -->
+<div class="bank-section">
+  <div style="text-align:center;margin-bottom:2.5rem">
+    <div class="ps-label">· Payment ·</div>
+    <div class="ps-zh">銀行匯款資訊</div>
+    <div class="ps-en">BANK TRANSFER DETAILS</div>
+    <div class="div-gold"></div>
+  </div>
+  <div class="bank-card">
+    <div class="bank-row">
+      <span class="bank-key">銀行 · Bank</span>
+      <span class="bank-val">聯邦銀行（Union Bank of Taiwan）</span>
+    </div>
+    <div class="bank-row">
+      <span class="bank-key">銀行代號 · Code</span>
+      <span class="bank-val bank-acct">803</span>
+    </div>
+    <div class="bank-row">
+      <span class="bank-key">戶名 · Account Name</span>
+      <span class="bank-val">鳳凰國際產業有限公司</span>
+    </div>
+    <div class="bank-row">
+      <span class="bank-key">帳號 · Account No.</span>
+      <span class="bank-val bank-acct">006-10-3020276</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ LINE ═══ -->
+<div class="line-section">
+  <div class="line-card">
+    <div class="line-icon-wrap" style="background:none;padding:0">
+      <img src="./brand_assets/Line%20Logo.jpg" alt="LINE" style="width:60px;height:60px;border-radius:16px;object-fit:cover">
+    </div>
+    <div class="line-title-zh">加入女兒國官方 LINE</div>
+    <div class="line-title-en">ADD OUR OFFICIAL LINE ACCOUNT</div>
+    <div class="div-gold-sm"></div>
+    <p class="line-note">完成銀行匯款後，請加入官方 LINE 確認付款並預約服務時間。<br>我們將盡快回覆。</p>
+    <p class="line-note-en">After your bank transfer, add our LINE to confirm payment and book your session.<br>We'll get back to you as soon as possible.</p>
+    <a href="https://lin.ee/RGOOSXa" target="_blank" rel="noopener" class="line-btn">
+      <img src="./brand_assets/Line%20Logo.jpg" alt="LINE" style="width:22px;height:22px;border-radius:6px;object-fit:cover">
+      加入官方 LINE · Add LINE
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="prices-footer">© 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved</div>
+
+<script>
+/* ─── Frame card mini-carousel ─── */
+const cardCarousels = {};
+function initCardCarousel(id, trackId, dotsId) {
+  const track = document.getElementById(trackId);
+  const dotsC = document.getElementById(dotsId);
+  if (!track) return;
+  const slides = track.querySelectorAll('.cc-slide');
+  const total = slides.length;
+  let cur = 0, timer;
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'cc-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label', 'Slide '+(i+1));
+    d.onclick = () => goTo(i);
+    dotsC.appendChild(d);
+  });
+  function goTo(n) {
+    cur = ((n%total)+total)%total;
+    track.style.transform = `translateX(-${cur*100}%)`;
+    dotsC.querySelectorAll('.cc-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  }
+  cardCarousels[id] = { goTo, getCur: ()=>cur };
+  function reset() { clearInterval(timer); timer=setInterval(()=>goTo(cur+1),3500); }
+  reset();
+  const wrap = track.closest('.cc-track-wrap');
+  let tx=0;
+  wrap.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  wrap.addEventListener('touchend',e=>{
+    if(Math.abs(e.changedTouches[0].clientX-tx)>35){goTo(cur+(e.changedTouches[0].clientX<tx?1:-1));reset();}
+  },{passive:true});
+}
+window.ccMove = function(id, dir) {
+  const c = cardCarousels[id];
+  if (c) c.goTo(c.getCur()+dir);
+};
+initCardCarousel('frame','frameTrack','frameDots');
+
+/* ─── Big Nose carousel ─── */
+(function(){
+  const track=document.getElementById('priceTrack');
+  const dotsC=document.getElementById('priceDots');
+  if(!track)return;
+  const slides=track.querySelectorAll('.carousel-slide');
+  const total=slides.length;
+  let cur=0,timer;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='carousel-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.onclick=()=>goTo(i);
+    dotsC.appendChild(d);
+  });
+  function goTo(n){
+    cur=((n%total)+total)%total;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dotsC.querySelectorAll('.carousel-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  }
+  window.pcMove=function(dir){goTo(cur+dir);reset();};
+  function reset(){clearInterval(timer);timer=setInterval(()=>goTo(cur+1),4500);}
+  reset();
+  const wrap=track.closest('.carousel-track-wrap');
+  let tx=0;
+  wrap.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  wrap.addEventListener('touchend',e=>{
+    if(Math.abs(e.changedTouches[0].clientX-tx)>40)pcMove(e.changedTouches[0].clientX<tx?1:-1);
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
