@@ -61,13 +61,13 @@
       position:fixed;top:0;left:0;right:0;z-index:200;
       padding:1.1rem 2.5rem;
       display:flex;align-items:center;justify-content:space-between;
-      transition:background .4s,backdrop-filter .4s,border-color .4s;
-      border-bottom:1px solid transparent
+      background:rgba(13,1,24,.82);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(201,168,76,.12);
+      transition:background .4s,border-color .4s
     }
     #nav.scrolled {
-      background:rgba(13,1,24,.92);
-      backdrop-filter:blur(22px);
-      border-color:rgba(201,168,76,.18)
+      background:rgba(13,1,24,.96);
+      border-color:rgba(201,168,76,.22)
     }
     .nav-logo { display:flex;align-items:center;gap:.9rem }
     .nav-logo img.logo-mark {
@@ -83,7 +83,7 @@
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
     }
     .nav-logo-en { font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;color:rgba(201,184,232,.65) }
-    .nav-links { display:flex;align-items:center;gap:2.2rem }
+    .nav-links { display:flex;align-items:center;gap:2.2rem;margin-left:auto;padding-right:1.2rem }
     .nav-link {
       font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
       color:var(--lavender);position:relative;transition:color .3s
