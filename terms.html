@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消費者權益與服務條款 · 女兒國</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple:#8B07A8;--gold:#C9A84C;--gold-lt:#E8D89A;
+      --void:#0D0118;--void-mid:#140829;--lavender:#C9B8E8;--cream:#F5EFD8;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--void)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(13,1,24,.92);backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(201,168,76,.18)}
+    .nav-logo{display:flex;align-items:center;gap:.9rem}
+    .nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;
+      border:1px solid rgba(201,168,76,.35)}
+    .nav-logo-zh{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-logo-en{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;
+      color:rgba(201,184,232,.6)}
+    .nav-back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;
+      color:var(--lavender);display:flex;align-items:center;gap:.5rem;
+      transition:color .3s;min-height:44px;padding:.5rem}
+    .nav-back:hover{color:var(--gold-lt)}
+    .nav-back svg{transition:transform .3s}
+    .nav-back:hover svg{transform:translateX(-3px)}
+
+    /* HERO */
+    .terms-hero{padding:9rem 2rem 4rem;text-align:center;
+      background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,7,168,.3) 0%,transparent 65%),
+                 linear-gradient(180deg,#0D0118 0%,#140829 100%)}
+    .terms-hero-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;
+      color:var(--gold);opacity:.7;margin-bottom:.7rem}
+    .terms-hero-zh{font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,3.5vw,2.2rem);
+      font-weight:700;letter-spacing:.05em;
+      background:linear-gradient(135deg,#F5EFD8,#E8D89A,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+      line-height:1.3;margin-bottom:.5rem}
+    .terms-hero-en{font-family:'Cinzel',serif;font-size:clamp(.62rem,1.2vw,.78rem);
+      letter-spacing:.15em;color:rgba(201,184,232,.45);line-height:1.7}
+    .div-gold{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      margin:1.2rem auto}
+
+    /* CONTENT */
+    .terms-body{max-width:800px;margin:0 auto;padding:3rem 2rem 6rem}
+
+    /* Section block */
+    .terms-section{margin-bottom:3.5rem}
+    .terms-section-title{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem;
+      padding-bottom:.8rem;border-bottom:1px solid rgba(201,168,76,.15)}
+    .ts-num{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;
+      color:var(--gold);opacity:.7}
+    .ts-zh{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:700;
+      color:var(--cream)}
+    .ts-en{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.15em;
+      color:rgba(201,184,232,.4)}
+
+    /* Clause rows */
+    .clause{margin-bottom:1.1rem}
+    .clause-zh{font-family:'Noto Serif TC',serif;font-size:.92rem;line-height:1.9;
+      color:rgba(201,184,232,.85)}
+    .clause-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;
+      line-height:1.8;color:rgba(201,184,232,.42);margin-top:.15rem}
+
+    /* Footer */
+    .terms-footer{text-align:center;padding:2rem;border-top:1px solid rgba(201,168,76,.1);
+      font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.25)}
+    .terms-footer a{color:rgba(201,168,76,.45);margin:0 .5rem;transition:color .3s}
+    .terms-footer a:hover{color:var(--gold-lt)}
+
+    /* Responsive */
+    @media(max-width:600px){
+      #nav{padding:.9rem 1.2rem}
+      .terms-body{padding:2rem 1.2rem 4rem}
+      .terms-hero{padding:8rem 1.2rem 3rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="./brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div style="display:flex;flex-direction:column;line-height:1.15">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+    </svg>
+    返回 · Back
+  </a>
+</nav>
+
+<div class="terms-hero">
+  <div class="terms-hero-label">· Legal & Consumer Information ·</div>
+  <h1 class="terms-hero-zh">消費者權益、服務條款<br>隱私權政策與退款政策</h1>
+  <div class="terms-hero-en">
+    Consumer Rights · Terms of Service · Privacy Policy · Refund Policy
+  </div>
+  <div class="div-gold"></div>
+</div>
+
+<div class="terms-body">
+
+  <!-- 一、消費者權益 -->
+  <div class="terms-section">
+    <div class="terms-section-title">
+      <span class="ts-num">一</span>
+      <span class="ts-zh">消費者權益</span>
+      <span class="ts-en">Consumer Rights</span>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">女兒國致力於提供透明、尊重且值得信賴的服務體驗。</div>
+      <div class="clause-en">Kingdom of True Daughters is committed to providing a transparent, respectful, and trustworthy customer experience.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">消費者有權於購買前了解服務內容、價格與活動資訊。</div>
+      <div class="clause-en">Customers have the right to receive clear information regarding services, pricing, and event details before purchase.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">消費者可依照本平台規範申請退款、改期或相關客服協助。</div>
+      <div class="clause-en">Customers may request refunds, rescheduling, or customer support according to platform policies.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">本平台重視個人資料保護與合理客戶服務。</div>
+      <div class="clause-en">We value personal data protection and reasonable customer support.</div>
+    </div>
+  </div>
+
+  <!-- 二、服務條款 -->
+  <div class="terms-section">
+    <div class="terms-section-title">
+      <span class="ts-num">二</span>
+      <span class="ts-zh">服務條款</span>
+      <span class="ts-en">Terms of Service</span>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">女兒國提供文化、教育、工作坊、活動、諮詢、身心放鬆與文創商品等相關服務。</div>
+      <div class="clause-en">Kingdom of True Daughters provides cultural, educational, workshop, consultation, wellness, and creative product-related services.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">部分活動或服務需於確認預約前完成付款。</div>
+      <div class="clause-en">Certain services or events may require payment before confirmation.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">所有價格皆以新台幣（NTD）為主，除另有說明外。</div>
+      <div class="clause-en">All prices are listed in New Taiwan Dollars (NTD) unless otherwise specified.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">參與者應提供正確資料並以尊重態度參與活動與服務。</div>
+      <div class="clause-en">Customers agree to provide accurate information and participate respectfully in services and events.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">本平台提供之內容以個人成長、文化探索、一般放鬆與生活體驗為目的，不構成醫療、法律、心理或財務建議，亦不保證特定結果。</div>
+      <div class="clause-en">Services are intended for personal growth, cultural exploration, relaxation, and general wellness purposes only, and do not constitute medical, legal, psychological, or financial advice.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">本平台保留因營運需求調整活動內容、時間或安排之權利。</div>
+      <div class="clause-en">We reserve the right to modify schedules, arrangements, or service details when necessary.</div>
+    </div>
+  </div>
+
+  <!-- 三、隱私權政策 -->
+  <div class="terms-section">
+    <div class="terms-section-title">
+      <span class="ts-num">三</span>
+      <span class="ts-zh">隱私權政策</span>
+      <span class="ts-en">Privacy Policy</span>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">本平台可能蒐集姓名、電話、電子郵件、LINE ID 與付款相關資訊。</div>
+      <div class="clause-en">We may collect customer information including names, phone numbers, email addresses, LINE IDs, and payment-related information.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">蒐集資料僅用於預約、付款、客服聯繫、活動通知與內部管理用途。</div>
+      <div class="clause-en">Collected information is used only for bookings, payment processing, customer communication, event updates, and internal administration.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">本平台不會任意販售或提供個人資料予未經授權之第三方。</div>
+      <div class="clause-en">We do not sell or intentionally share customer data with unauthorized third parties.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">部分資訊可能透過第三方支付或通訊平台進行安全處理。</div>
+      <div class="clause-en">Some information may be securely processed through third-party payment or communication providers.</div>
+    </div>
+  </div>
+
+  <!-- 四、退款政策 -->
+  <div class="terms-section">
+    <div class="terms-section-title">
+      <span class="ts-num">四</span>
+      <span class="ts-zh">退款政策</span>
+      <span class="ts-en">Refund Policy</span>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">活動與工作坊如於活動開始七日前取消，可視情況申請退款或保留名額。</div>
+      <div class="clause-en">Cancellations made at least 7 days before an event may qualify for refunds or credit transfer.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">活動開始前七日內取消者無法退款。</div>
+      <div class="clause-en">Cancellations made within 7 days of the event are not refundable.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">若因主辦方因素取消活動，將提供退款或改期方案。</div>
+      <div class="clause-en">If an event is cancelled by the organizer, customers will receive a refund or transfer option.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">數位內容或已開通之線上服務原則上不提供退款。</div>
+      <div class="clause-en">Digital products or accessed online content are generally non-refundable.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">若收到損壞或錯誤商品，請於七日內聯繫客服協助處理。</div>
+      <div class="clause-en">Customers may contact support within 7 days for damaged or incorrect physical products.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="terms-footer">
+  © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved
+  &ensp;·&ensp;
+  <a href="index.html">首頁 Home</a>
+  <a href="prices.html">服務價格 Prices</a>
+</div>
+
+</body>
+</html>

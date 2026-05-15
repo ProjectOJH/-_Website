@@ -1172,7 +1172,10 @@
     }
 
     @media (max-width:480px) {
-      .nav-cta { font-size:.65rem;padding:.4rem .8rem;letter-spacing:.06em }
+      .nav-cta { font-size:.58rem;padding:.35rem .6rem;letter-spacing:.04em }
+    }
+    @media (max-width:360px) {
+      .nav-cta { font-size:.52rem;padding:.3rem .5rem }
     }
   </style>
 </head>
@@ -1188,7 +1191,8 @@
   <a href="#readings" class="nav-link f-cinzel" onclick="closeMobile()">占卜</a>
   <a href="#healings" class="nav-link f-cinzel" onclick="closeMobile()">療癒</a>
   <a href="#wishes"   class="nav-link f-cinzel" onclick="closeMobile()">祈願</a>
-  <a href="prices.html" class="nav-link f-cinzel" onclick="closeMobile()">價格</a>
+  <a href="prices.html" class="nav-link f-cinzel" onclick="closeMobile()">價格 · Prices</a>
+  <a href="terms.html" class="nav-link f-cinzel" onclick="closeMobile()">條款 · Terms</a>
 </div>
 
 <!-- ═══════════ NAVBAR ═══════════ -->
@@ -1218,6 +1222,7 @@
 
   <div style="display:flex;align-items:center;gap:.8rem">
     <a href="prices.html" class="nav-cta">價格 · Prices</a>
+    <a href="terms.html" class="nav-cta">條款 · Terms</a>
     <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
@@ -1602,7 +1607,8 @@
     <div class="footer-bottom">
       <div class="footer-copy">
         © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved<br>
-        <span style="opacity:.5;font-size:.6rem">THE KINGDOM IS WITHIN YOU</span>
+        <span style="opacity:.5;font-size:.6rem">THE KINGDOM IS WITHIN YOU</span><br>
+        <a href="terms.html" style="opacity:.45;font-size:.6rem;color:rgba(201,168,76,.5);text-decoration:none;letter-spacing:.08em;transition:opacity .3s" onmouseover="this.style.opacity=.85" onmouseout="this.style.opacity=.45">消費者權益・服務條款・隱私權政策・退款政策</a>
       </div>
 
       <div class="footer-socials">
