@@ -204,6 +204,52 @@
     @media(max-width:480px){
       .price-table th,.price-table td{padding:.7rem .8rem;font-size:.8rem}
     }
+
+    /* ── Service detail cards (type / validity / booking) ── */
+    .svc-detail-grid {
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1rem;margin-top:1.8rem
+    }
+    .svc-detail-card {
+      background:rgba(14,4,30,.55);backdrop-filter:blur(12px);
+      border:1px solid rgba(201,168,76,.12);
+      padding:1.3rem 1.4rem
+    }
+    .sdc-name-zh {
+      font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:500;
+      color:var(--cream);margin-bottom:.15rem
+    }
+    .sdc-name-en {
+      font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.14em;
+      color:rgba(201,168,76,.55);margin-bottom:.7rem
+    }
+    .attr-badge {
+      display:inline-block;font-family:'Noto Serif TC',serif;font-size:.72rem;
+      padding:.2rem .7rem;border-radius:3px;margin-bottom:.75rem
+    }
+    .attr-appt  { background:rgba(80,130,220,.12);color:rgba(170,200,255,.8);border:1px solid rgba(80,130,220,.25) }
+    .attr-sub   { background:rgba(139,7,168,.14); color:rgba(210,170,240,.8);border:1px solid rgba(139,7,168,.28) }
+    .attr-store { background:rgba(201,168,76,.1); color:rgba(230,200,110,.85);border:1px solid rgba(201,168,76,.28) }
+    .sdc-validity {
+      font-family:'Noto Serif TC',serif;font-size:.78rem;
+      color:var(--gold-lt);margin-bottom:.15rem;line-height:1.6
+    }
+    .sdc-validity-en {
+      font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:.78rem;color:rgba(201,184,232,.4);margin-bottom:.6rem;line-height:1.6
+    }
+    .sdc-note {
+      font-family:'Noto Serif TC',serif;font-size:.78rem;
+      color:rgba(201,184,232,.62);line-height:1.75
+    }
+    .sdc-note-en {
+      font-family:'Cormorant Garamond',serif;font-style:italic;
+      font-size:.78rem;color:rgba(201,184,232,.38);line-height:1.7;
+      display:block;margin-top:.15rem
+    }
+    @media(max-width:600px){
+      .svc-detail-grid { grid-template-columns:1fr }
+    }
   </style>
 </head>
 <body>
@@ -301,6 +347,7 @@
     </div>
   </div>
 
+
   <!-- 大鼻子 Carousel -->
   <div style="max-width:600px;margin:3.5rem auto 0">
     <div style="text-align:center;margin-bottom:1.2rem">
@@ -329,6 +376,24 @@
       <div class="carousel-dots" id="priceDots"></div>
     </div>
   </div>
+
+  <!-- 取件與配送 -->
+  <div class="svc-detail-card" style="max-width:700px;margin:2rem auto 0">
+    <div class="sdc-name-zh">取件與配送方式</div>
+    <div class="sdc-name-en">PICKUP &amp; DELIVERY</div>
+    <span class="attr-badge attr-appt" style="margin-top:.5rem">單次購買 · One-Time Purchase</span>
+    <div class="sdc-note">
+      ▸ 現場取件：台北市信義區信義路5段150巷499號 B1<br>
+      ▸ 宅配到府：運費另計<br>
+      付款後請透過官方 LINE 聯繫安排取件或寄送事宜
+      <span class="sdc-note-en">
+        ▸ In-store pickup: No. 499, Lane 150, Xinyi Rd Sec. 5, Xinyi District, Taipei (B1F)<br>
+        ▸ Home delivery available — shipping fees apply<br>
+        Please contact via official LINE after payment to arrange pickup or delivery
+      </span>
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -381,6 +446,31 @@
       </tbody>
     </table>
   </div>
+
+  <!-- 服務屬性與效期 -->
+  <div class="svc-detail-grid">
+    <div class="svc-detail-card">
+      <div class="sdc-name-zh">單次占卜（塔羅・易經）</div>
+      <div class="sdc-name-en">ONE-TIME READING · TAROT / I CHING</div>
+      <span class="attr-badge attr-appt">預約制 · By Appointment</span>
+      <div class="sdc-validity">最長履約效期：自購買日起 30 天內有效</div>
+      <div class="sdc-validity-en">Valid for 30 days from date of purchase</div>
+      <div class="sdc-note">付款後透過官方 LINE 預約
+        <span class="sdc-note-en">Book via official LINE after payment</span>
+      </div>
+    </div>
+    <div class="svc-detail-card">
+      <div class="sdc-name-zh">入會方案</div>
+      <div class="sdc-name-en">MEMBERSHIP PACKAGE</div>
+      <span class="attr-badge attr-sub">訂閱制 · Subscription-Based</span>
+      <div class="sdc-validity">最長履約效期：自購買日起 12 個月內有效</div>
+      <div class="sdc-validity-en">Valid for 12 months from date of purchase</div>
+      <div class="sdc-note">不需固定排程，隨時透過官方 LINE 聯繫預約即可
+        <span class="sdc-note-en">No fixed schedule — contact via LINE whenever you're ready</span>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -428,6 +518,31 @@
       </tbody>
     </table>
   </div>
+
+  <!-- 服務屬性與效期 -->
+  <div class="svc-detail-grid">
+    <div class="svc-detail-card">
+      <div class="sdc-name-zh">單次療程</div>
+      <div class="sdc-name-en">SINGLE SESSION</div>
+      <span class="attr-badge attr-appt">預約制 · By Appointment</span>
+      <div class="sdc-validity">最長履約效期：自購買日起 30 天內有效</div>
+      <div class="sdc-validity-en">Valid for 30 days from date of purchase</div>
+      <div class="sdc-note">30 分鐘 $880 ／ 60 分鐘 $1,800<br>付款後透過官方 LINE 預約
+        <span class="sdc-note-en">Book via official LINE after payment</span>
+      </div>
+    </div>
+    <div class="svc-detail-card">
+      <div class="sdc-name-zh">十堂療程</div>
+      <div class="sdc-name-en">10-SESSION PACKAGE</div>
+      <span class="attr-badge attr-store">儲值式 · Prepaid Package</span>
+      <div class="sdc-validity">最長履約效期：自購買日起 6 個月內使用完畢</div>
+      <div class="sdc-validity-en">To be used within 6 months from date of purchase</div>
+      <div class="sdc-note">依自己的步調安排，想預約時透過官方 LINE 聯繫即可<br>療程不可轉讓
+        <span class="sdc-note-en">Arrange at your own pace via LINE · Sessions are non-transferable</span>
+      </div>
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -452,6 +567,15 @@
       <div style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:rgba(201,168,76,.5);margin-top:.3rem">Give what your heart feels is right</div>
     </div>
   </div>
+  <div class="svc-detail-card" style="max-width:660px;margin:1.5rem auto 0">
+    <span class="attr-badge attr-appt">預約制 · By Appointment</span>
+    <div class="sdc-validity">最長履約效期：樂捐性質，不設使用期限</div>
+    <div class="sdc-validity-en">Donation-based · No expiry date</div>
+    <div class="sdc-note">一次性儀式體驗，採自由樂捐形式<br>請透過官方 LINE 聯繫預約
+      <span class="sdc-note-en">One-time ritual experience · Donation-based<br>Please contact via official LINE to book</span>
+    </div>
+  </div>
+
 </div>
 </div>
 
