@@ -1177,6 +1177,11 @@
     @media (max-width:360px) {
       .nav-cta { font-size:.52rem;padding:.3rem .5rem }
     }
+    @media (max-width:560px) {
+      /* Only one pinned CTA fits next to the logo + hamburger at phone widths;
+         Events & Terms stay reachable via the hamburger's mobile-nav list. */
+      .nav-cta-secondary { display:none }
+    }
   </style>
 </head>
 <body>
@@ -1191,6 +1196,7 @@
   <a href="#readings" class="nav-link f-cinzel" onclick="closeMobile()">占卜</a>
   <a href="#healings" class="nav-link f-cinzel" onclick="closeMobile()">療癒</a>
   <a href="#wishes"   class="nav-link f-cinzel" onclick="closeMobile()">祈願</a>
+  <a href="activities.html" class="nav-link f-cinzel" onclick="closeMobile()">活動 · Events</a>
   <a href="prices.html" class="nav-link f-cinzel" onclick="closeMobile()">價格 · Prices</a>
   <a href="terms.html" class="nav-link f-cinzel" onclick="closeMobile()">條款 · Terms</a>
 </div>
@@ -1221,8 +1227,9 @@
   </div>
 
   <div style="display:flex;align-items:center;gap:.8rem">
+    <a href="activities.html" class="nav-cta nav-cta-secondary">活動 · Events</a>
     <a href="prices.html" class="nav-cta">價格 · Prices</a>
-    <a href="terms.html" class="nav-cta">條款 · Terms</a>
+    <a href="terms.html" class="nav-cta nav-cta-secondary">條款 · Terms</a>
     <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
       <span></span><span></span><span></span>
     </div>
@@ -1587,7 +1594,8 @@
       <div>
         <div class="footer-col-title">探索 EXPLORE</div>
         <div class="footer-links">
-          <a href="#wenqi"    class="footer-link">服務項目 · Services</a>
+          <a href="#wenqi"        class="footer-link">服務項目 · Services</a>
+          <a href="activities.html" class="footer-link">最新活動 · Events</a>
         </div>
       </div>
 

@@ -8,3 +8,6 @@ package-lock.json
 .DS_Store
 
 女兒國 Key Info/
+
+members/.env
+members/node_modules/

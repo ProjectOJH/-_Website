@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>最新活動 · 女兒國 · The Kingdom of True Daughters</title>
+  <meta name="description" content="女兒國最新活動與一日侑行程 — 報名請私訊官方 LINE。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple:#8B07A8;--gold:#C9A84C;--gold-lt:#E8D89A;--gold-glow:#FFE066;
+      --void:#0D0118;--void-mid:#140829;--lavender:#C9B8E8;--cream:#F5EFD8;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--void)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(13,1,24,.95);backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(201,168,76,.18)}
+    .nav-logo{display:flex;align-items:center;gap:.9rem}
+    .nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,.35)}
+    .nav-logo-zh{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-logo-en{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;color:rgba(201,184,232,.6)}
+    .nav-back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;color:var(--lavender);
+      display:flex;align-items:center;gap:.5rem;transition:color .3s;min-height:44px;min-width:44px;
+      padding:.5rem}
+    .nav-back:hover{color:var(--gold-lt)}
+    .nav-back svg{transition:transform .3s}
+    .nav-back:hover svg{transform:translateX(-3px)}
+
+    /* HERO */
+    .act-hero{padding:10rem 2rem 5rem;text-align:center;
+      background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,7,168,.4) 0%,transparent 65%),
+                 linear-gradient(180deg,#0D0118 0%,#140829 100%)}
+    .act-hero-label{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.3em;color:var(--gold);opacity:.7;margin-bottom:.8rem}
+    .act-hero-zh{font-family:'Noto Serif TC',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:.06em;
+      background:linear-gradient(135deg,#F5EFD8,#E8D89A,#FFE066,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .act-hero-en{font-family:'Cinzel',serif;font-size:clamp(.7rem,1.5vw,.9rem);letter-spacing:.22em;color:rgba(201,184,232,.55);margin-top:.6rem}
+    .div-gold{width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.2rem auto}
+    .act-hero-sub{font-family:'Noto Serif TC',serif;font-size:.85rem;color:rgba(201,184,232,.55);max-width:480px;margin:1rem auto 0;line-height:1.8}
+    .act-hero-sub-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;color:rgba(201,184,232,.35);max-width:480px;margin:.6rem auto 0;line-height:1.7}
+
+    /* EVENTS GRID (shared visual language with index.html's events section) */
+    #events{padding:2rem 2rem 7rem}
+    .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,340px));
+      justify-content:center;gap:1.8rem;max-width:1080px;margin:0 auto}
+    .event-card{background:rgba(20,8,41,.55);backdrop-filter:blur(18px);
+      border:1px solid rgba(201,168,76,.12);overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s;display:block}
+    .event-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.36);box-shadow:0 24px 60px rgba(139,7,168,.25)}
+    .event-img{height:340px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#050211}
+    .event-img img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s ease}
+    .event-card:hover .event-img img{transform:scale(1.04)}
+    .event-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 78%,rgba(13,1,24,.95) 100%)}
+    .event-body{padding:1.5rem}
+    .event-zh{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.2rem}
+    .event-en{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;color:rgba(201,168,76,.6);margin-bottom:.9rem}
+    .event-detail{font-family:'Noto Serif TC',serif;font-size:.8rem;color:rgba(201,184,232,.6);line-height:1.7;margin-bottom:.5rem}
+    .event-detail-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.78rem;color:rgba(201,184,232,.38);line-height:1.65;margin-bottom:1.2rem}
+    .event-meta{display:flex;align-items:center;justify-content:space-between}
+    .event-type{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;color:var(--gold);opacity:.7}
+    .event-register{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.1em;
+      color:var(--gold-lt);border:1px solid rgba(201,168,76,.35);padding:.35rem .9rem;
+      transition:background .3s,box-shadow .3s}
+    .event-register:hover{background:rgba(201,168,76,.12);box-shadow:0 0 14px rgba(201,168,76,.15)}
+
+    /* Empty-state note for future events */
+    .events-more{max-width:1080px;margin:2.5rem auto 0;text-align:center;
+      font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:rgba(201,184,232,.4)}
+
+    /* FOOTER */
+    .act-footer{text-align:center;padding:2rem;border-top:1px solid rgba(201,168,76,.1);
+      font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.25)}
+    .act-footer a{color:rgba(201,168,76,.45);margin:0 .5rem;transition:color .3s}
+    .act-footer a:hover{color:var(--gold-lt)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      #nav{padding:.9rem 1.2rem}
+      .act-hero{padding:8rem 1.2rem 4rem}
+      #events{padding:1rem 1.2rem 5rem}
+      .events-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="./brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div style="display:flex;flex-direction:column;line-height:1.15">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+    </svg>
+    返回 · Back
+  </a>
+</nav>
+
+<div class="act-hero">
+  <div class="act-hero-label">· Upcoming Events & Day Trips ·</div>
+  <h1 class="act-hero-zh">最新活動</h1>
+  <div class="act-hero-en">EVENTS &amp; 一日侑</div>
+  <div class="div-gold"></div>
+  <p class="act-hero-sub">走進能量之旅，開啟美好人生。點選活動卡片了解完整行程，並私訊官方 LINE 報名。</p>
+  <p class="act-hero-sub-en">Step into a journey of energy, and open the door to a beautiful life. Tap a card for the full itinerary, then message our official LINE to join.</p>
+</div>
+
+<div id="events">
+  <div class="events-grid">
+
+    <a href="activities/2026-07-28-huadong.html" class="event-card">
+      <div class="event-img">
+        <img src="activities/img/2026-07-28-huadong.jpg" alt="看得見的花東與看不見的花東 三日兩夜能量之旅">
+        <div class="event-img-overlay"></div>
+      </div>
+      <div class="event-body">
+        <div class="event-zh">看得見的花東與看不見的花東</div>
+        <div class="event-en">HUALIEN &amp; TAITUNG · 3 DAYS 2 NIGHTS</div>
+        <p class="event-detail">感受山海能量、探索風水寶地、療癒身心靈。7/28－7/30 三天兩夜，帶你走進花東的美好能量之旅。</p>
+        <p class="event-detail-en">Feel the energy of mountain and sea, explore sacred sites, and heal body and spirit. Three days, two nights.</p>
+        <div class="event-meta">
+          <span class="event-type">07.28 － 07.30</span>
+          <span class="event-register">查看詳情 · Details</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="events-more">· 更多活動陸續推出，敬請期待 · More events coming soon ·</p>
+</div>
+
+<div class="act-footer">
+  © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved
+  &ensp;·&ensp;
+  <a href="index.html">首頁 Home</a>
+  <a href="prices.html">服務價格 Prices</a>
+  <a href="terms.html">服務條款 Terms</a>
+</div>
+
+</body>
+</html>

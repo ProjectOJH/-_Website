@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看得見的花東與看不見的花東 · 三日侑 · 女兒國</title>
+  <meta name="description" content="花東三日兩夜能量之旅 07/28－07/30。感受山海能量、探索風水寶地、療癒身心靈。私訊官方 LINE 報名。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple:#8B07A8;--gold:#C9A84C;--gold-lt:#E8D89A;--gold-glow:#FFE066;
+      --void:#0D0118;--void-mid:#140829;--lavender:#C9B8E8;--cream:#F5EFD8;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--void);color:var(--cream);font-family:'Montserrat','Noto Serif TC',sans-serif;
+      overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.7}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:var(--void)}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--purple),var(--gold));border-radius:3px}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 2.5rem;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(13,1,24,.95);backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(201,168,76,.18)}
+    .nav-logo{display:flex;align-items:center;gap:.9rem}
+    .nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,168,76,.35)}
+    .nav-logo-zh{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:500;
+      background:linear-gradient(135deg,#E8D89A,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-logo-en{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.12em;color:rgba(201,184,232,.6)}
+    .nav-back{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.1em;color:var(--lavender);
+      display:flex;align-items:center;gap:.5rem;transition:color .3s;min-height:44px;min-width:44px;
+      padding:.5rem}
+    .nav-back:hover{color:var(--gold-lt)}
+    .nav-back svg{transition:transform .3s}
+    .nav-back:hover svg{transform:translateX(-3px)}
+
+    /* HERO */
+    .ev-hero{padding:9rem 2rem 3.5rem;text-align:center;
+      background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(139,7,168,.3) 0%,transparent 65%),
+                 linear-gradient(180deg,#0D0118 0%,#140829 100%)}
+    .ev-hero-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.28em;color:var(--gold);opacity:.7;margin-bottom:.8rem}
+    .ev-hero-zh{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;letter-spacing:.04em;
+      background:linear-gradient(135deg,#F5EFD8,#E8D89A,#FFE066,#C9A84C);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.35}
+    .ev-hero-en{font-family:'Cinzel',serif;font-size:clamp(.65rem,1.3vw,.8rem);letter-spacing:.18em;color:rgba(201,184,232,.5);margin-top:.7rem}
+    .ev-hero-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.85rem,1.6vw,1rem);color:rgba(201,184,232,.55);margin-top:.6rem}
+    .div-gold{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.2rem auto}
+
+    .ev-meta-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem;margin-top:1.6rem}
+    .ev-meta-chip{font-family:'Noto Serif TC',serif;font-size:.78rem;color:var(--gold-lt);
+      background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);
+      padding:.5rem 1.1rem;display:flex;align-items:center;gap:.5rem}
+
+    /* POSTER */
+    .ev-poster-wrap{max-width:640px;margin:3rem auto 0;padding:0 2rem}
+    .ev-poster-wrap img{width:100%;border:1px solid rgba(201,168,76,.2);box-shadow:0 24px 60px rgba(139,7,168,.25)}
+
+    /* BODY */
+    .ev-body{max-width:760px;margin:0 auto;padding:4rem 2rem 2rem}
+    .ev-section{margin-bottom:3.2rem}
+    .ev-section-title{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.4rem;
+      padding-bottom:.8rem;border-bottom:1px solid rgba(201,168,76,.15)}
+    .ev-zh{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;color:var(--cream)}
+    .ev-en{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;color:rgba(201,184,232,.4)}
+    .ev-intro{font-family:'Noto Serif TC',serif;font-size:.92rem;line-height:2;color:rgba(201,184,232,.85)}
+    .ev-intro strong{color:var(--gold-lt);font-weight:500}
+    .ev-intro-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;
+      line-height:1.85;color:rgba(201,184,232,.42);margin-top:1.2rem}
+    .ev-intro-en strong{color:rgba(201,184,232,.65);font-weight:600;font-style:normal}
+
+    /* Experience highlights list */
+    .exp-list{margin-top:1.8rem;display:flex;flex-direction:column;gap:1.2rem}
+    .exp-item{display:flex;gap:.9rem;align-items:flex-start}
+    .exp-icon{font-size:1.1rem;line-height:1.75;flex:0 0 auto}
+    .exp-text{flex:1}
+    .exp-zh{font-family:'Noto Serif TC',serif;font-size:.9rem;color:rgba(201,184,232,.88);line-height:1.75}
+    .exp-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;color:rgba(201,184,232,.42);line-height:1.6;margin-top:.15rem}
+    .exp-closing{margin-top:1.8rem;padding-top:1.4rem;border-top:1px solid rgba(201,168,76,.1);
+      font-family:'Noto Serif TC',serif;font-size:.88rem;color:rgba(201,184,232,.75);line-height:1.9}
+    .exp-closing-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:rgba(201,184,232,.4);line-height:1.8;margin-top:.5rem}
+
+    /* Day-by-day teaser (replaces a flat highlight list — new info, not on the poster) */
+    .day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.8rem}
+    .day-card{background:rgba(14,4,30,.55);backdrop-filter:blur(12px);
+      border:1px solid rgba(201,168,76,.12);padding:1.4rem 1.3rem}
+    .day-num{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;color:var(--gold);opacity:.8;margin-bottom:.7rem}
+    .day-loc-zh{font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:500;color:var(--cream);margin-bottom:.1rem}
+    .day-loc-en{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.08em;color:rgba(201,168,76,.55);margin-bottom:.9rem}
+    .day-spots{font-family:'Noto Serif TC',serif;font-size:.78rem;color:var(--gold-lt);opacity:.9;margin-bottom:.6rem;line-height:1.7}
+    .day-mood{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:rgba(201,184,232,.5);line-height:1.65}
+
+    /* Included */
+    .incl-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+    .incl-chip{font-family:'Noto Serif TC',serif;font-size:.82rem;color:var(--gold-lt);
+      background:rgba(139,7,168,.14);border:1px solid rgba(139,7,168,.28);
+      padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem}
+    .incl-chip .en{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(201,184,232,.5)}
+
+    /* Notice clauses */
+    .clause{margin-bottom:1.15rem;padding-left:1.2rem;position:relative}
+    .clause::before{content:'';position:absolute;left:0;top:.65em;width:5px;height:5px;background:var(--gold);opacity:.6}
+    .clause-zh{font-family:'Noto Serif TC',serif;font-size:.88rem;line-height:1.9;color:rgba(201,184,232,.85)}
+    .clause-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.82rem;
+      line-height:1.7;color:rgba(201,184,232,.4);margin-top:.15rem}
+
+    /* LINE CTA (shared pattern with prices.html) */
+    .line-section{padding:3rem 2rem 6rem;text-align:center}
+    .line-card{max-width:520px;margin:0 auto;background:rgba(14,4,30,.65);backdrop-filter:blur(20px);
+      border:1px solid rgba(201,168,76,.15);padding:2.5rem 2rem}
+    .line-title-zh{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:500;color:var(--cream);margin-bottom:.3rem}
+    .line-title-en{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.15em;color:rgba(201,184,232,.5);margin-bottom:1.2rem}
+    .div-gold-sm{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.5rem auto}
+    .line-note{font-family:'Noto Serif TC',serif;font-size:.88rem;line-height:1.85;color:rgba(201,184,232,.7);margin:.8rem 0}
+    .line-note-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;line-height:1.8;color:rgba(201,184,232,.4);margin-bottom:1.2rem}
+    .line-btn{display:inline-flex;align-items:center;gap:.7rem;
+      background:#06C755;color:#fff;
+      font-family:'Noto Serif TC',serif;font-size:.9rem;font-weight:500;
+      padding:.85rem 2rem;border-radius:6px;margin-top:.8rem;
+      transition:opacity .3s,transform .2s;min-height:44px}
+    .line-btn:hover{opacity:.88;transform:translateY(-2px)}
+
+    /* FOOTER */
+    .ev-footer{text-align:center;padding:2rem;border-top:1px solid rgba(201,168,76,.1);
+      font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(201,184,232,.25)}
+    .ev-footer a{color:rgba(201,168,76,.45);margin:0 .5rem;transition:color .3s}
+    .ev-footer a:hover{color:var(--gold-lt)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      #nav{padding:.9rem 1.2rem}
+      .ev-hero{padding:8rem 1.2rem 3rem}
+      .ev-poster-wrap{padding:0 1.2rem}
+      .ev-body{padding:3rem 1.2rem 1.5rem}
+      .day-grid{grid-template-columns:1fr;gap:.9rem}
+      .line-card{padding:2rem 1.2rem}
+      .ev-meta-bar{gap:.6rem}
+      .ev-meta-chip{font-size:.72rem;padding:.45rem .85rem}
+    }
+    @media(max-width:420px){
+      .ev-hero{padding:7.5rem 1rem 2.5rem}
+      .ev-meta-bar{flex-direction:column;align-items:stretch}
+      .ev-meta-chip{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../brand_assets/女兒國_logo.jpg" alt="女兒國">
+    <div style="display:flex;flex-direction:column;line-height:1.15">
+      <span class="nav-logo-zh">女兒國</span>
+      <span class="nav-logo-en">The Kingdom of True Daughters</span>
+    </div>
+  </a>
+  <a href="../activities.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+    </svg>
+    返回活動 · Back
+  </a>
+</nav>
+
+<div class="ev-hero">
+  <div class="ev-hero-label">· 三日侑 · Energy Journey ·</div>
+  <h1 class="ev-hero-zh">看得見的花東<br>與看不見的花東</h1>
+  <div class="ev-hero-tagline">The Hualien &amp; Taitung You Can See — and the One You Can't</div>
+  <div class="ev-hero-en">THREE DAYS, TWO NIGHTS ENERGY JOURNEY</div>
+  <div class="div-gold"></div>
+  <div class="ev-meta-bar">
+    <span class="ev-meta-chip">📅 日期 · Date&emsp;115.07.28（二）－ 07.30（四）</span>
+    <span class="ev-meta-chip">🕖 集合時間 · Meeting Time&emsp;07:00</span>
+    <span class="ev-meta-chip">📍 集合地點 · Meeting Point&emsp;臺北市信義區（依行前通知）</span>
+  </div>
+</div>
+
+<div class="ev-poster-wrap">
+  <img src="img/2026-07-28-huadong.jpg" alt="看得見的花東與看不見的花東 活動海報">
+</div>
+
+<div class="ev-body">
+
+  <div class="ev-section">
+    <p class="ev-intro">
+      花東，是許多人心目中最美的旅遊目的地之一。大家想到花東，會想到壯闊山海、湛藍海岸、遼闊稻田，
+      還有鹿野高台的熱氣球。但除了這些看得見的風景，花東還有另一面，是許多人來過卻未曾真正認識的。<br><br>
+      這趟旅程，帶你一起探索<strong>「看得見的花東」</strong>，也感受<strong>「看不見的花東」</strong>。
+    </p>
+    <p class="ev-intro-en">
+      Hualien and Taitung are two of Taiwan's most beloved destinations. People come for the
+      mountains, the coastline, the rice fields, and the hot air balloons. But beyond the
+      breathtaking scenery lies another side of Hualien &amp; Taitung — one that many visitors never
+      get to experience.<br><br>
+      This journey is about discovering both <strong>the Hualien &amp; Taitung you can see</strong> and
+      <strong>the one you can't</strong>.
+    </p>
+
+    <div class="exp-list">
+      <div class="exp-item">
+        <span class="exp-icon">🏞</span>
+        <div class="exp-text">
+          <div class="exp-zh">漫步清澈溪流與壯麗山海。</div>
+          <div class="exp-en">Explore crystal-clear rivers and spectacular coastlines.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">🎈</span>
+        <div class="exp-text">
+          <div class="exp-zh">欣賞鹿野高台熱氣球晨曦。</div>
+          <div class="exp-en">Watch the sunrise over Luye's famous hot air balloons.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">🛕</span>
+        <div class="exp-text">
+          <div class="exp-zh">探索秘境景點、文化聖地，以及花東豐富的人文故事。</div>
+          <div class="exp-en">Visit sacred sites, hidden gems, and places rich in culture and history.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span class="exp-icon">🌿</span>
+        <div class="exp-text">
+          <div class="exp-zh">從自然景觀、地方文化到風水地理與能量觀點，用不同的視角重新認識花東。</div>
+          <div class="exp-en">Learn about the landscapes, local traditions, and a different perspective of Hualien &amp; Taitung.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="exp-closing">無論你是第一次來花東，還是曾經造訪過，相信這趟旅程都能讓你看見不一樣的花東。</p>
+    <p class="exp-closing-en">Whether it's your first time in Hualien &amp; Taitung or you've been here before, this journey may show you a side you've never seen.</p>
+  </div>
+
+  <div class="ev-section">
+    <div class="ev-section-title">
+      <span class="ev-zh">三天兩夜．行程走向</span>
+      <span class="ev-en">THE JOURNEY</span>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <div class="day-num">DAY 01</div>
+        <div class="day-loc-zh">花蓮 · 三棧溪</div>
+        <div class="day-loc-en">HUALIEN · SANZHAN RIVER</div>
+        <div class="day-spots">玫瑰石秘境・富甲天下能量導覽</div>
+        <div class="day-mood">A hidden gorge of rose stone, then an energy walkthrough as the journey begins.</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">DAY 02</div>
+        <div class="day-loc-zh">花蓮 → 台東</div>
+        <div class="day-loc-en">HUALIEN → TAITUNG</div>
+        <div class="day-spots">大聖宮・北回歸線・八仙洞・三仙台</div>
+        <div class="day-mood">Sacred temples, the Tropic of Cancer, sea caves, and the coastline of Sanxiantai.</div>
+      </div>
+      <div class="day-card">
+        <div class="day-num">DAY 03</div>
+        <div class="day-loc-zh">鹿野．關山．池上</div>
+        <div class="day-loc-en">LUYE · GUANSHAN · CHISHANG</div>
+        <div class="day-spots">熱氣球日出・高台基地・稻浪風光</div>
+        <div class="day-mood">Sunrise hot air balloons, then the rice-field valleys of the East Rift.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev-section">
+    <div class="ev-section-title">
+      <span class="ev-zh">費用包含</span>
+      <span class="ev-en">INCLUDED</span>
+    </div>
+    <div class="incl-row">
+      <span class="incl-chip">🚐 車資 <span class="en">· Transport</span></span>
+      <span class="incl-chip">🏨 住宿 <span class="en">· Lodging</span></span>
+      <span class="incl-chip">🛡️ 旅遊保險 <span class="en">· Travel Insurance</span></span>
+    </div>
+  </div>
+
+  <div class="ev-section">
+    <div class="ev-section-title">
+      <span class="ev-zh">報名須知</span>
+      <span class="ev-en">HOW TO JOIN</span>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">採額滿為止，額滿即停止受理報名。</div>
+      <div class="clause-en">Registration closes once spots are filled.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">完成繳費並提供完整個人資料後，才視為報名成功。</div>
+      <div class="clause-en">Your spot is confirmed only after payment and full personal details are received.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">報名成功後，我們將提供活動問卷供您填寫。</div>
+      <div class="clause-en">A short trip questionnaire will follow once your registration is confirmed.</div>
+    </div>
+    <div class="clause">
+      <div class="clause-zh">有興趣了解更多，歡迎直接私訊我們的官方 LINE，我們會將完整活動資訊提供給您！</div>
+      <div class="clause-en">Message our official LINE for the complete itinerary and registration details.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="line-section">
+  <div class="line-card">
+    <div class="line-title-zh">私訊官方 LINE 報名</div>
+    <div class="line-title-en">MESSAGE US ON LINE TO JOIN</div>
+    <div class="div-gold-sm"></div>
+    <p class="line-note">名額有限，額滿為止。私訊我們的官方 LINE，將提供完整活動資訊給您。</p>
+    <p class="line-note-en">Limited spots. Message our official LINE for the full itinerary and registration details.</p>
+    <a href="https://lin.ee/RGOOSXa" target="_blank" rel="noopener" class="line-btn">
+      <img src="../brand_assets/Line%20Logo.jpg" alt="LINE" style="width:22px;height:22px;border-radius:6px;object-fit:cover">
+      加入官方 LINE · Add LINE
+    </a>
+  </div>
+</div>
+
+<div class="ev-footer">
+  © 2026 女兒國 · The Kingdom of True Daughters · All Rights Reserved
+  &ensp;·&ensp;
+  <a href="../activities.html">最新活動 Events</a>
+  <a href="../index.html">首頁 Home</a>
+</div>
+
+</body>
+</html>
