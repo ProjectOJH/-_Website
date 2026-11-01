@@ -1,0 +1,2531 @@
+{
+  "version": "five-assets-members-v10-draft",
+  "date": "2026-10-31",
+  "status": "proposed_not_validated",
+  "membersOnly": true,
+  "required": true,
+  "questions": [
+    {
+      "id": "wisdom-T1",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "最近一次需要確認消息是否真實時，妳做到哪一步？",
+      "en": "The last time you needed to check whether some information was true, how far did you get?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有再找其他資訊，就直接採用。",
+          "en": "I used it without looking for any other information.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "看過其他說法，但沒有查來源。",
+          "en": "I looked at other accounts, but did not check where they came from.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "找到原始來源，但沒有確認依據是否支持這個說法。",
+          "en": "I found the original source, but did not check whether its evidence supported the claim.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "自己或在協助下，核對來源和依據後才決定是否採用。",
+          "en": "I checked both the source and its evidence before deciding whether to use it, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-T2",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "最近一次兩個來源說法不同時，妳在決定相信哪個說法前做了什麼？",
+      "en": "The last time two sources gave you conflicting information, what did you do before deciding what to believe?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "比較依據後作出判斷；若仍不清楚，就暫不下結論。",
+          "en": "I compared the evidence and either reached a conclusion or left the question open.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "請人說明差異，但還沒有比較依據。",
+          "en": "I asked someone to explain the difference, but had not yet compared the evidence.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "沒有查證，就選了自己較喜歡的說法。",
+          "en": "I chose the explanation I preferred, without checking either one.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "沒有考慮另一個說法，直接採用先聽到的版本。",
+          "en": "I went with the first explanation I had heard, without considering the other one.",
+          "score": 1
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-T3",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "回想過去三個月，做重要決定時，妳有多少次先比較至少兩個選項可能帶來的結果？",
+      "en": "Thinking about the past three months, when making an important decision, how often did you consider the likely outcome of at least two options?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-T4",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "想一件最近決定要做的事。到目前為止，妳做到哪一步？",
+      "en": "Think of something you recently decided to do. How far have you got with it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒有想出具體步驟。",
+          "en": "I have not worked out any steps yet.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "想出一些步驟，但還沒有選定先做哪個。",
+          "en": "I have thought of possible steps, but have not chosen one to start with.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "選好第一步，但還沒有開始。",
+          "en": "I have chosen a first step, but have not started it.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "已經開始第一步；主動尋求需要的協助也算。",
+          "en": "I have started a first step. Asking for the help I need counts.",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-T5",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "最近一次計畫需要的時間、金錢或協助超出現有資源時，最後處理到什麼程度？",
+      "en": "The last time a plan required more time, money or help than you had, where did things stand afterwards?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "自己或在協助下，調整或停止計畫，作出符合現有資源的決定。",
+          "en": "I changed or stopped the plan and reached a decision that fit my available resources, with help if needed.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "已作部分調整，但仍有資源問題未解決。",
+          "en": "I had made some changes, but one or more resource problems were still unresolved.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "因想不出下一步而停住，事情仍未解決。",
+          "en": "I stopped because I could not work out what to do next, and the issue remained unresolved.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "明知負擔不了，仍照原計畫繼續。",
+          "en": "I kept going with the original plan, although I knew I could not manage it.",
+          "score": 1
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-T6",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "回想過去三個月，原本的方法沒有效時，妳有多少次改試另一種方法？",
+      "en": "Thinking about the past three months, when an approach did not work, how often did you try a different one?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-T7",
+      "category": "wisdom",
+      "side": "tangible",
+      "zh": "回想過去三個月，完成一件自己重視的事後，妳有多少次回顧哪些做法有效、下次想改什麼？",
+      "en": "Thinking about the past three months, after finishing something important to you, how often did you look back at what worked and what you would change?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-I1",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "最近一次別人的期待與妳的想法不同時，妳何時弄清楚自己想要什麼？",
+      "en": "The last time someone wanted something different from what you wanted, when did you become clear about your own preference?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "到現在仍不清楚自己想要什麼。",
+          "en": "I am still not sure what I wanted.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "隔天或更晚才弄清楚。",
+          "en": "I worked it out the next day or later.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "作出決定後，在當天內弄清楚。",
+          "en": "I worked it out after deciding, but on the same day.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "在作決定前已弄清楚；有人協助整理也算。",
+          "en": "I knew what I wanted before making the decision, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-I2",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "回想過去三個月，不想答應一件事時，妳有多少次因怕別人失望而仍然答應？",
+      "en": "Thinking about the past three months, when you did not want to agree to something, how often did you agree anyway because you feared disappointing someone?",
+      "signal": "approval",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "boundaries_support",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-I3",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "想一個最近讓妳猶豫的決定。妳何時看清楚，猶豫是否與怕失敗有關？",
+      "en": "Think of a recent decision you hesitated over. When did you recognise whether fear of failure was part of the hesitation?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "到現在仍分不清是否與怕失敗有關。",
+          "en": "I still cannot tell whether fear of failure was involved.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "隔天或更晚才看清楚。",
+          "en": "I recognised it the next day or later.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "作出決定後，在當天內看清楚。",
+          "en": "I recognised it after deciding, but on the same day.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "作決定前已看清楚，能把這個因素納入考慮。",
+          "en": "I recognised it before deciding, so I could take it into account.",
+          "score": 4
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-I4",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "最近一次直覺與手上資訊不一致時，妳把兩者的差異整理到哪一步？",
+      "en": "The last time your gut feeling did not match the information you had, how far did you get in working through the difference?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "自己或在協助下，查核資訊並考慮直覺後才決定。",
+          "en": "I checked the information and considered my gut feeling before deciding, with help if needed.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "已開始釐清差異，但還沒作出決定。",
+          "en": "I started checking the difference, but had not yet reached a decision.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "沒有釐清差異，就選擇相信其中一邊。",
+          "en": "I chose one or the other without checking the difference.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "沒有嘗試釐清，持續拖延一個需要處理的決定。",
+          "en": "I put off a decision that needed attention, without trying to clarify the difference.",
+          "score": 1
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "situation"
+    },
+    {
+      "id": "wisdom-I5",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "回想過去三個月，明知身體或情緒已超出負荷時，妳有多少次仍逼自己繼續？",
+      "en": "Thinking about the past three months, when you knew you were physically or emotionally overloaded, how often did you push yourself to carry on?",
+      "signal": "overextension",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "self_pressure",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-I6",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "回想過去三個月，決定還不確定時，妳有多少次主要為了趕快安心而提早決定？",
+      "en": "Thinking about the past three months, when a decision was still uncertain, how often did you rush it mainly to stop feeling unsettled?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "decisions",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wisdom-I7",
+      "category": "wisdom",
+      "side": "intangible",
+      "zh": "回想過去三個月，沒有達到自己的期待時，妳有多少次因此覺得「我整個人不夠好」？",
+      "en": "Thinking about the past three months, when you fell short of your own expectations, how often did you think, “I am not good enough as a person”?",
+      "signal": "self_pressure",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "self_pressure",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "beauty-T1",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天能完成自己需要的基本清潔與照顧？接受協助也算。",
+      "en": "In the past 14 days, on how many days did you manage the basic washing and personal care you needed, with help if needed?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "day_count"
+    },
+    {
+      "id": "beauty-T2",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "最近一次穿著讓妳不舒服時，最後情況如何？",
+      "en": "The last time your clothes felt uncomfortable, what was the outcome?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有調整，仍然不舒服。",
+          "en": "I made no change and stayed uncomfortable.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "試過調整，但沒有變得較舒服。",
+          "en": "I tried making a change, but it did not make me more comfortable.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "調整後有改善，但仍不舒服。",
+          "en": "I made a change that helped a little, but I was still uncomfortable.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "用現有選擇或透過協助，找到舒服的穿著。",
+          "en": "I found a comfortable option, using what was available or asking for help.",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "beauty-T3",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "想一次最近想在穿著、空間或創作中表達自己喜好的經驗。妳做到哪一步？",
+      "en": "Think of a recent time you wanted your clothes, surroundings or creative work to reflect your taste. How far did you get?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒有弄清楚自己喜歡什麼。",
+          "en": "I had not worked out what I liked.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "知道自己喜歡什麼，但還沒有試。",
+          "en": "I knew what I liked, but had not tried it.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "試過了，但還沒找到自己自在的方式。",
+          "en": "I tried it, but had not found a version I felt comfortable with.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "找到並用上符合自己喜好的方式；不需要買新東西。",
+          "en": "I found and used a way that felt like me. Buying something new was not necessary.",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "beauty-T4",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "過去 14 天，在自己能控制的範圍內，妳有幾天讓一個常用空間保持方便、舒適？",
+      "en": "In the past 14 days, on how many days was a space you regularly use comfortable and usable, within what you could control?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "day_count"
+    },
+    {
+      "id": "beauty-T5",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "過去 7 天，妳有幾天留意到讓自己喜歡的景象、聲音、觸感、味道或氣味？",
+      "en": "In the past 7 days, on how many days did you notice something you enjoyed seeing, hearing, touching, tasting or smelling?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0 天",
+          "en": "0 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "1–2 天",
+          "en": "1–2 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "3–4 天",
+          "en": "3–4 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "5–7 天",
+          "en": "5–7 days",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "day_count"
+    },
+    {
+      "id": "beauty-T6",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "過去 7 天，妳有幾天做自己喜歡的表達或創作，例如書寫、唱歌、搭配或手作？",
+      "en": "In the past 7 days, on how many days did you do something creative or expressive that you enjoyed, such as writing, singing, styling or making something?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0 天",
+          "en": "0 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "1–2 天",
+          "en": "1–2 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "3–4 天",
+          "en": "3–4 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "5–7 天",
+          "en": "5–7 days",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "day_count"
+    },
+    {
+      "id": "beauty-T7",
+      "category": "beauty",
+      "side": "tangible",
+      "zh": "最近一次照顧外在的習慣讓妳不舒服，或負擔太大時，最後情況如何？",
+      "en": "The last time a personal-care or appearance routine felt uncomfortable or too much to keep up, what was the outcome?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "明知不適合，仍完全照原本的方式做。",
+          "en": "I kept the routine unchanged, even though it did not suit me.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "想改變，但還沒有試著調整。",
+          "en": "I wanted to change it, but had not tried an adjustment.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "試過調整，但仍太不舒服或太吃力。",
+          "en": "I tried an adjustment, but the routine was still too uncomfortable or demanding.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "透過調整、替換或停止，讓安排變成自己能負擔的樣子。",
+          "en": "I changed, replaced or stopped the routine so that it was manageable for me.",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "beauty-I1",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "回想過去三個月，覺得別人的外表或生活很理想時，妳有多少次因此覺得自己不值得被喜歡或被愛？",
+      "en": "Thinking about the past three months, when someone else seemed to have an ideal appearance or life, how often did it make you feel less worthy of being liked or loved?",
+      "signal": "comparison",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "beauty-I2",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "回想過去三個月，不滿意自己的外表時，妳有多少次仍覺得自己值得被善待與照顧？",
+      "en": "Thinking about the past three months, when you were unhappy with your appearance, how often did you still feel you deserved kindness and care?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "beauty-I3",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "想一想最近一次收到稱讚。妳能接受這份稱讚到什麼程度？",
+      "en": "Think of the most recent compliment you received. How much of it could you take in?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "能直接接受，不需要補充理由或否定它。",
+          "en": "I accepted it without needing to qualify or dismiss it.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "起初有些懷疑，後來能接受。",
+          "en": "I accepted it after some initial doubt.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "只能接受一部分，其他部分仍不相信。",
+          "en": "I could accept part of it, but still doubted the rest.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "無法相信其中有任何部分是真的。",
+          "en": "I could not accept any of it as true.",
+          "score": 1
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "beauty-I4",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "最近一次別人不喜歡妳一個不傷害他人的個人選擇時，這如何影響妳對自己喜好的信任？",
+      "en": "The last time someone disliked a harmless personal choice you made, how did it affect your trust in your own taste?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "不再相信自己的喜好，到現在仍是如此。",
+          "en": "I stopped trusting my taste and still have not regained that trust.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "恢復一些信心，但仍主要依賴對方的看法。",
+          "en": "I regained some trust, but still mainly relied on their opinion.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "起初懷疑自己，後來恢復對自己喜好的信任。",
+          "en": "I doubted myself at first, then regained trust in my taste.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "能考慮對方的意見，同時保持對自己喜好的信任。",
+          "en": "I could consider their opinion without losing trust in my taste.",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "beauty-I5",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "回想過去三個月，想用不傷害他人的方式表達自己時，妳有多少次因怕被批評而放棄？",
+      "en": "Thinking about the past three months, when you wanted to express yourself in a harmless way, how often did fear of criticism stop you?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "beauty-I6",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "過去 7 天，妳有幾天做過一件照顧自己的小事，即使沒有人會注意到？",
+      "en": "In the past 7 days, on how many days did you do a small thing to care for yourself even though no one else would notice?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0 天",
+          "en": "0 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "1–2 天",
+          "en": "1–2 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "3–4 天",
+          "en": "3–4 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "5–7 天",
+          "en": "5–7 days",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "day_count"
+    },
+    {
+      "id": "beauty-I7",
+      "category": "beauty",
+      "side": "intangible",
+      "zh": "想一件最近做過的事。除了外表或別人的稱讚，妳能說出並相信自己一個值得欣賞的地方嗎？",
+      "en": "Thinking about something you recently did, can you name and believe something positive about yourself that is not about looks or praise?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "即使有人提示，也說不出任何值得欣賞的地方。",
+          "en": "I cannot name anything positive, even with a prompt.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "說得出一個地方，但不相信是真的。",
+          "en": "I can name something, but I do not believe it is true.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "說得出一個地方，也相信一部分，但仍有懷疑。",
+          "en": "I can name something and partly believe it, but still have doubts.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "能說出並相信一個地方；有人提示也算。",
+          "en": "I can name something and accept it as true, with a prompt if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "self_expression",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-T1",
+      "category": "health",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天睡醒後覺得精神恢復了？",
+      "en": "In the past 14 days, on how many days did you wake up feeling rested after sleep?",
+      "signal": "restoration",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 4
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-T2",
+      "category": "health",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天的作息安排能留足自己需要的睡眠時間？",
+      "en": "In the past 14 days, on how many days did your schedule allow enough time for the sleep you needed?",
+      "signal": "sleep_opportunity",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 4
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-T3",
+      "category": "health",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天因忙碌、情緒不好或資源不足，沒吃到自己需要的一餐？",
+      "en": "In the past 14 days, on how many days did you miss a meal you needed because you were busy, upset or short of resources?",
+      "signal": "meal_access",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 1
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-T4",
+      "category": "health",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天做過適合自己能力的身體活動？調整過的活動或專業人員建議的活動也算。",
+      "en": "In the past 14 days, on how many days did you do some physical activity suited to your abilities? Adapted activity or movement recommended by a professional counts.",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 4
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-T5",
+      "category": "health",
+      "side": "tangible",
+      "zh": "回想過去三個月，身體明顯需要休息或恢復時，妳有多少次減少或調整正在做的事？",
+      "en": "Thinking about the past three months, when your body clearly needed rest or recovery, how often did you reduce or change what you were doing?",
+      "signal": "physical_overload",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "health-T6",
+      "category": "health",
+      "side": "tangible",
+      "zh": "如果身體不舒服一直沒有改善，以下哪個最符合妳目前取得專業照顧的情況？",
+      "en": "If a physical symptom did not go away, which best describes your current route to professional care?",
+      "signal": "care_access",
+      "options": [
+        {
+          "id": "a",
+          "zh": "知道找誰，也能安排就醫或取得照顧。",
+          "en": "I know whom to contact and could make the necessary arrangements.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "還不知道找誰，但知道可以請誰協助查找。",
+          "en": "I do not yet know whom to contact, but know someone who could help me find out.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "知道找誰，但費用、時間、交通或其他障礙可能使我無法取得照顧。",
+          "en": "I know whom to contact, but cost, time, travel or another barrier could prevent me from getting care.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "不知道找誰，也不知道可以請誰協助查找。",
+          "en": "I do not know whom to contact or who could help me find out.",
+          "score": 1
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-T7",
+      "category": "health",
+      "side": "tangible",
+      "zh": "過去 14 天，妳有幾天因疲累或身體不舒服，難以完成清潔、準備食物、工作或照顧他人等必要事情？",
+      "en": "In the past 14 days, on how many days did tiredness or physical discomfort make essential tasks difficult, such as washing, preparing food, work or caring for someone?",
+      "signal": "daily_function",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 1
+        }
+      ],
+      "theme": "rest_care",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-I1",
+      "category": "health",
+      "side": "intangible",
+      "zh": "最近一次情緒強烈時，妳何時能說出自己是什麼感受？",
+      "en": "The last time you felt a strong emotion, when could you put a name to what you were feeling?",
+      "signal": "emotion_awareness",
+      "options": [
+        {
+          "id": "a",
+          "zh": "到現在仍說不出是什麼感受。",
+          "en": "I still cannot put a name to it.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "隔天或更晚才能說出來。",
+          "en": "I could name it the next day or later.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "事情過後，在當天內能說出來。",
+          "en": "I could name it later that day, once the moment had passed.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "情緒發生當下就能說出來；有人協助也算。",
+          "en": "I could name it while it was happening, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "emotion",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-I2",
+      "category": "health",
+      "side": "intangible",
+      "zh": "最近一次強烈情緒打斷原本需要做的事情時，後來情況如何？",
+      "en": "The last time a strong emotion interrupted what you needed to do, what happened next?",
+      "signal": "emotion_coping",
+      "options": [
+        {
+          "id": "a",
+          "zh": "在中斷造成實際困難前，已緩和到能繼續；有可靠協助也算。",
+          "en": "I settled enough to continue before the interruption caused a practical problem, with reliable help if needed.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "最後能繼續，但耽擱已造成自己不希望出現的影響。",
+          "en": "I eventually continued, but the delay caused difficulties I wanted to avoid.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "試過緩和或求助，但仍無法繼續。",
+          "en": "I tried to settle myself or get help, but still could not continue.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "不知道能試什麼或找誰幫忙，也無法繼續。",
+          "en": "I did not know what to try or whom to turn to, and could not continue.",
+          "score": 1
+        }
+      ],
+      "theme": "emotion",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-I3",
+      "category": "health",
+      "side": "intangible",
+      "zh": "回想過去三個月，情緒難受時，妳有多少次先允許自己留意感受，而不是立刻把它壓下去？",
+      "en": "Thinking about the past three months, when you felt upset, how often did you allow yourself to notice the feeling before trying to push it away?",
+      "signal": "suppression",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "emotion",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "health-I4",
+      "category": "health",
+      "side": "intangible",
+      "zh": "過去 14 天，妳有幾天覺得自己必須再多完成一些事，才有資格休息？",
+      "en": "In the past 14 days, on how many days did you feel you had to achieve more before you deserved a rest?",
+      "signal": "rest_guilt",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 1
+        }
+      ],
+      "theme": "self_pressure",
+      "responseType": "day_count"
+    },
+    {
+      "id": "health-I5",
+      "category": "health",
+      "side": "intangible",
+      "zh": "最近一次別人的請求超出妳能負擔的範圍時，妳把自己的界線說明到什麼程度？",
+      "en": "The last time someone asked for more than you could manage, how clearly did you communicate your limit?",
+      "signal": "boundaries",
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有說出自己的界線。",
+          "en": "I did not communicate a limit.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "暗示自己吃不消，但沒有明確說出界線。",
+          "en": "I hinted that it was too much, but did not state a limit.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "說出有界線，但沒有說清楚自己能做到什麼。",
+          "en": "I stated a limit, but left it unclear what I could actually offer.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "清楚說明能做與不能做的部分；有人協助表達也算。",
+          "en": "I clearly stated what I could and could not do, with help communicating if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "boundaries_support",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-I6",
+      "category": "health",
+      "side": "intangible",
+      "zh": "最近一次需要支持時，妳有多具體地告訴別人什麼協助會有幫助？",
+      "en": "The last time you needed support, how specifically did you tell someone what would help?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有告訴任何人自己需要支持。",
+          "en": "I did not tell anyone I needed support.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "說出自己很吃力，但沒有說需要什麼協助。",
+          "en": "I said I was struggling, but did not say what help I needed.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "說出大概需要哪類幫忙，但沒有提出具體請求。",
+          "en": "I described the kind of help I needed, but did not make a specific request.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "向合適的人提出具體請求；有人協助表達也算。",
+          "en": "I made a specific request to someone appropriate, with help expressing it if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "boundaries_support",
+      "responseType": "situation"
+    },
+    {
+      "id": "health-I7",
+      "category": "health",
+      "side": "intangible",
+      "zh": "過去 14 天，妳有幾天因情緒壓力，難以完成清潔、準備食物、工作或照顧他人等必要事情？",
+      "en": "In the past 14 days, on how many days did emotional strain make essential tasks difficult, such as washing, preparing food, work or caring for someone?",
+      "signal": "emotional_function",
+      "options": [
+        {
+          "id": "a",
+          "zh": "0–2 天",
+          "en": "0–2 days",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "3–6 天",
+          "en": "3–6 days",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "7–10 天",
+          "en": "7–10 days",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "11–14 天",
+          "en": "11–14 days",
+          "score": 1
+        }
+      ],
+      "theme": "emotion",
+      "responseType": "day_count"
+    },
+    {
+      "id": "wealth-T1",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "對住房、飲食、帳單、照顧等必要支出，妳掌握得多清楚？",
+      "en": "How clearly do you know what you need to spend on essentials, such as housing, food, bills and care?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "知道主要支出項目，也大致知道各項金額。",
+          "en": "I know the main expenses and roughly how much each one costs.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "知道主要支出項目，但部分金額仍需要查。",
+          "en": "I know the main expenses, but still need to check some amounts.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "說得出部分支出，但不清楚整體情況。",
+          "en": "I can name some expenses, but do not have a clear overall picture.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "目前還說不出主要支出項目。",
+          "en": "I cannot yet identify the main expenses.",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-T2",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "過去三個月，妳支付必要支出的情況最接近哪一種？請把平常可靠的支持也算進去。",
+      "en": "Over the past three months, which best describes how you covered your essential expenses? Include any reliable support you normally receive.",
+      "signal": "financial_access",
+      "options": [
+        {
+          "id": "a",
+          "zh": "所有必要支出都按時付清，也還能應付一筆小額意外支出。",
+          "en": "I paid everything on time and still had enough for a small unexpected expense.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "所有必要支出都按時付清，但剩下的錢不足以應付一筆小額意外支出。",
+          "en": "I paid everything on time, but did not have enough left for a small unexpected expense.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "最後都能支付，但有部分延遲。",
+          "en": "I covered them all eventually, but some payments were late.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "仍有必要支出沒有付清。",
+          "en": "Some essential expenses remained unpaid.",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-T3",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "最近一次出現意外的必要支出時，妳安排到哪一步？",
+      "en": "The last time an unexpected essential expense came up, how far did you get in arranging for it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒有確認金額或可用資源。",
+          "en": "I had not checked the cost or what resources were available.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "確認金額與資源，但還沒安排任何付款。",
+          "en": "I checked the cost and resources, but had not arranged any of the payment.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "安排好部分付款，但仍有未解決的部分。",
+          "en": "I arranged part of the payment, but some was still unresolved.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "自己或在協助下，為全額支出作出可行安排。",
+          "en": "I made a workable arrangement for the full amount, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-T4",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "回想過去三個月，購買非必要物品前，妳有多少次先確認自己是否負擔得起？",
+      "en": "Thinking about the past three months, before buying something nonessential, how often did you check whether you could afford it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-T5",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "回想過去三個月，因情緒、他人影響或限時優惠而購物時，妳有多少次花超過自己能負擔的金額？",
+      "en": "Thinking about the past three months, when you bought something because of your mood, someone else’s influence or a limited-time offer, how often did you spend more than you could afford?",
+      "signal": "spending_pressure",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-T6",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "最近一次尋找減輕支出或增加收入的協助時，妳做到哪一步？",
+      "en": "The last time you looked for help to reduce expenses or earn income, how far did you get?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒有找到自己可用的選擇。",
+          "en": "I had not found an option I could use.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "找到可能的選擇，但還沒聯絡或嘗試。",
+          "en": "I found a possible option, but had not contacted anyone or tried it.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "已聯絡或嘗試，但還沒有實際用上。",
+          "en": "I contacted someone or tried the option, but had not yet been able to use it.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "實際用上一個選擇，例如可用的協助、資訊或技能。",
+          "en": "I put an option to use, such as available help, information or a skill.",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-T7",
+      "category": "wealth",
+      "side": "tangible",
+      "zh": "回想過去三個月，生活情況改變時，妳有多少次檢查支出或金錢安排是否需要調整？",
+      "en": "Thinking about the past three months, when your circumstances changed, how often did you check whether your spending or money arrangements needed updating?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-I1",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "回想過去三個月，需要查看帳單、餘額或其他金錢資訊時，妳有多少次因擔心而逃避？",
+      "en": "Thinking about the past three months, when you needed to check a bill, balance or other money matter, how often did worry make you avoid it?",
+      "signal": "money_avoidance",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-I2",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "回想過去三個月，收入或存款不如期待時，妳有多少次因此覺得自己這個人比較沒有價值？",
+      "en": "Thinking about the past three months, when your income or savings fell short of what you hoped, how often did it make you feel less valuable as a person?",
+      "signal": "money_worth",
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-I3",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "最近一次財務不如期待時，妳能把金錢問題與自己作為一個人的價值分開到什麼程度？",
+      "en": "The last time money did not work out as you hoped, how well could you separate the financial problem from your worth as a person?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "覺得金錢問題證明自己整個人很失敗。",
+          "en": "I saw the financial problem as proof that I was a failure as a person.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "知道不等於個人價值，卻仍主要在否定整個自己。",
+          "en": "I knew it did not define my worth, but I still mainly blamed myself as a person.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "起初否定自己，後來能把問題與個人價值分開。",
+          "en": "I blamed myself at first, then separated the problem from my worth.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "能看待金錢問題，而不把它當成個人價值的判決。",
+          "en": "I could look at the financial problem without treating it as a judgment of my worth.",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-I4",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "回想過去三個月，別人請妳付出時間或金錢時，妳有多少次因不好意思拒絕，而給出超過自己能負擔的部分？",
+      "en": "Thinking about the past three months, when someone asked for time or money, how often did you give more than you could manage because saying no felt uncomfortable?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "boundaries_support",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-I5",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "最近一次討論報酬或分攤費用時，妳把自己可接受的安排說得多清楚？",
+      "en": "The last time you discussed payment or shared costs, how clearly did you say what would work for you?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有說出自己可接受的安排。",
+          "en": "I did not say what would work for me.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "暗示自己的想法，但沒有直接說出來。",
+          "en": "I hinted at what I wanted, but did not state it directly.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "直接說出部分想法，但重要細節仍不清楚。",
+          "en": "I stated part of what I wanted, but left important details unclear.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "清楚提出自己可接受的安排；有人協助表達也算。",
+          "en": "I clearly stated an arrangement I could accept, with help expressing it if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "wealth-I6",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "回想過去三個月，注意到別人的收入或消費時，妳有多少次用它來判斷自己是否成功？",
+      "en": "Thinking about the past three months, when you noticed someone else’s income or spending, how often did you use it to judge your own success?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "wealth-I7",
+      "category": "wealth",
+      "side": "intangible",
+      "zh": "最近一次想要某樣負擔不起的東西時，妳最後如何處理這筆消費？",
+      "en": "The last time you wanted something you could not afford, what did you do about the spending?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "能接受目前的預算，選擇等待、較便宜的替代品或不買；有人協助也算。",
+          "en": "I accepted my budget and chose an affordable option, such as waiting, buying something cheaper or going without, with help if needed.",
+          "score": 4
+        },
+        {
+          "id": "b",
+          "zh": "沒有超出預算，但心裡仍很難接受這個限制。",
+          "en": "I stayed within my budget, but was still finding it hard to accept the limit.",
+          "score": 3
+        },
+        {
+          "id": "c",
+          "zh": "還沒有承諾購買，但正打算花超過自己能負擔的金額。",
+          "en": "I had not committed to buying it, but was planning to spend more than I could afford.",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "zh": "明知負擔不起，仍購買或承諾付款。",
+          "en": "I bought it or committed to paying for it even though I could not afford it.",
+          "score": 1
+        }
+      ],
+      "theme": "money_resources",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-T1",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "想一件最近在工作、家中或照顧他人時做過的事。妳能指出自己用上的一個長處嗎？",
+      "en": "Think of something you recently did at work, at home or while caring for someone. Can you identify a strength you used?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "即使有人協助，也找不出一個長處。",
+          "en": "I cannot identify a strength, even with help.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "說得出可能的長處，但不確定自己有沒有用上。",
+          "en": "I can name a possible strength, but I am not sure I used it.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "說得出用上的長處，但難以說明如何用上。",
+          "en": "I can name a strength I used, but struggle to explain how.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "能指出長處並舉出用上的具體例子；有人協助也算。",
+          "en": "I can name a strength and give a specific example of using it, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-T2",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "過去 7 天，妳有幾天用上自己擅長的事，即使只是日常小事？",
+      "en": "In the past 7 days, on how many days did you use something you are good at, even in a small everyday task?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0 天",
+          "en": "0 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "1–2 天",
+          "en": "1–2 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "3–4 天",
+          "en": "3–4 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "5–7 天",
+          "en": "5–7 days",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "day_count"
+    },
+    {
+      "id": "civilisation-T3",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "想一件最近想學的事。妳學到哪一步？",
+      "en": "Think of something you recently wanted to learn. How far have you got with learning it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒找到學習方式。",
+          "en": "I have not found a way to learn it.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "找到方式，但還沒開始。",
+          "en": "I have found a way, but have not started.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "已開始，但還沒找到符合時間與資源、能繼續的方式。",
+          "en": "I have started, but have not yet found a way to keep going that fits my time and resources.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "已開始，也找到能持續的方式；有人協助也算。",
+          "en": "I have started and found a manageable way to keep going, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-T4",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "回想過去三個月，學到一個看起來有用的方法後，妳有多少次在生活中試用？",
+      "en": "Thinking about the past three months, when you learned a method that seemed useful, how often did you try it in everyday life?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "civilisation-T5",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "最近一次事情需要妳還不會的技能時，妳把不會的部分處理到哪一步？",
+      "en": "The last time a task required a skill you did not have, how far did you get in dealing with that gap?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒弄清楚需要學什麼或請人幫什麼。",
+          "en": "I had not worked out what I needed to learn or get help with.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "知道缺少什麼，但還沒找到做法。",
+          "en": "I knew what was missing, but had not found a way forward.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "找到練習、求助或調整任務的方法，但還沒用上。",
+          "en": "I found a way to practise, get help or change the task, but had not put it into action.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "已開始練習、取得合適協助，或把任務調整成能處理的範圍。",
+          "en": "I started practising, got suitable help or changed the task to something manageable.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-T6",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "回想過去三個月，有機會以自己願意、也負擔得起的方式幫忙時，妳有多少次實際去做？私下的小幫忙也算。",
+      "en": "Thinking about the past three months, when there was a chance to help in a way you wanted to and could manage, how often did you do so? Small, private acts count.",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "civilisation-T7",
+      "category": "civilisation",
+      "side": "tangible",
+      "zh": "最近一次收到意見時，妳把它整理、運用到哪一步？",
+      "en": "The last time you received feedback, how far did you get in deciding what to do with it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有嘗試理解，就完全接受或完全否定。",
+          "en": "I accepted or dismissed it without trying to understand it.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "理解內容，但還沒考慮是否適用。",
+          "en": "I understood it, but had not considered whether it applied to me.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "考慮過是否適用，但還沒決定如何處理。",
+          "en": "I considered whether it applied, but had not decided what to do.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "試用適合的部分，或在想清楚不適用的理由後決定不採用。",
+          "en": "I tried a relevant part, or deliberately set it aside after considering why it did not fit.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-I1",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "想一個最近似曾相識的困難。妳何時留意到自己反應中重複的模式？",
+      "en": "Think of a recent difficulty that felt familiar. When did you notice a pattern in how you responded?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "到現在仍看不出有什麼模式。",
+          "en": "I still cannot see a pattern.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "隔天或更晚才注意到；有人協助也算。",
+          "en": "I noticed it the next day or later, with help if needed.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "事情結束後，在當天內注意到。",
+          "en": "I noticed it afterwards, but on the same day.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "事情發生當下就注意到；有人協助也算。",
+          "en": "I noticed it while it was happening, with help if needed.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-I2",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "回想過去三個月，別人沒有達到期待時，妳有多少次先確認自己是否清楚說明過期待？",
+      "en": "Thinking about the past three months, when someone did not meet your expectations, how often did you check whether you had clearly explained what you expected?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "一次也沒有",
+          "en": "Never",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "有些時候，但不到一半",
+          "en": "On some occasions, but fewer than half",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "至少一半，但不是每次",
+          "en": "On at least half the occasions, but not every time",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "每次都是",
+          "en": "Every time",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "occasion_frequency"
+    },
+    {
+      "id": "civilisation-I3",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "最近一次發現別人做不到妳的期待時，妳把安排調整到哪一步？",
+      "en": "The last time you realised someone could not meet your expectations, how far did you get in adjusting the arrangement?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "仍要求照原本的安排完成。",
+          "en": "I kept expecting the original arrangement to be met.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "不再要求，但沒有討論其他安排。",
+          "en": "I dropped the expectation, but did not discuss a different arrangement.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "討論過其他安排，但還沒有達成共識。",
+          "en": "We discussed a different arrangement, but had not agreed on one.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "一起同意一個兼顧雙方能力與限制的安排。",
+          "en": "We agreed on an arrangement that took both people’s limits into account.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-I4",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "過去 7 天，妳有幾天覺得自己做的事，與重視的人、價值或目標有連結？",
+      "en": "In the past 7 days, on how many days did something you did feel connected to a person, value or goal that matters to you?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "0 天",
+          "en": "0 days",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "1–2 天",
+          "en": "1–2 days",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "3–4 天",
+          "en": "3–4 days",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "5–7 天",
+          "en": "5–7 days",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "day_count"
+    },
+    {
+      "id": "civilisation-I5",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "最近一次經驗與長期相信的想法不一致時，妳思考到哪一步？",
+      "en": "The last time an experience challenged something you had long believed, how far did you get in thinking it through?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "沒有考慮它可能代表什麼，就否定這個經驗。",
+          "en": "I dismissed the experience without considering what it might mean.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "注意到不一致，但沒有繼續想。",
+          "en": "I noticed the conflict, but did not examine it further.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "比較過經驗與原本的想法，但還沒形成看法。",
+          "en": "I compared the experience with my belief, but had not decided what to make of it.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "考慮兩者後，決定保留、調整，或暫不判斷原本的想法。",
+          "en": "I considered both and decided whether to keep, change or suspend judgment on the belief.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-I6",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "最近一次對人生方向不確定時，妳把下一步整理到哪裡？可以透過他人、反思、信仰或其他方式。",
+      "en": "The last time you felt unsure where your life was heading, how far did you get in finding a next step? You may have turned to people, reflection, faith or another source.",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "還沒找到能幫自己整理下一步的方法。",
+          "en": "I had not found anything that helped me work out a next step.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "找到讓自己安心的方式，但仍不知道下一步做什麼。",
+          "en": "I found something reassuring, but still did not know what to do next.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "找出下一步，但還沒開始。",
+          "en": "I identified a next step, but had not started it.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "已採取一個自己認同、也符合現況的下一步。",
+          "en": "I took a next step that made sense to me and fit my circumstances.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    },
+    {
+      "id": "civilisation-I7",
+      "category": "civilisation",
+      "side": "intangible",
+      "zh": "想一次最近對人生或靈性建議感到不確定的經驗。妳如何決定要不要照做？",
+      "en": "Think of a recent piece of life or spiritual advice you were unsure about. Which best describes how you decided whether to follow it?",
+      "signal": null,
+      "options": [
+        {
+          "id": "a",
+          "zh": "覺得自己不能質疑或自行決定，例如害怕不照做的後果。",
+          "en": "I did not feel able to question the advice or decide for myself, for example because I feared consequences.",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "zh": "覺得可以提出疑問，但不知道如何判斷是否適合自己。",
+          "en": "I felt able to question it, but did not know how to judge whether it suited me.",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "zh": "檢查過是否適合，卻仍照做自己認為不適合的部分。",
+          "en": "I checked whether it fit me, but still followed parts I thought were unsuitable.",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "zh": "檢查是否適合自己，再決定採用哪些部分，或完全不採用。",
+          "en": "I checked whether it fit me and chose which parts, if any, to follow.",
+          "score": 4
+        }
+      ],
+      "theme": "meaning_learning",
+      "responseType": "situation"
+    }
+  ],
+  "supersedes": "five-assets-members-v09-draft",
+  "changesComparable": false
+}

@@ -1,0 +1,242 @@
+{
+  "version": "five-assets-results-v10-review",
+  "categories": [
+    {
+      "id": "wisdom",
+      "zh": "智慧",
+      "en": "Wisdom",
+      "whyZh": "有形看知識、方法與實際行動；無形看判斷背後的內在方向、信念與直覺。",
+      "whyEn": "The tangible side concerns knowledge, methods and action; the intangible side concerns the inner direction, beliefs and intuition behind judgment."
+    },
+    {
+      "id": "beauty",
+      "zh": "美學",
+      "en": "Beauty and Self-expression",
+      "whyZh": "分辨外在照顧與表達，以及內在的自我價值與真實感；不以消費能力或外貌標準評分。",
+      "whyEn": "Distinguish outward care and expression from self-worth and authenticity, without rewarding spending power or a particular appearance."
+    },
+    {
+      "id": "health",
+      "zh": "健康",
+      "en": "Health and Well-being",
+      "whyZh": "有形看身體照顧與生活習慣；無形看內在覺察、界線與恢復感。這些回答不是診斷。",
+      "whyEn": "The tangible side concerns physical care and habits; the intangible side concerns inner awareness, boundaries and replenishment. These answers are not a diagnosis."
+    },
+    {
+      "id": "wealth",
+      "zh": "財富",
+      "en": "Wealth and Resources",
+      "whyZh": "有形看資源管理與行動；無形看金錢信念、自我價值與選擇動機。",
+      "whyEn": "The tangible side concerns managing resources and taking action; the intangible side concerns money beliefs, self-worth and the motivations behind choices."
+    },
+    {
+      "id": "civilisation",
+      "zh": "文明",
+      "en": "Learning Contribution and Life Connection",
+      "whyZh": "有形看學習、專長與貢獻；無形看反覆的人生模式、意義與靈性照顧。學歷高低不計分。",
+      "whyEn": "The tangible side concerns learning, expertise and contribution; the intangible side concerns recurring patterns, meaning and spiritual care. Educational attainment is not scored."
+    }
+  ],
+  "bands": {
+    "1": {
+      "zh": "先建立基礎",
+      "en": "Build a foundation"
+    },
+    "2": {
+      "zh": "持續累積中",
+      "en": "Developing"
+    },
+    "3": {
+      "zh": "已有穩定支持",
+      "en": "Steady support"
+    }
+  },
+  "profiles": {
+    "11": {
+      "name": {
+        "zh": "兩側先建立",
+        "en": "Build both sides"
+      }
+    },
+    "12": {
+      "name": {
+        "zh": "內在開始成形，行動待建立",
+        "en": "Emerging inner support; build practical support"
+      }
+    },
+    "13": {
+      "name": {
+        "zh": "內在較穩，行動待建立",
+        "en": "Steadier inner support; build practical support"
+      }
+    },
+    "21": {
+      "name": {
+        "zh": "行動開始成形，內在待建立",
+        "en": "Developing practical support; build inner support"
+      }
+    },
+    "22": {
+      "name": {
+        "zh": "兩側持續累積",
+        "en": "Develop both sides"
+      }
+    },
+    "23": {
+      "name": {
+        "zh": "內在較穩，行動持續累積",
+        "en": "Steadier inner support; develop practical support"
+      }
+    },
+    "31": {
+      "name": {
+        "zh": "行動較穩，內在待建立",
+        "en": "Steadier practical support; build inner support"
+      }
+    },
+    "32": {
+      "name": {
+        "zh": "行動較穩，內在持續累積",
+        "en": "Steadier practical support; develop inner support"
+      }
+    },
+    "33": {
+      "name": {
+        "zh": "兩側整體較穩",
+        "en": "Steadier overall on both sides"
+      }
+    }
+  },
+  "themes": {
+    "decisions": {
+      "name": {
+        "zh": "決策與執行",
+        "en": "Decisions and action"
+      },
+      "step": {
+        "zh": "選一件正在猶豫的事，確認可用資訊，再選一個這週能完成的小步驟。",
+        "en": "Choose one pending decision, check available information and choose a small step for this week."
+      },
+      "service": "reading"
+    },
+    "self_pressure": {
+      "name": {
+        "zh": "自我壓力",
+        "en": "Self-pressure"
+      },
+      "step": {
+        "zh": "選一項可以減少、延後或請人協助的安排。留意一次失誤是否被當成對整個自己的評價。",
+        "en": "Choose one task to reduce, postpone or ask for help with. Notice whether one mistake becomes a judgment of your whole self."
+      },
+      "service": null
+    },
+    "boundaries_support": {
+      "name": {
+        "zh": "界線與支持",
+        "en": "Boundaries and support"
+      },
+      "step": {
+        "zh": "選一個安全、合適的對象，說明一項具體需要，或提出一個自己能負擔的安排。",
+        "en": "With a safe, appropriate person, express one specific need or propose an arrangement within your capacity."
+      },
+      "service": null
+    },
+    "self_expression": {
+      "name": {
+        "zh": "自我表達",
+        "en": "Self-expression"
+      },
+      "step": {
+        "zh": "選一個不增加支出的日常選擇，練習依自己的喜好決定。",
+        "en": "Practise making one everyday choice based on your own preferences, without extra spending."
+      },
+      "service": null
+    },
+    "rest_care": {
+      "name": {
+        "zh": "休息與照顧",
+        "en": "Rest and care"
+      },
+      "step": {
+        "zh": "先找出一項最難維持的休息或照顧安排，看看能否減少負擔或取得協助。",
+        "en": "Identify one difficult rest or care arrangement and consider reducing the burden or finding support."
+      },
+      "service": "relaxation"
+    },
+    "emotion": {
+      "name": {
+        "zh": "情緒",
+        "en": "Emotions"
+      },
+      "step": {
+        "zh": "先分清楚是難以辨認情緒、難以緩和，還是不容易表達需要，再選一個可行的小步驟。",
+        "en": "First distinguish difficulty naming feelings, settling them or expressing needs, then choose a feasible step."
+      },
+      "service": null
+    },
+    "money_resources": {
+      "name": {
+        "zh": "金錢與資源",
+        "en": "Money and resources"
+      },
+      "step": {
+        "zh": "先確認必要支出與可用資源。資源不足不等於不會理財，也不代表個人價值。",
+        "en": "Check essential expenses and available resources. Limited resources do not imply poor financial skill or lower personal worth."
+      },
+      "service": null
+    },
+    "meaning_learning": {
+      "name": {
+        "zh": "學習與意義",
+        "en": "Learning and meaning"
+      },
+      "step": {
+        "zh": "回想一件最近對妳有意義的小事，選擇一個符合自己意願、時間與資源的下一步。",
+        "en": "Recall one recent meaningful action and choose a next step that fits your wishes, time and resources."
+      },
+      "service": "tarot"
+    }
+  },
+  "services": {
+    "tarot": {
+      "name": {
+        "zh": "塔囉聊心",
+        "en": "Xian Tian Tarot"
+      },
+      "text": {
+        "zh": "如果想進一步探索自己的想法，可以先了解「塔囉聊心」，再決定是否適合。",
+        "en": "If you want to explore your personal question, you can ask about Xian Tian Tarot before deciding whether it fits."
+      }
+    },
+    "iching": {
+      "name": {
+        "zh": "易經解困",
+        "en": "I Ching Reading"
+      },
+      "text": {
+        "zh": "如果想探索一個具體的抉擇，可以先了解「易經解困」，與我們確認是否適合。",
+        "en": "If you want to explore a specific decision, ask us whether an I Ching Reading fits your question."
+      }
+    },
+    "knife": {
+      "name": {
+        "zh": "刀式舒壓",
+        "en": "Knife Therapy"
+      },
+      "text": {
+        "zh": "若想安排身體放鬆體驗，可以先了解「刀式舒壓」，並與我們確認服務方式與身體狀況是否合適。",
+        "en": "If you want a body relaxation experience, ask about Knife Therapy and discuss whether the approach suits your circumstances."
+      }
+    },
+    "phytoncide": {
+      "name": {
+        "zh": "芬多精療癒",
+        "en": "Phytoncide Healing"
+      },
+      "text": {
+        "zh": "若想留一段時間慢下來，可以先了解「芬多精療癒」的放鬆體驗，再決定是否安排。",
+        "en": "If you want time to slow down, you can ask about the Phytoncide Healing relaxation experience before deciding."
+      }
+    }
+  }
+}
