@@ -42,3 +42,5 @@
 /* v11: explain purpose and pace before the questions. */
 .assessment-purpose{font-size:16px}.start-meta .assessment-duration{color:#f5dfac;font-size:16px}.assessment-panel .start-meta{margin-bottom:8px}.assessment-panel .duration-note{margin:6px auto 24px;font-size:13px}.start-explanation{text-align:left;max-width:620px;margin:26px auto}.start-explanation h3{font-size:18px;color:#eed6a4;margin:24px 0 8px}.start-explanation p{font-size:15px;margin:8px 0 18px}.start-explanation .assessment-note{font-size:13px}.chapter-sides{text-align:left;margin:26px auto 0;max-width:520px}.chapter-sides p{font-size:14px;margin:18px 0}.chapter-sides strong{font-size:14px;color:#f3dfa9;font-weight:400}
 @media(max-width:650px){.assessment-panel{padding:26px 20px}.assessment-panel h2{font-size:26px}.assessment-panel .start-meta{gap:10px 18px}.chapter-sides{margin-top:20px}.section-card{padding-bottom:20px}.section-card h2{font-size:30px!important}}
+
+.assessment-panel h2{text-wrap:balance}
